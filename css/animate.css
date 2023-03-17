@@ -3375,3 +3375,30 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+
+#sprite1 {
+  position: fixed;
+  bottom: -100px;
+  left: 20%;
+  transform: translateX(-50%);
+  animation: peek1 5s ease-in-out infinite;
+}
+
+.start-animation {
+  animation: peek 5s ease-in-out infinite;
+}
+
+@keyframes peek1 {
+  0% {
+    bottom: -1000px;
+  }
+  25% {
+    bottom: calc(0% - 100px);
+  }
+  75% {
+    bottom: calc(0% - 100px);
+  }
+  100% {
+    bottom: -1000px;
+  }
+}

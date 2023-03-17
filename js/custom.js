@@ -72,6 +72,42 @@
 	};
 	
 
+	/*----------------------------------------
+		Konami Code
+	----------------------------------------*/
+
+	var konamiCode = function() {
+		// Definir la secuencia del código Konami completo
+		const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA', 'Enter'];
+
+		// Definir la variable que llevará un registro de la posición actual del usuario en la secuencia
+		let konamiCodePosition = 0;
+
+		// Escuchar eventos de teclado
+		document.addEventListener('keydown', (event) => {
+		// Obtener la tecla presionada
+		const keyPressed = event.code;
+		
+		// Comprobar si la tecla presionada coincide con la tecla esperada en la posición actual del código Konami
+		if (keyPressed === konamiCode[konamiCodePosition]) {
+			// Incrementar la posición actual del usuario en la secuencia
+			konamiCodePosition++;
+			
+			// Comprobar si el usuario ha completado todo el código Konami
+			if (konamiCodePosition === konamiCode.length) {
+			// El usuario ha ingresado el código Konami completo, haz algo aquí
+			// Por ejemplo, muestra un mensaje o inicia un juego oculto
+			alert('¡Código Konami completo!');
+			
+			// Reiniciar la posición actual del usuario en la secuencia
+			konamiCodePosition = 0;
+			}
+		} else {
+			// La tecla presionada no coincide con la tecla esperada en la posición actual del código Konami, reiniciar la posición actual del usuario en la secuencia
+			konamiCodePosition = 0;
+		}
+		});
+	};
 
 	/*----------------------------------------
 		Animate Scroll
