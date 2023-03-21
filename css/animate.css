@@ -3402,3 +3402,29 @@ Copyright (c) 2015 Daniel Eden
     bottom: -1000px;
   }
 }
+
+
+.train{
+  overflow: hidden;
+  position: relative;
+  transform: scaleY(-1) translateY(-8px);
+  animation: train1 10s ease-in-out infinite;
+  width: 50%;
+  height: 60%;
+}
+
+@keyframes train1 {
+  0% {
+    left: 150%;
+  }
+  40% {
+    left: 30%;
+  }
+  60%
+  {
+    left: 30%;
+  }
+  100% {
+    left: -150%;
+  }
+}
