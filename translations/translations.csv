@@ -1,0 +1,64 @@
+key;en;es;
+home;Home;Inicio;
+portfolio;Portfolio;Portfolio;
+resume;Resume;Resumen;
+about;About;Sobre Mi;
+contact;Contact;Contacto;
+hello_heading;Hello, I am;Hola, yo soy;
+welcome_message;Welcome to my personal portfolio;Te doy la bienvenida a mi portfolio personal;
+section_portfolio_heading;Portfolio;Portafolio;
+filter_all;All Projects;Todos los proyectos;
+filter_haptic;Haptics;Hápticos;
+filter_iot;IoT;IoT;
+filter_videogame;Videogames and VR;Videojuegos y RV;
+filter_simulation;Simulation;Simulación;
+portfolio_project1_name;Part-Time Hero;Part-Time Hero;
+portfolio_project1_category;Videogames and VR;Videojuegos y RV;
+portfolio_project2_name;Smart Train Composition Coupling;Acoplamiento Inteligente de Composición de Trenes;
+portfolio_project2_category;IoT;IoT;
+portfolio_project3_name;Obstetric Simulator;Simulador Obstétrico;
+portfolio_project3_category;Simulation and Haptics;Simulación y Hápticos;
+portfolio_project4_name;On Board Train Integrity;Integridad de Tren a Bordo;
+portfolio_project4_category;IoT;IoT;
+portfolio_project5_name;Escape Game;Escape Game;
+portfolio_project5_category;Videogames and VR;Videojuegos y RV;
+portfolio_project6_name;Haptic Render;Háptico Render;
+portfolio_project6_category;Haptics;Hápticos;
+portfolio_project7_name;Advanced Mesh Deformation Simulations;Simulaciones Avanzadas en Mallas;
+portfolio_project7_category;Simulation;Simulación;
+portfolio_project8_name;More Projects;Más Proyectos;
+portfolio_project8_category;Various;Varios;
+portfolio_project9_name;Boat VR Minigame;Boat VR Minijuego;
+portfolio_project9_category;Videogames and VR / Simulation;Videojuegos y RV / Simulación;
+portfolio_project10_name;Rigging and Animation of Models;Rigging y Animación de Modelos;
+portfolio_project10_category;Videogames and RV;Videojuegos y RV;
+portfolio_project11_name;Github;Github;
+portfolio_project11_category;https://github.com/Ecenys;https://github.com/Ecenys;
+portfolio_project12_name;Stereoscopic Marker Tracking;Seguimiento Estereoscópico de Marcadores;
+portfolio_project12_category;Videogames and VR;Videojuegos y RV;
+my_resume;My Resume;Mi Resumen
+laboral_experience;Laboral Experience;Experiencia laboral
+resume_item_5;November 2021 - Present;Noviembre 2021 - Actualidad
+resume_title_5;R&D Engineer in Railway Systems;Ingeniero de I+D en sistemas ferroviarios
+resume_description_5_1;Railway Systems Engineer in the European program "Europe’s Rail Joint Undertaking". Research and development of new systems for ETCS 3.;Ingeniero de Sistemas Ferroviarios en el programa Europeo "Europe’s Rail Joint Undertaking". Investigación y desarrollo de nuevos sistemas para ETCS 3.
+resume_description_5_2;Virtual Coupling, On Board Train Integrity y Train Warning System,Virtual Coupling; and Train Warning System; On Board Train Integrity
+resume_description_5_3;C/C++, MQTT and QT5 for simulator development and support tools; and CBOR for core systems and communications<br>Python;C/C++, MQTT y CBOR para sistemas principales y comunicaciones<br>Python, QT5 para desarrollo de simuladores y herramientas de soporte
+resume_company_5;Indra Sistemas;Indra Sistemas
+resume_item_4;January 2021 - September 2021;Enero 2021 - Septiembre 2021
+resume_title_4;Researcher;Investigador
+resume_description_4_1;Researcher in the "TouchDesing" research group. Research on new subactuated haptic rendering algorithms;Investigador en el grupo de investigación "TouchDesing". Investigación de nuevos algoritmos de renderizado háptico subactuado
+resume_description_4_2;C/C++, C#, and Unity<br>Programming drivers for the SenseGlove DK1 haptic device;C/C++, C# y Unity<br>Programación de drivers para dispositivo háptico SenseGlove DK1
+resume_company_4; Rey Juan Carlos I University;Universidad Rey Juan Carlos I
+resume_item_3;January 2020 - December 2020;Enero 2020 - Diciembre 2020
+resume_company_3;Vector ITC Group;Vector ITC Group
+resume_description_3_1;Junior Programmer for the "Programa por puntos" (PxP) and accident program (ARENA) for DGT (Dirección General de Tráfico);Programador Junior de los programas "Programa por puntos" (PxP) y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)
+resume_description_3_2;Java/JSP and OracleSQL for projects related to DGT<br>Angular for support tools;Java/JSP y OracleSQL para proyectos relacionados con DGT<br>Angular para herramientas de apoyo
+resume_item_2;April 2019 - June 2019;Abril 2019 - Junio 2019
+resume_title_2;Intern;Estudiante en prácticas
+resume_description_2_1;Development of a smart car key storage system. Enabling automatic opening via app;Desarrollo de un sistema de almacenamiento de llaves de automoviles inteligentes. Que permiten la apertura automática mediante app
+resume_description_2_2;Java/Angular;Java/Angular
+resume_description_2_3;Developer and Functional Tester;Desarrollador y Tester funcional
+resume_company_2;CreamTeam GmbH;CreamTeam GmbH
+resume_item_1;2013-2020;2013;2020
+resume_title_1;Farm Labourer;Trabajador agrícola
+resume_desciption_1_1;Various tasks in the world of agriculture at different time periods;Tareas varias en el mundo de la agricultura en diferentes intervalos de tiempo

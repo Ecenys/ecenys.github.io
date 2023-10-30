@@ -28,11 +28,11 @@
 
 			<div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#section-home">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-portfolio">Portfolio</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-resume">Resumen</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-about">Sobre Mi</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-contact">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-home" data-translate="home">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-portfolio" data-translate="portfolio">Portfolio</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-resume" data-translate="resume">Resume</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-about" data-translate="about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-contact" data-translate="contact">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -43,17 +43,23 @@
 			<div class="row intro-text align-items-center justify-content-center">
 				<div class="col-md-12 text-center pt-5">
 
-					<h1 class="site-heading site-animate">Hola, yo soy <strong class="d-block">ÓSCAR GÓMEZ MONEDERO</strong></h1>
-					<h2>Te doy la bienvenida a mi <strong>portfolio personal</strong></h2>
+					<h2 class="site-heading site-animate" data-translate="hello_heading">Hello, I am</h2>
+					<h1><strong class="d-block">ÓSCAR GÓMEZ MONEDERO</strong></h1>
+					<h2 data-translate="welcome_message">Welcome to my personal portfolio</h2>
+					<br>
+					<select id="languageSelector">
+						<option value="en">English</option>
+						<option value="es">Español</option>
+					</select>
 					<br>
 					<br>
 					<h2><mark style="background-color: yellow;">PORTFOLIO <strong>UNDER CONSTRUCTION </mark></strong></h2>
-					<h2><mark style="background-color: yellow;"><strong>SOON</strong> ALSO IN  <strong> ENGLISH </mark><strong></h2>
+					<h2><mark style="background-color: yellow;"><strong>RECOMENDED IN PC</mark><strong></h2>
 
 				</div>
 			</div>
 		</div>
-	</section> <!-- section -->
+	</section>
 
 
  	<section class="site-section" id="section-portfolio">
@@ -65,16 +71,17 @@
 			</div>
 			<div class="filters">
 				<ul>
-					<li class="active" data-filter=".all">Todos los proyectos</li>
-					<li data-filter=".haptic">Hápticos</li>
-					<li data-filter=".iot">IoT</li>
-					<li data-filter=".videogame">Videojuegos y RV</li>
-					<li data-filter=".simulation">Simulación</li>
+					<li class="active" data-filter=".all" data-translate="filter_all">All Projects</li>
+					<li data-filter=".haptic" data-translate="filter_haptic">Haptics</li>
+					<li data-filter=".iot" data-translate="filter_iot">IoT</li>
+					<li data-filter=".videogame" data-translate="filter_videogame">Videogames and VR</li>
+					<li data-filter=".simulation" data-translate="filter_simulation">Simulation</li>
 				</ul>
 			</div>
 
 			<div class="filters-content">
 				<div class="row grid">
+					<!-- Proyecto 1: Part-Time Hero -->
 					<div class="single-portfolio col-sm-4 all videogame">
 						<div class="relative">
 							<a href="https://c404games.itch.io/part-time-hero">
@@ -85,10 +92,12 @@
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Part-Time Hero</h4>
-							<div class="cat">Videojuegos y RV</div>
+							<h4 data-translate="portfolio_project1_name">Part-Time Hero</h4>
+							<div class="cat" data-translate="portfolio_project1_category">Video Games and VR</div>
 						</div>
 					</div>
+				
+					<!-- Proyecto 2: Smart Train Composition Coupling -->
 					<div class="single-portfolio col-sm-4 all iot">
 						<div class="relative">
 							<a href="https://www.youtube.com/watch?v=pMQ0CWzOKTI&">
@@ -99,10 +108,10 @@
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Smart Train Composition Coupling</h4>
-							<div class="cat">IoT</div>
+							<h4 data-translate="portfolio_project2_name">Smart Train Composition Coupling</h4>
+							<div class="cat" data-translate="portfolio_project2_category">IoT</div>
 						</div>
-					</div>
+					</div>				
 					<div class="single-portfolio col-sm-4 all simulation haptic">
 						<div class="relative">
 							<a href="https://github.com/Ecenys/Obstetric-simulator">
@@ -110,14 +119,14 @@
 									<div class="overlay overlay-bg"></div>
 									<img class="image img-fluid" src="images/portfolio/ObstetricSimulator.png" alt="">
 								</div>
-							</a> 
-
+							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Simulador Obstétrico</h4>
-							<div class="cat">Simulación / Hápticos</div>
+							<h4 data-translate="portfolio_project3_name">Simulador Obstétrico</h4>
+							<div class="cat" data-translate="portfolio_project3_category">Simulación / Hápticos</div>
 						</div>
 					</div>
+					
 					<div class="single-portfolio col-sm-4 all iot">
 						<div class="relative">
 							<a href="https://www.youtube.com/watch?v=INog83y3lKE&">
@@ -128,10 +137,11 @@
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>On Board Train Integrity</h4>
-							<div class="cat">IoT</div>
+							<h4 data-translate="portfolio_project4_name">On Board Train Integrity</h4>
+							<div class="cat" data-translate="portfolio_project4_category">IoT</div>
 						</div>
 					</div>
+					
 					<div class="single-portfolio col-sm-4 all videogame">
 						<div class="relative">
 							<a href="https://github.com/Ecenys/EscapeGame">
@@ -139,13 +149,13 @@
 									<div class="overlay overlay-bg"></div>
 									<img class="image img-fluid" src="images/portfolio/EscapeGame.png" alt="">
 								</div>
-							</a>                                  
+							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Escape Game</h4>
-							<div class="cat">Videojuegos y RV</div>
-						</div> 
-					</div> 
+							<h4 data-translate="portfolio_project5_name">Escape Game</h4>
+							<div class="cat" data-translate="portfolio_project5_category">Videojuegos y RV</div>
+						</div>
+					</div>
 					<div class="single-portfolio col-sm-4 all haptic">
 						<div class="relative">
 							<a href="https://github.com/Ecenys/Basic-Proxy-HIP-Simulation"> 
@@ -156,10 +166,11 @@
 							</a>                                
 						</div> 
 						<div class="p-inner">
-							<h4>Render háptico subactuado</h4>
-							<div class="cat">Hápticos</div>
+							<h4 data-translate="portfolio_project6_name">Render háptico subactuado</h4>
+							<div class="cat" data-translate="portfolio_project6_category">Hápticos</div>
 						</div>
 					</div>
+					
 					<div class="single-portfolio col-sm-4 all simulation">
 						<div class="relative">
 							<a href="https://github.com/Ecenys/Animacion-y-simulacion-avanzada">  
@@ -170,10 +181,11 @@
 							</a>                                
 						</div>
 						<div class="p-inner">
-							<h4>Simulaciones avanzadas en mallas</h4>
-							<div class="cat">Simulación</div>
+							<h4 data-translate="portfolio_project7_name">Simulaciones avanzadas en mallas</h4>
+							<div class="cat" data-translate="portfolio_project7_category">Simulación</div>
 						</div>
 					</div>
+					
 					<div class="single-portfolio col-sm-4 all principal">
 						<div class="relative">
 							<div class="thumb">
@@ -187,10 +199,11 @@
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Para más proyectos</h4>
-							<div class="cat">cambia de sección</div>
+							<h4 data-translate="portfolio_project8_name">Para más proyectos</h4>
+							<div class="cat" data-translate="portfolio_project8_category">cambia de sección</div>
 						</div>
 					</div>
+					
 					<div class="single-portfolio col-sm-4 all videogame simulation">
 						<div class="relative">
 							<a href="https://github.com/Ecenys/Boat-VR-minigame">
@@ -201,23 +214,22 @@
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Boat VR Minigame</h4>
-							<div class="cat">Videojuegos y RV / Simulación</div>
+							<h4 data-translate="portfolio_project9_name">Boat VR Minigame</h4>
+							<div class="cat" data-translate="portfolio_project9_category">Videojuegos y RV / Simulación</div>
 						</div>
 					</div>
-					
 					<div class="single-portfolio col-sm-4 all videogame modeling">
 						<div class="relative">
 							<a href="https://github.com/Ecenys/Modelado-y-Animacion-de-Personaje">
 								<div class="thumb">
 									<div class="overlay overlay-bg"></div>
-									<img href="https://github.com/Ecenys/Modelado-y-Animacion-de-Personaje" class="image img-fluid" src="images/portfolio/rigging.png" alt="">
+									<img src="images/portfolio/rigging.png" class="image img-fluid" alt="">
 								</div>
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Rigging y animación de modelos</h4>
-							<div class="cat">Videojuegos y RV</div>
+							<h4 data-translate="portfolio_project10_name">Rigging y animación de modelos</h4>
+							<div class="cat" data-translate="portfolio_project10_category">Videojuegos y RV</div>
 						</div>
 					</div>
 					<div class="single-portfolio col-sm-4 all videogame simulation haptic iot">
@@ -225,14 +237,14 @@
 							<a href="https://github.com/Ecenys">
 								<div class="thumb">
 									<div class="overlay overlay-bg"></div>
-									<img href="https://github.com/Ecenys" class="image img-fluid" src="images/portfolio/masEnGithub.png" alt="" max-idth="1000" max-height="1000">
+									<img src="images/portfolio/masEnGithub.png" class="image img-fluid" alt="" max-width="1000" max-height="1000">
 								</div>
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Github</h4>
+							<h4 data-translate="portfolio_project11_name">Github</h4>
 							<a href="https://github.com/Ecenys">
-								<div class="cat">https://github.com/Ecenys</div>
+								<div class="cat" data-translate="portfolio_project11_category">https://github.com/Ecenys</div>
 							</a>
 						</div>
 					</div>
@@ -241,15 +253,16 @@
 							<a href="">
 								<div class="thumb">
 									<div class="overlay overlay-bg"></div>
-									<img href="" class="image img-fluid" src="images/portfolio/estereocopia.png" alt="" width="1000" height="1000">
+									<img src="images/portfolio/estereocopia.png" class="image img-fluid" alt="" width="1000" height="1000">
 								</div>
 							</a>
 						</div>
 						<div class="p-inner">
-							<h4>Seguimiento estereoscópico de marcador</h4>
-							<div class="cat">Videojuegos y RV</div>
+							<h4 data-translate="portfolio_project12_name">Seguimiento estereoscópico de marcador</h4>
+							<div class="cat" data-translate="portfolio_project12_category">Videojuegos y RV</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -265,52 +278,57 @@
 					<div class="row">
 					<div class="col-md-12 mb-5">
 						<div class="section-heading text-center">
-							<h2>Mi <strong>Resumen</strong></h2>
+							<h2 data-translate="my_resume">My Resume</h2>
 						</div>
 					</div>
 					<div class="col-md-2 mb-5"></div>
 					<div class="col-md-8 mb-5">
 
-						<h2 class="mb-4" style="text-align: center;">Experiencia laboral</h2>
+						<h2 class="mb-4" style="text-align: center;" data-translate="laboral_experience">Laboral Experience</h2>
 
 						<div class="resume-item mb-4">
-							<span class="date"><span class="icon-calendar"></span> Noviembre 2021 - Actualidad</span>
-							<h3>Ingeniero de I+D en sistemas ferroviarios</h3>
-							<p>Ingeniero de Sistemas Ferroviarios en el programa Europeo "Europe’s Rail Joint Undertaking". Investigación y desarrollo de nuevos sistemas para ETCS 3.</p>
-							<p>Virtual Coupling, On Board Train Integrity y Train Warning System</p>
-							<p>C/C++, MQTT y CBOR para sistemas principales y comunicaciones<br>Python, QT5 para desarrollo de simuladores y herramientas de soporte</p>
-							<span class="school">Indra</span>
+							<span class="icon-calendar"></span>
+							<span class="date" data-translate="resume_item_5">Noviembre 2021 - Actualidad</span>
+							<h3 data-translate="resume_title_5">Ingeniero de I+D en sistemas ferroviarios</h3>
+							<p data-translate="resume_description_5_1">Ingeniero de Sistemas Ferroviarios en el programa Europeo "Europe’s Rail Joint Undertaking". Investigación y desarrollo de nuevos sistemas para ETCS 3.</p>
+							<p data-translate="resume_description_5_2">Virtual Coupling, On Board Train Integrity y Train Warning System</p>
+							<p data-translate="resume_description_5_3">C/C++, MQTT y CBOR para sistemas principales y comunicaciones<br>Python, QT5 para desarrollo de simuladores y herramientas de soporte</p>
+							<span class="school" data-translate="resume_company_5">Indra</span>
 						</div>
 
 						<div class="resume-item mb-4">
-							<span class="date"><span class="icon-calendar"></span> Enero 2021 - Septiembre 2021</span>
-							<h3>Investigador</h3>
-							<p>Investigador en el grupo de investigación "TouchDesing". Investigación de nuevos algoritmos de renderizado háptico subactuado</p>
-							<p>C/C++, C# y Unity<br>Programación de drivers para dispositivo háptico SenseGlove DK1</p>
-							<span class="school">Universidad Rey Juan Carlos I</span>
+							<span class="icon-calendar"></span>
+							<span class="date" data-translate="resume_item_4"> Enero 2021 - Septiembre 2021</span>
+							<h3 data-translate="resume_title_4">Investigador</h3>
+							<p data-translate="resume_description_4_1">Investigador en el grupo de investigación "TouchDesing". Investigación de nuevos algoritmos de renderizado háptico subactuado</p>
+							<p data-translate="resume_description_4_2">C/C++, C# y Unity<br>Programación de drivers para dispositivo háptico SenseGlove DK1</p>
+							<span class="school" data-translate="resume_company_4">Universidad Rey Juan Carlos I</span>
 						</div>
 
 						<div class="resume-item mb-4">
-							<span class="date"><span class="icon-calendar"></span> Enero 2020 - Diciembre 2020</span>
-							<h3>Programador</h3>
-							<p>Programador Junior de los programas "Programa por puntos (PxP)" y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)</p>
-							<p>Java/JSP y OracleSQL para proyectos relacionados con DGT<br>Angular para herramientas de apoyo</p>
-							<span class="school">Vector ITC Group</span>
+							<span class="icon-calendar"></span>
+							<span class="date" data-translate="resume_item_3"> Enero 2020 - Diciembre 2020</span>
+							<h3 data-translate="resume_title_3">Programador</h3>
+							<p data-translate="resume_description_3_1">Programador Junior de los programas "Programa por puntos (PxP)" y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)</p>
+							<p data-translate="resume_description_3_2">Java/JSP y OracleSQL para proyectos relacionados con DGT<br>Angular para herramientas de apoyo</p>
+							<span class="school" data-translate="resume_company_3">Vector ITC Group</span>
 						</div>
 
 						<div class="resume-item mb-4">
-							<span class="date"><span class="icon-calendar"></span> Abril 2019 - Junio 2019</span>
-							<p>Programador Junior de los programas "Programa por puntos (PxP)" y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)</p>
-							<h3>Estudiante en prácticas</h3>
-							<p>Java/Angular</p>
-							<p>Tester funcional</p>
-							<span class="school">CreamTeam GmbH</span>
+							<span class="icon-calendar"></span>
+							<span class="date" data-translate="resume_item_2"> Abril 2019 - Junio 2019</span>
+							<h3 data-translate="resume_title_2">Estudiante en prácticas</h3>
+							<p data-translate="resume_description_2_1">Desarrollo de un sistema de almacenamiento de llaves de automoviles inteligentes. Que permiten la apertura automática mediante app</p>
+							<p data-translate="resume_description_2_2">Java/Angular</p>
+							<p data-translate="resume_description_2_3">Tester funcional</p>
+							<span class="school" data-translate="resume_company_2">CreamTeam GmbH</span>
 						</div>
 
 						<div class="resume-item mb-4">
-							<span class="date"><span class="icon-calendar"></span> 2013 - 2020</span>
-							<h3>Peón agricultor</h3>
-							<p>Tareas varias en el mundo de la agricultura en diferentes intervalos de tiempo</p>
+							<span class="icon-calendar"></span>
+							<span class="date" data-translate="resume_item_1">  2013 - 2020</span>
+							<h3 data-translate="resume_title_1">Trabajador agrícola</h3>
+							<p data-translate="resume_desciption_1_1">Tareas varias en el mundo de la agricultura en diferentes intervalos de tiempo</p>
 						</div>
 					</div>
 					<div class="col-md-2 mb-5"></div>
@@ -675,6 +693,8 @@
 	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/konami.js"></script>
+
+	<script src="js/translator.js"></script>
 
 
     </body>
