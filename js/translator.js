@@ -6,11 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             const translations = parseCSV(data);
             updatePageContent(translations);
+            updatePagePlaceHoldersContent(translations);
+            updatePageValueContent(translations);
             // Escuchar cambios en el selector de idioma
             const languageSelector = document.getElementById('languageSelector');
             languageSelector.addEventListener('change', function () {
                 const selectedLanguage = languageSelector.value;
                 updatePageContent(translations, selectedLanguage);
+                updatePagePlaceHoldersContent(translations, selectedLanguage);
+                updatePageValueContent(translations, selectedLanguage);
             });
         });
 
@@ -46,5 +50,34 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Función para actualizar los placeholders de la pagina
+    function updatePagePlaceHoldersContent(translations, language = document.documentElement.lang) {
+        document.documentElement.lang = language; // Actualizar el atributo lang en html
+        const elements = document.querySelectorAll('[data-translate-placeholder]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate-placeholder');
+            if (translations[key] && translations[key][language]) {
+                // print placeholder of element
+                console.log(element.placeholder);
+                element.placeholder = translations[key][language];
+            }
+        });
+    }
+
+    // Función para actualizar los placeholders de la pagina
+    function updatePageValueContent(translations, language = document.documentElement.lang) {
+        document.documentElement.lang = language; // Actualizar el atributo lang en html
+        const elements = document.querySelectorAll('[data-translate-value]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate-value');
+            if (translations[key] && translations[key][language]) {
+                // print placeholder of element
+                console.log(element.placeholder);
+                element.value = translations[key][language];
+            }
+        });
+    }
+
 });
 
