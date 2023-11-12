@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
             updatePageValueContent(translations);
             // Escuchar cambios en el selector de idioma
             const languageSelector = document.getElementById('languageSelector');
+            // Vuelve a poner el selector languageSelector del hmtl al primer idioma de la lista cada vez que se recarga la pagina
+            languageSelector.value = languageSelector.options[0].value;
             languageSelector.addEventListener('change', function () {
                 const selectedLanguage = languageSelector.value;
                 updatePageContent(translations, selectedLanguage);

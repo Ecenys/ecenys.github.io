@@ -1,101 +1,103 @@
-key;en;es;de;fr;it
-home;Home;Inicio;Startseite;Accueil;Inicio
-portfolio;Portfolio;Portfolio;Portfolio;Portfolio;Portafoglio
-resume;Resume;Resumen;Lebenslauf;CV;Curriculum
-about_tag;About;Sobre Mi;Über mich;À propos de moi;Su di me
-contact;Contact;Contacto;Kontakt;Contact;Contatto
-hello_heading;Hello, I am;Hola, yo soy;Hallo, ich bin;Bonjour, je suis;Ciao, sono
-welcome_message;Welcome to my personal portfolio;Te doy la bienvenida a mi portfolio personal;Willkommen in meinem persönlichen Portfolio;Bienvenue sur mon portfolio personnel;Benvenuto nel mio portafoglio personale
-section_portfolio_heading;Portfolio;Portafolio;Portfolio;Portfolio;Portafoglio
-filter_all;All Projects;Todos los proyectos;Alle Projekte;Tous les projets;Tutti i progetti
-filter_haptic;Haptics;Hápticos;Haptik;Haptique;Haptics
-filter_iot;IoT;IoT;IoT;IoT;IoT
-filter_videogame;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV
-filter_simulation;Simulation;Simulación;Simulation;Simulation;Simulazione
-portfolio_project1_name;Part-Time Hero;Part-Time Hero;Teilzeit-Held;Part-Time Hero;Part-Time Hero
-portfolio_project1_category;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV
-portfolio_project2_name;Smart Train Composition Coupling;Acoplamiento Inteligente de Composición de Trenes;Intelligente Zugzusammensetzung;Accouplement intelligent de composition de trains;Accoppiamento intelligente della composizione dei treni
-portfolio_project2_category;IoT;IoT;IoT;IoT;IoT
-portfolio_project3_name;Obstetric Simulator;Simulador Obstétrico;Geburtssimulator;Simulateur obstétrique;Simulatore ostetrico
-portfolio_project3_category;Simulation and Haptics;Simulación y Hápticos;Simulation und Haptik;Simulation et Haptique;Simulazione e Haptics
-portfolio_project4_name;Wireless Train Integrity;Wireless Train Integrity;Wireless Train Integrity;Intégrité sans fil des trains;Integrità del treno wireless
-portfolio_project4_category;IoT;IoT;IoT;IoT;IoT
-portfolio_project5_name;Escape Game;Escape Game;Escape-Spiel;Escape Game;Escape Game
-portfolio_project5_category;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV
-portfolio_project6_name;Haptic Render;Háptico Render;Haptisches Rendering;Rendu haptique;Haptic Render
-portfolio_project6_category;Haptics;Hápticos;Haptik;Haptique;Haptics
-portfolio_project7_name;Advanced Mesh Deformation Simulations;Simulaciones Avanzadas en Mallas;Fortgeschrittene Mesh-Deformations-Simulationen;Simulations avancées de déformation de maillage;Simulazioni avanzate di deformazione della maglia
-portfolio_project7_category;Simulation;Simulación;Simulation;Simulation;Simulazione
-portfolio_project8_name;More Projects;Más Proyectos;Weitere Projekte;Autres projets;Altri progetti
-portfolio_project8_category;Various;Varios;Verschiedenes;Divers;Varie
-portfolio_project9_name;Boat VR Minigame;Boat VR Minijuego;Boat VR Minispiel;Boat VR Minigame;Boat VR Minigioco
-portfolio_project9_category;Videogames and VR / Simulation;Videojuegos y RV / Simulación;Videospiele und VR / Simulation;Jeux vidéo et RV / Simulation;Videogiochi e RV / Simulazione
-portfolio_project10_name;Rigging and Animation of Models;Rigging y Animación de Modelos;Rigging und Animation von Modellen;Rigging et animation de modèles;Rigging e animazione di modelli
-portfolio_project10_category;Videogames and RV;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV
-portfolio_project11_name;Github;Github;Github;Github;Github
-portfolio_project11_category;https://github.com/Ecenys;https://github.com/Ecenys;https://github.com/Ecenys;https://github.com/Ecenys;https://github.com/Ecenys
-portfolio_project12_name;Stereoscopic Marker Tracking;Seguimiento Estereoscópico de Marcadores;Stereoskopische Marker-Verfolgung;Suivi stéréoscopique des marqueurs;Tracciamento stereoscopico dei marcatori
-portfolio_project12_category;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV
-my_resume;My Resume;Mi Resumen;Mein Lebenslauf;Mon CV;Il mio curriculum
-laboral_experience;Laboral Experience;Experiencia laboral;Berufserfahrung;Expérience professionnelle;Esperienza lavorativa
-resume_item_5;November 2021 - Present;Noviembre 2021 - Actualidad;November 2021 - Heute;Novembre 2021 - Présent;Novembre 2021 - Oggi
-resume_title_5;R&D Engineer in Railway Systems;Ingeniero de I+D en sistemas ferroviarios;F&E-Ingenieur für Bahnsysteme;Ingénieur en R&D en systèmes ferroviaires;Ingegnere di Ricerca e Sviluppo nei Sistemi Ferroviari
-resume_description_5_1;"Railway Systems Engineer in the European program ""Europe’s Rail Joint Undertaking"". Research and development of new systems for ETCS 3.";"Ingeniero de Sistemas Ferroviarios en el programa Europeo ""Europe’s Rail Joint Undertaking"". Investigación y desarrollo de nuevos sistemas para ETCS 3.";"Bahnsystemingenieur im europäischen Programm ""Europe’s Rail Joint Undertaking"". Forschung und Entwicklung neuer Systeme für ETCS 3.";"Ingénieur en systèmes ferroviaires dans le programme européen ""Europe’s Rail Joint Undertaking"". Recherche et développement de nouveaux systèmes pour ETCS 3.";"Ingegnere dei Sistemi Ferroviari nel programma europeo ""Europe’s Rail Joint Undertaking"". Ricerca e sviluppo di nuovi sistemi per ETCS 3."
-resume_description_5_2;Wireless Train Integiry, Virtual Coupling and Train Warning System; Virtual Coupling, Wireless Train Integrity y Train Warning System;Wireless Train Integrity, Virtuelles Kuppeln und Zugwarnsystem;Intégrité sans fil des trains, couplage virtuel et système d'avertissement des trains;Wireless Train Integrity, Virtual Coupling e Train Warning System
-resume_description_5_3;C/C++, MQTT and CBOR for main systems and communications. Python and QT5 for simulator development and support tools;C/C++, MQTT y CBOR para sistemas principales y comunicaciones. Python y QT5 para desarrollo de simuladores y herramientas de soporte;C/C++, MQTT und CBOR für Hauptsysteme und Kommunikation. Python und QT5 für die Entwicklung von Simulatoren und Support-Tools;C/C++, MQTT et CBOR pour les systèmes principaux et les communications. Python et QT5 pour le développement de simulateurs et d'outils de support;C/C++, MQTT e CBOR per sistemi principali e comunicazioni. Python e QT5 per lo sviluppo di simulatori e strumenti di supporto
-resume_company_5;Indra Sistemas;Indra Sistemas;Indra Sistemas;Indra Sistemas;Indra Sistemas
-resume_item_4;January 2021 - September 2021;Enero 2021 - Septiembre 2021;Januar 2021 - September 2021;Janvier 2021 - Septembre 2021;Gennaio 2021 - Settembre 2021
-resume_title_4;Researcher;Investigador;Forscher;Chercheur;Ricercatore
-resume_description_4_1;"Researcher in the ""TouchDesing"" research group. Research on new subactuated haptic rendering algorithms";"Investigador en el grupo de investigación ""TouchDesing"". Investigación de nuevos algoritmos de renderizado háptico subactuado";"Forscher in der Forschungsgruppe ""TouchDesing"". Forschung zu neuen subaktuierenden haptischen Rendering-Algorithmen";"Chercheur dans le groupe de recherche ""TouchDesing"". Recherche sur de nouveaux algorithmes de rendu haptique subactué";"Ricercatore nel gruppo di ricerca ""TouchDesing"". Ricerca su nuovi algoritmi di rendering aptico subattuato"
-resume_description_4_2;C/C++, C#, and Unity. Programming drivers for the SenseGlove DK1 haptic device;C/C++, C# y Unity. Programación de drivers para dispositivo háptico SenseGlove DK1;C/C++, C# und Unity. Programmierung von Treibern für das haptische Gerät SenseGlove DK1;C/C++, C# et Unity. Programmation des pilotes pour le dispositif haptique SenseGlove DK1;C/C++, C# e Unity. Programmazione di driver per il dispositivo aptico SenseGlove DK1
-resume_company_4; Rey Juan Carlos I University;Universidad Rey Juan Carlos I;Universidad Rey Juan Carlos I;Université Rey Juan Carlos I;Università Rey Juan Carlos I
-resume_item_3;January 2020 - December 2020;Enero 2020 - Diciembre 2020;Januar 2020 - Dezember 2020;Janvier 2020 - Décembre 2020;Gennaio 2020 - Dicembre 2020
-resume_company_3;Vector ITC Group;Vector ITC Group;Vector ITC Group;Vector ITC Group;Vector ITC Group
-resume_title_3;Developer;Programador;Entwickler;Développeur;Sviluppatore
-resume_description_3_1;"Junior Programmer for the ""Programa por puntos"" (PxP) and accident program (ARENA) for DGT (Dirección General de Tráfico)";"Programador Junior de los programas ""Programa por puntos"" (PxP) y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)";"Junior-Programmierer für das ""Programa por puntos"" (PxP) und das Unfallprogramm (ARENA) für die DGT (Dirección General de Tráfico)";"Programmeur junior pour les programmes ""Programa por puntos"" (PxP) et programme d'accidents (ARENA) pour la DGT (Direction générale de la circulation)";"Programmatore Junior per i programmi ""Programa por puntos"" (PxP) e programma degli incidenti (ARENA) per la DGT (Dirección General de Tráfico)"
-resume_description_3_2;Java/JSP and OracleSQL for projects related to DGT. Angular for support tools;Java/JSP y OracleSQL para proyectos relacionados con DGT. Angular para herramientas de apoyo;Java/JSP und OracleSQL für Projekte im Zusammenhang mit der DGT. Angular für Support-Tools;Java/JSP et OracleSQL pour des projets liés à la DGT. Angular pour les outils de support;Java/JSP e OracleSQL per progetti legati alla DGT. Angular per gli strumenti di supporto
-resume_item_2;April 2019 - June 2019;Abril 2019 - Junio 2019;April 2019 - Juni 2019;Avril 2019 - Juin 2019;Aprile 2019 - Giugno 2019
-resume_title_2;Intern;Estudiante en prácticas;Praktikant;Stagiaire;Tirocinante
-resume_description_2_1;Development of a smart car key storage system. Enabling automatic opening via app;Desarrollo de un sistema de almacenamiento de llaves de automoviles inteligentes. Que permiten la apertura automática mediante app;Entwicklung eines intelligenten Autoschlüsselaufbewahrungssystems. Ermöglichen der automatischen Öffnung über die App;Développement d'un système de stockage intelligent de clés de voiture. Activation de l'ouverture automatique via une application;Sviluppo di un sistema di archiviazione intelligente delle chiavi delle auto. Abilitazione all'apertura automatica tramite app
-resume_description_2_2;Java/Angular;Java/Angular;Java/Angular;Java/Angular;Java/Angular
-resume_description_2_3;Developer and Functional Tester;Desarrollador y Tester funcional;Entwickler und funktionaler Tester;Développeur et testeur fonctionnel;Sviluppatore e tester funzionale
-resume_company_2;CreamTeam GmbH;CreamTeam GmbH;CreamTeam GmbH;CreamTeam GmbH;CreamTeam GmbH
-resume_item_1;2013-2020;2013-2020;2013-2020;2013-2020;2013-2020
-resume_title_1;Farm Labourer;Trabajador agrícola;Landarbeiter;Ouvrier agricole;Lavoratore agricolo
-resume_desciption_1_1;Various tasks in the world of agriculture at different time periods;Tareas varias en el mundo de la agricultura en diferentes intervalos de tiempo;Verschiedene Aufgaben in der Welt der Landwirtschaft zu verschiedenen Zeiten;Diverses tâches dans le domaine de l'agriculture à différents moments;Varie attività nel mondo dell'agricoltura in periodi diversi
-education_item_2;November 2020 - Present; Noviembre 2020 - Actualidad;November 2020 - Heute;Novembre 2020 - Présent;Novembre 2020 - Oggi
-education_description_2_1;Master in Computer Graphics, Videogames and Virtual Reality;Master en Informática Gráfica, Videojuegos y Realidad Virtual;Master in Computergrafik, Videospiele und Virtual Reality;Master en informatique graphique, jeux vidéo et réalité virtuelle;Master in Grafica Informatica, Videogiochi e Realtà Virtuale
-education_school_2_1;University Rey Juan Carlos I;Universidad Rey Juan Carlos I;Universidad Rey Juan Carlos I;Université Rey Juan Carlos I;Università Rey Juan Carlos I
-education_item_1;September 2015 - December 2019;Septiembre 2015 - Diciembre 2019;September 2015 - Dezember 2019;Septembre 2015 - Décembre 2019;Settembre 2015 - Dicembre 2019
-education_description_1_1;Degree in Computer Engineering;Grado en Ingeniería Informática;Bachelor in Informatik;Licence en génie informatique;Laurea in Ingegneria Informatica
-education_description_1_2;Computer Science Speciality;Especialidad en Computación;Spezialgebiet Informatik;Spécialité en informatique;Specializzazione in Informatica
-education_school_1_1;University of Castilla-La Mancha;Universidad de Castilla-La Mancha;Universidad de Castilla-La Mancha;Université de Castilla-La Mancha;Università di Castilla-La Mancha
-volunteer_item_4;September 2017 - Present;Septiembre 2017 - Actualidad;September 2017 - Heute;Septembre 2017 - Présent;Settembre 2017 - Oggi
-volunteer_title_4;Organizer Albanime;Organizador Albanime;Organisator Albanime;Organisateur d'Albanime;Organizzatore di Albanime
-volunteer_description_4_1;Albacete Manga, Anime and Alternative Leisure Fair;Salon del manga, anime y ocio alternativo de Albacete;Messe für Manga, Anime und alternative Freizeit in Albacete;Salon du manga, de l'animé et des loisirs alternatifs d'Albacete;Fiera del manga, anime e tempo libero alternativo di Albacete
-volunteer_item_3;January 2018 - Present;Enero 2018 - Actualidad;Januar 2018 - Heute;Janvier 2018 - Présent;Gennaio 2018 - Oggi
-volunteer_title_3;Partner Nexus Outsiders;Socio Nexus Outsiders;Partner Nexus Outsiders;Membre de Nexus Outsiders;Membro Nexus Outsiders
-volunteer_description_3_1;Organisation promoting alternative leisure activities in Albacete;Organización promotora del ocio alternativo en Albacete;Organisation zur Förderung alternativer Freizeitaktivitäten in Albacete;Organisation promouvant les activités de loisirs alternatives à Albacete;Organizzazione che promuove attività di tempo libero alternative ad Albacete
-volunteer_item_2;September 2017 - July 2019;Septiembre 2017 - Julio 2019;September 2017 - Juli 2019;Septembre 2017 - Juillet 2019;Settembre 2017 - Luglio 2019
-volunteer_title_2;Student Mentor;Mentor de estudiantes;Studentenmentor;Mentor d'étudiants;Mentore studentesco
-volunteer_description_2_1;Mentor of first and second year students of the Computer Engineering degree in Albacete.;Mentor de estudiantes del primer y segundo curso del grado de Ingeniería Informática de Albacete;Mentor für Studierende im ersten und zweiten Studienjahr des Informatikstudiengangs in Albacete.;Mentor des étudiants de première et deuxième année du diplôme d'ingénieur informatique à Albacete;Mentore degli studenti del primo e secondo anno del corso di Ingegneria Informatica ad Albacete
-volunteer_item_1;March 2019;Marzo 2019;März 2019;Mars 2019;Marzo 2019
-volunteer_title_1;Volunteer organiser;Voluntario organizador;Freiwilliger Organisator;Organisateur bénévole;Organizzatore volontario
-volunteer_description_1_1;Volunteer organiser of the X Meeting of Students of Technical and Higher Engineering in Computer Science (RITSI);Voluntario organizador del X Congreso Encuentro de Estudiantes de Ingeniería Técnica y Superior en Informática (RITSI);Freiwilliger Organisator des X Treffens der Studenten der Technischen und Höheren Ingenieurwissenschaften in Informatik (RITSI);Organisateur bénévole de la Xe rencontre des étudiants en ingénierie technique et supérieure en informatique (RITSI);Organizzatore volontario del X Incontro degli Studenti di Ingegneria Tecnica e Superiore in Informatica (RITSI)
-education_tag;Education;Educación;Bildung;Éducation;Educazione
-volunteer_tag;Volunteer;Voluntariado;Freiwilliger;Bénévolat;Volontariato
-aboutme_tag;About Me;Sobre Mi;Über mich;À propos de moi;Su di me
-aboutme_resume;Freak, enthusiast, animal lover, video game lover,... and in search of adventure.;Friki, entusiasta, amante de los animales, de los videojuegos,... y en busca de aventuras;Freak, Enthusiast, Tierliebhaber, Videospielliebhaber,... und auf der Suche nach Abenteuern.;Friki, enthousiaste, amoureux des animaux, amateur de jeux vidéo,... et à la recherche d'aventures.;Appassionato, entusiasta, amante degli animali, amante dei videogiochi,... e in cerca di avventure
-aboutme_text;I am a computer engineer specialised in BackEnd programming, but with great fluency in any kind of programming. He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. My specialities are videogames and haptic devices, thanks to the projects during all my educational stage, and the development of railway systems and Safety, por el desarrollo de estos sistemas durante más de 2 años;Soy un ingeniero informático especializado en programación BackEnd, pero con gran soltura en cualquier tipo de programación. He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. Mis especialidades son los videojuegos y dispositivos hápticos, gracias a los proyectos durante toda mi etapa educativa, y el desarrollo de sistemas ferroviarios y Safety, por el desarrollo de estos sistemas durante más de 2 años;Ich bin ein Informatikingenieur, spezialisiert auf Backend-Programmierung, aber mit großer Fähigkeit in jeder Art von Programmierung. Ich habe an verschiedenen Projekten und Bereichen der Ingenieurwissenschaften gearbeitet, die mich zu einem besseren Profi gemacht haben. Meine Spezialgebiete sind Videospiele und haptische Geräte, dank der Projekte während meiner gesamten Ausbildungszeit, sowie die Entwicklung von Bahnsystemen und Sicherheit, aufgrund der Entwicklung dieser Systeme seit mehr als 2 Jahren.;Je suis un ingénieur informaticien spécialisé dans la programmation BackEnd, mais avec une grande aisance dans tout type de programmation. J'ai travaillé sur divers projets et domaines de l'ingénierie qui m'ont transformé en un professionnel meilleur. Mes spécialités sont les jeux vidéo et les dispositifs haptiques, grâce aux projets réalisés tout au long de ma scolarité, et le développement de systèmes ferroviaires et de sécurité, grâce au développement de ces systèmes pendant plus de 2 ans.;Sono un ingegnere informatico specializzato nella programmazione BackEnd, ma con una grande competenza in qualsiasi tipo di programmazione. Ho lavorato su vari progetti e settori dell'ingegneria che mi hanno trasformato in un professionista migliore. Le mie specialità sono i videogiochi e i dispositivi aptici, grazie ai progetti durante tutto il mio percorso educativo, e lo sviluppo di sistemi ferroviari e sicurezza, grazie allo sviluppo di questi sistemi per oltre 2 anni
-contactme_tag;Contact Me;Contacta Conmigo;Kontaktiere mich;Contactez-moi;Contattami
-contactme_sendme;Send me an email;Mandame un email;Schick mir eine E-Mail;Envoyez-moi un e-mail;Inviami una mail
-contactme_contact;Contact;Contacto;Kontakt;Contact;Contatto
-contactme_yourname;Your Name;Tu Nombre;Dein Name;Votre nom;Il tuo nome
-contactme_youremail;Your Email;Tu Email;Deine E-Mail;Votre e-mail;La tua email
-contactme_yourphone;Your Phone;Tu Teléfono;Deine Telefonnummer;Votre téléphone;Il tuo telefono
-contactme_message;Message;Mensaje;Nachricht;Message;Messaggio
-contactme_email;Email;Email;E-Mail;E-mail;Email
-contactme_address;Address;Dirección;Adresse;Adresse;Indirizzo
-contactme_send;Send Message;Enviar Mensaje;Nachricht senden;Envoyer le message;Invia messaggio
-contactme_currentemail;ogmonedero@gmail.com;ogmonedero@gmail.com;ogmonedero@gmail.com;ogmonedero@gmail.com;ogmonedero@gmail.com
+key;en;es;de;fr;it;
+home;Home;Inicio;Startseite;Accueil;Inicio;
+portfolio;Portfolio;Portfolio;Portfolio;Portfolio;Portafoglio;
+resume;Resume;Resumen;Lebenslauf;CV;Curriculum;
+about_tag;About;Sobre Mi;Über mich;À propos de moi;Su di me;
+contact;Contact;Contacto;Kontakt;Contact;Contatto;
+hello_heading;Hello, I am;Hola, yo soy;Hallo, ich bin;Bonjour, je suis;Ciao, sono;
+welcome_message;Welcome to my personal portfolio;Te doy la bienvenida a mi portfolio personal;Willkommen in meinem persönlichen Portfolio;Bienvenue sur mon portfolio personnel;Benvenuto nel mio portafoglio personale;
+section_portfolio_heading;Portfolio;Portafolio;Portfolio;Portfolio;Portafoglio;
+filter_all;All Projects;Todos los proyectos;Alle Projekte;Tous les projets;Tutti i progetti;
+filter_haptic;Haptics;Hápticos;Haptik;Haptique;Haptics;
+filter_iot;IoT;IoT;IoT;IoT;IoT;
+filter_videogame;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV;
+filter_simulation;Simulation;Simulación;Simulation;Simulation;Simulazione;
+portfolio_project1_name;Part-Time Hero;Part-Time Hero;Teilzeit-Held;Part-Time Hero;Part-Time Hero;
+portfolio_project1_category;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV;
+portfolio_project2_name;Smart Train Composition Coupling;Acoplamiento Inteligente de Composición de Trenes;Intelligente Zugzusammensetzung;Accouplement intelligent de composition de trains;Accoppiamento intelligente della composizione dei treni;
+portfolio_project2_category;IoT;IoT;IoT;IoT;IoT;
+portfolio_project3_name;Obstetric Simulator;Simulador Obstétrico;Geburtssimulator;Simulateur obstétrique;Simulatore ostetrico;
+portfolio_project3_category;Simulation and Haptics;Simulación y Hápticos;Simulation und Haptik;Simulation et Haptique;Simulazione e Haptics;
+portfolio_project4_name;Wireless Train Integrity;Wireless Train Integrity;Wireless Train Integrity;Intégrité sans fil des trains;Integrità del treno wireless;
+portfolio_project4_category;IoT;IoT;IoT;IoT;IoT;
+portfolio_project5_name;Escape Game;Escape Game;Escape-Spiel;Escape Game;Escape Game;
+portfolio_project5_category;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV;
+portfolio_project6_name;Haptic Render;Háptico Render;Haptisches Rendering;Rendu haptique;Haptic Render;
+portfolio_project6_category;Haptics;Hápticos;Haptik;Haptique;Haptics;
+portfolio_project7_name;Advanced Mesh Deformation Simulations;Simulaciones Avanzadas en Mallas;Fortgeschrittene Mesh-Deformations-Simulationen;Simulations avancées de déformation de maillage;Simulazioni avanzate di deformazione della maglia;
+portfolio_project7_category;Simulation;Simulación;Simulation;Simulation;Simulazione;
+portfolio_project8_name;More Projects;Más Proyectos;Weitere Projekte;Autres projets;Altri progetti;
+portfolio_project8_category;Various;Varios;Verschiedenes;Divers;Varie;
+portfolio_project9_name;Boat VR Minigame;Boat VR Minijuego;Boat VR Minispiel;Boat VR Minigame;Boat VR Minigioco;
+portfolio_project9_category;Videogames and VR / Simulation;Videojuegos y RV / Simulación;Videospiele und VR / Simulation;Jeux vidéo et RV / Simulation;Videogiochi e RV / Simulazione;
+portfolio_project10_name;Rigging and Animation of Models;Rigging y Animación de Modelos;Rigging und Animation von Modellen;Rigging et animation de modèles;Rigging e animazione di modelli;
+portfolio_project10_category;Videogames and RV;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV;
+portfolio_project11_name;Github;Github;Github;Github;Github;
+portfolio_project11_category;https://github.com/Ecenys;https://github.com/Ecenys;https://github.com/Ecenys;https://github.com/Ecenys;https://github.com/Ecenys;
+portfolio_project12_name;Stereoscopic Marker Tracking;Seguimiento Estereoscópico de Marcadores;Stereoskopische Marker-Verfolgung;Suivi stéréoscopique des marqueurs;Tracciamento stereoscopico dei marcatori;
+portfolio_project12_category;Videogames and VR;Videojuegos y RV;Videospiele und VR;Jeux vidéo et RV;Videogiochi e RV;
+my_resume;My Resume;Mi Resumen;Mein Lebenslauf;Mon CV;Il mio curriculum;
+laboral_experience;Laboral Experience;Experiencia laboral;Berufserfahrung;Expérience professionnelle;Esperienza lavorativa;
+resume_item_5;November 2021 - Present;Noviembre 2021 - Actualidad;November 2021 - Heute;Novembre 2021 - Présent;Novembre 2021 - Oggi;
+resume_title_5;R&D Engineer in Railway Systems;Ingeniero de I+D en sistemas ferroviarios;F&E-Ingenieur für Bahnsysteme;Ingénieur en R&D en systèmes ferroviaires;Ingegnere di Ricerca e Sviluppo nei Sistemi Ferroviari;
+resume_description_5_1;"Railway Systems Engineer in the European program ""Europe’s Rail Joint Undertaking"". Research and development of new systems for ETCS 3.";"Ingeniero de Sistemas Ferroviarios en el programa Europeo ""Europe’s Rail Joint Undertaking"". Investigación y desarrollo de nuevos sistemas para ETCS 3.";"Bahnsystemingenieur im europäischen Programm ""Europe’s Rail Joint Undertaking"". Forschung und Entwicklung neuer Systeme für ETCS 3.";"Ingénieur en systèmes ferroviaires dans le programme européen ""Europe’s Rail Joint Undertaking"". Recherche et développement de nouveaux systèmes pour ETCS 3.";"Ingegnere dei Sistemi Ferroviari nel programma europeo ""Europe’s Rail Joint Undertaking"". Ricerca e sviluppo di nuovi sistemi per ETCS 3.";
+resume_description_5_2;Wireless Train Integiry, Virtual Coupling and Train Warning System; Virtual Coupling, Wireless Train Integrity y Train Warning System;Wireless Train Integrity, Virtuelles Kuppeln und Zugwarnsystem;Intégrité sans fil des trains, couplage virtuel et système d'avertissement des trains;Wireless Train Integrity, Virtual Coupling e Train Warning System;
+resume_description_5_3;C/C++, MQTT and CBOR for main systems and communications. Python and QT5 for simulator development and support tools;C/C++, MQTT y CBOR para sistemas principales y comunicaciones. Python y QT5 para desarrollo de simuladores y herramientas de soporte;C/C++, MQTT und CBOR für Hauptsysteme und Kommunikation. Python und QT5 für die Entwicklung von Simulatoren und Support-Tools;C/C++, MQTT et CBOR pour les systèmes principaux et les communications. Python et QT5 pour le développement de simulateurs et d'outils de support;C/C++, MQTT e CBOR per sistemi principali e comunicazioni. Python e QT5 per lo sviluppo di simulatori e strumenti di supporto;
+resume_company_5;Indra Sistemas;Indra Sistemas;Indra Sistemas;Indra Sistemas;Indra Sistemas;
+resume_item_4;January 2021 - September 2021;Enero 2021 - Septiembre 2021;Januar 2021 - September 2021;Janvier 2021 - Septembre 2021;Gennaio 2021 - Settembre 2021;
+resume_title_4;Researcher;Investigador;Forscher;Chercheur;Ricercatore;
+resume_description_4_1;"Researcher in the ""TouchDesing"" research group. Research on new subactuated haptic rendering algorithms";"Investigador en el grupo de investigación ""TouchDesing"". Investigación de nuevos algoritmos de renderizado háptico subactuado";"Forscher in der Forschungsgruppe ""TouchDesing"". Forschung zu neuen subaktuierenden haptischen Rendering-Algorithmen";"Chercheur dans le groupe de recherche ""TouchDesing"". Recherche sur de nouveaux algorithmes de rendu haptique subactué";"Ricercatore nel gruppo di ricerca ""TouchDesing"". Ricerca su nuovi algoritmi di rendering aptico subattuato";
+resume_description_4_2;C/C++, C#, and Unity. Programming drivers for the SenseGlove DK1 haptic device;C/C++, C# y Unity. Programación de drivers para dispositivo háptico SenseGlove DK1;C/C++, C# und Unity. Programmierung von Treibern für das haptische Gerät SenseGlove DK1;C/C++, C# et Unity. Programmation des pilotes pour le dispositif haptique SenseGlove DK1;C/C++, C# e Unity. Programmazione di driver per il dispositivo aptico SenseGlove DK1;
+resume_company_4; Rey Juan Carlos I University;Universidad Rey Juan Carlos I;Universidad Rey Juan Carlos I;Université Rey Juan Carlos I;Università Rey Juan Carlos I;
+resume_item_3;January 2020 - December 2020;Enero 2020 - Diciembre 2020;Januar 2020 - Dezember 2020;Janvier 2020 - Décembre 2020;Gennaio 2020 - Dicembre 2020;
+resume_company_3;Vector ITC Group;Vector ITC Group;Vector ITC Group;Vector ITC Group;Vector ITC Group;
+resume_title_3;Developer;Programador;Entwickler;Développeur;Sviluppatore;
+resume_description_3_1;"Junior Programmer for the ""Programa por puntos"" (PxP) and accident program (ARENA) for DGT (Dirección General de Tráfico)";"Programador Junior de los programas ""Programa por puntos"" (PxP) y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)";"Junior-Programmierer für das ""Programa por puntos"" (PxP) und das Unfallprogramm (ARENA) für die DGT (Dirección General de Tráfico)";"Programmeur junior pour les programmes ""Programa por puntos"" (PxP) et programme d'accidents (ARENA) pour la DGT (Direction générale de la circulation)";"Programmatore Junior per i programmi ""Programa por puntos"" (PxP) e programma degli incidenti (ARENA) per la DGT (Dirección General de Tráfico)";
+resume_description_3_2;Java/JSP and OracleSQL for projects related to DGT. Angular for support tools;Java/JSP y OracleSQL para proyectos relacionados con DGT. Angular para herramientas de apoyo;Java/JSP und OracleSQL für Projekte im Zusammenhang mit der DGT. Angular für Support-Tools;Java/JSP et OracleSQL pour des projets liés à la DGT. Angular pour les outils de support;Java/JSP e OracleSQL per progetti legati alla DGT. Angular per gli strumenti di supporto;
+resume_item_2;April 2019 - June 2019;Abril 2019 - Junio 2019;April 2019 - Juni 2019;Avril 2019 - Juin 2019;Aprile 2019 - Giugno 2019;
+resume_title_2;Intern;Estudiante en prácticas;Praktikant;Stagiaire;Tirocinante;
+resume_description_2_1;Development of a smart car key storage system. Enabling automatic opening via app;Desarrollo de un sistema de almacenamiento de llaves de automoviles inteligentes. Que permiten la apertura automática mediante app;Entwicklung eines intelligenten Autoschlüsselaufbewahrungssystems. Ermöglichen der automatischen Öffnung über die App;Développement d'un système de stockage intelligent de clés de voiture. Activation de l'ouverture automatique via une application;Sviluppo di un sistema di archiviazione intelligente delle chiavi delle auto. Abilitazione all'apertura automatica tramite app;
+resume_description_2_2;Java/Angular;Java/Angular;Java/Angular;Java/Angular;Java/Angular;
+resume_description_2_3;Developer and Functional Tester;Desarrollador y Tester funcional;Entwickler und funktionaler Tester;Développeur et testeur fonctionnel;Sviluppatore e tester funzionale;
+resume_company_2;CreamTeam GmbH;CreamTeam GmbH;CreamTeam GmbH;CreamTeam GmbH;CreamTeam GmbH;
+resume_item_1;2013-2020;2013-2020;2013-2020;2013-2020;2013-2020;
+resume_title_1;Farm Labourer;Trabajador agrícola;Landarbeiter;Ouvrier agricole;Lavoratore agricolo;
+resume_desciption_1_1;Various tasks in the world of agriculture at different time periods;Tareas varias en el mundo de la agricultura en diferentes intervalos de tiempo;Verschiedene Aufgaben in der Welt der Landwirtschaft zu verschiedenen Zeiten;Diverses tâches dans le domaine de l'agriculture à différents moments;Varie attività nel mondo dell'agricoltura in periodi diversi;
+education_item_2;November 2020 - Present; Noviembre 2020 - Actualidad;November 2020 - Heute;Novembre 2020 - Présent;Novembre 2020 - Oggi;
+education_description_2_1;Master in Computer Graphics, Videogames and Virtual Reality;Master en Informática Gráfica, Videojuegos y Realidad Virtual;Master in Computergrafik, Videospiele und Virtual Reality;Master en informatique graphique, jeux vidéo et réalité virtuelle;Master in Grafica Informatica, Videogiochi e Realtà Virtuale;
+education_school_2_1;University Rey Juan Carlos I;Universidad Rey Juan Carlos I;Universidad Rey Juan Carlos I;Université Rey Juan Carlos I;Università Rey Juan Carlos I;
+education_item_1;September 2015 - December 2019;Septiembre 2015 - Diciembre 2019;September 2015 - Dezember 2019;Septembre 2015 - Décembre 2019;Settembre 2015 - Dicembre 2019;
+education_description_1_1;Degree in Computer Engineering;Grado en Ingeniería Informática;Bachelor in Informatik;Licence en génie informatique;Laurea in Ingegneria Informatica;
+education_description_1_2;Computer Science Speciality;Especialidad en Computación;Spezialgebiet Informatik;Spécialité en informatique;Specializzazione in Informatica;
+education_school_1_1;University of Castilla-La Mancha;Universidad de Castilla-La Mancha;Universidad de Castilla-La Mancha;Université de Castilla-La Mancha;Università di Castilla-La Mancha;
+volunteer_item_4;September 2017 - Present;Septiembre 2017 - Actualidad;September 2017 - Heute;Septembre 2017 - Présent;Settembre 2017 - Oggi;
+volunteer_title_4;Organizer Albanime;Organizador Albanime;Organisator Albanime;Organisateur d'Albanime;Organizzatore di Albanime;
+volunteer_description_4_1;Albacete Manga, Anime and Alternative Leisure Fair;Salon del manga, anime y ocio alternativo de Albacete;Messe für Manga, Anime und alternative Freizeit in Albacete;Salon du manga, de l'animé et des loisirs alternatifs d'Albacete;Fiera del manga, anime e tempo libero alternativo di Albacete;
+volunteer_item_3;January 2018 - Present;Enero 2018 - Actualidad;Januar 2018 - Heute;Janvier 2018 - Présent;Gennaio 2018 - Oggi;
+volunteer_title_3;Partner Nexus Outsiders;Socio Nexus Outsiders;Partner Nexus Outsiders;Membre de Nexus Outsiders;Membro Nexus Outsiders;
+volunteer_description_3_1;Organisation promoting alternative leisure activities in Albacete;Organización promotora del ocio alternativo en Albacete;Organisation zur Förderung alternativer Freizeitaktivitäten in Albacete;Organisation promouvant les activités de loisirs alternatives à Albacete;Organizzazione che promuove attività di tempo libero alternative ad Albacete;
+volunteer_item_2;September 2017 - July 2019;Septiembre 2017 - Julio 2019;September 2017 - Juli 2019;Septembre 2017 - Juillet 2019;Settembre 2017 - Luglio 2019;
+volunteer_title_2;Student Mentor;Mentor de estudiantes;Studentenmentor;Mentor d'étudiants;Mentore studentesco;
+volunteer_description_2_1;Mentor of first and second year students of the Computer Engineering degree in Albacete.;Mentor de estudiantes del primer y segundo curso del grado de Ingeniería Informática de Albacete;Mentor für Studierende im ersten und zweiten Studienjahr des Informatikstudiengangs in Albacete.;Mentor des étudiants de première et deuxième année du diplôme d'ingénieur informatique à Albacete;Mentore degli studenti del primo e secondo anno del corso di Ingegneria Informatica ad Albacete;
+volunteer_item_1;March 2019;Marzo 2019;März 2019;Mars 2019;Marzo 2019;
+volunteer_title_1;Volunteer organiser;Voluntario organizador;Freiwilliger Organisator;Organisateur bénévole;Organizzatore volontario;
+volunteer_description_1_1;Volunteer organiser of the X Meeting of Students of Technical and Higher Engineering in Computer Science (RITSI);Voluntario organizador del X Congreso Encuentro de Estudiantes de Ingeniería Técnica y Superior en Informática (RITSI);Freiwilliger Organisator des X Treffens der Studenten der Technischen und Höheren Ingenieurwissenschaften in Informatik (RITSI);Organisateur bénévole de la Xe rencontre des étudiants en ingénierie technique et supérieure en informatique (RITSI);Organizzatore volontario del X Incontro degli Studenti di Ingegneria Tecnica e Superiore in Informatica (RITSI);
+education_tag;Education;Educación;Bildung;Éducation;Educazione;
+volunteer_tag;Volunteer;Voluntariado;Freiwilliger;Bénévolat;Volontariato;
+aboutme_tag;About Me;Sobre Mi;Über mich;À propos de moi;Su di me;
+aboutme_resume;Freak, enthusiast, animal lover, video game lover,... and in search of adventure.;Friki, entusiasta, amante de los animales, de los videojuegos,... y en busca de aventuras;Freak, Enthusiast, Tierliebhaber, Videospielliebhaber,... und auf der Suche nach Abenteuern.;Friki, enthousiaste, amoureux des animaux, amateur de jeux vidéo,... et à la recherche d'aventures.;Appassionato, entusiasta, amante degli animali, amante dei videogiochi,... e in cerca di avventure;
+aboutme_text;I am a computer engineer specialised in BackEnd programming, but with great fluency in any kind of programming. He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. My specialities are videogames and haptic devices, thanks to the projects during all my educational stage, and the development of railway systems and Safety, por el desarrollo de estos sistemas durante más de 2 años;Soy un ingeniero informático especializado en programación BackEnd, pero con gran soltura en cualquier tipo de programación. He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. Mis especialidades son los videojuegos y dispositivos hápticos, gracias a los proyectos durante toda mi etapa educativa, y el desarrollo de sistemas ferroviarios y Safety, por el desarrollo de estos sistemas durante más de 2 años;Ich bin ein Informatikingenieur, spezialisiert auf Backend-Programmierung, aber mit großer Fähigkeit in jeder Art von Programmierung. Ich habe an verschiedenen Projekten und Bereichen der Ingenieurwissenschaften gearbeitet, die mich zu einem besseren Profi gemacht haben. Meine Spezialgebiete sind Videospiele und haptische Geräte, dank der Projekte während meiner gesamten Ausbildungszeit, sowie die Entwicklung von Bahnsystemen und Sicherheit, aufgrund der Entwicklung dieser Systeme seit mehr als 2 Jahren.;Je suis un ingénieur informaticien spécialisé dans la programmation BackEnd, mais avec une grande aisance dans tout type de programmation. J'ai travaillé sur divers projets et domaines de l'ingénierie qui m'ont transformé en un professionnel meilleur. Mes spécialités sont les jeux vidéo et les dispositifs haptiques, grâce aux projets réalisés tout au long de ma scolarité, et le développement de systèmes ferroviaires et de sécurité, grâce au développement de ces systèmes pendant plus de 2 ans.;Sono un ingegnere informatico specializzato nella programmazione BackEnd, ma con una grande competenza in qualsiasi tipo di programmazione. Ho lavorato su vari progetti e settori dell'ingegneria che mi hanno trasformato in un professionista migliore. Le mie specialità sono i videogiochi e i dispositivi aptici, grazie ai progetti durante tutto il mio percorso educativo, e lo sviluppo di sistemi ferroviari e sicurezza, grazie allo sviluppo di questi sistemi per oltre 2 anni;
+aboutme_contactme;Contact Me;Contacta Conmigo;Kontaktiere mich;Contactez-moi;Contattami;
+aboutme_linkedin;LinkedIn;LinkedIn;LinkedIn;LinkedIn;LinkedIn;
+contactme_tag;Contact Me;Contacta Conmigo;Kontaktiere mich;Contactez-moi;Contattami;
+contactme_sendme;Send me an email;Mandame un email;Schick mir eine E-Mail;Envoyez-moi un e-mail;Inviami una mail;
+contactme_contact;Contact;Contacto;Kontakt;Contact;Contatto;
+contactme_yourname;Your Name;Tu Nombre;Dein Name;Votre nom;Il tuo nome;
+contactme_youremail;Your Email;Tu Email;Deine E-Mail;Votre e-mail;La tua email;
+contactme_yourphone;Your Phone;Tu Teléfono;Deine Telefonnummer;Votre téléphone;Il tuo telefono;
+contactme_message;Message;Mensaje;Nachricht;Message;Messaggio;
+contactme_email;Email;Email;E-Mail;E-mail;Email;
+contactme_address;Address;Dirección;Adresse;Adresse;Indirizzo;
+contactme_send;Send Message;Enviar Mensaje;Nachricht senden;Envoyer le message;Invia messaggio;
+contactme_currentemail;ogmonedero@gmail.com;ogmonedero@gmail.com;ogmonedero@gmail.com;ogmonedero@gmail.com;ogmonedero@gmail.com;
 contactme_currentlocation;Madrid, Spain; Madrid, España;Madrid, Spanien;Madrid, Espagne;Madrid, Spagna
