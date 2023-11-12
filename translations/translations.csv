@@ -1,101 +1,101 @@
-key;en;es;
-home;Home;Inicio;
-portfolio;Portfolio;Portfolio;
-resume;Resume;Resumen;
-about_tag;About;Sobre Mi;
-contact;Contact;Contacto;
-hello_heading;Hello, I am;Hola, yo soy;
-welcome_message;Welcome to my personal portfolio;Te doy la bienvenida a mi portfolio personal;
-section_portfolio_heading;Portfolio;Portafolio;
-filter_all;All Projects;Todos los proyectos;
-filter_haptic;Haptics;Hápticos;
-filter_iot;IoT;IoT;
-filter_videogame;Videogames and VR;Videojuegos y RV;
-filter_simulation;Simulation;Simulación;
-portfolio_project1_name;Part-Time Hero;Part-Time Hero;
-portfolio_project1_category;Videogames and VR;Videojuegos y RV;
-portfolio_project2_name;Smart Train Composition Coupling;Acoplamiento Inteligente de Composición de Trenes;
-portfolio_project2_category;IoT;IoT;
-portfolio_project3_name;Obstetric Simulator;Simulador Obstétrico;
-portfolio_project3_category;Simulation and Haptics;Simulación y Hápticos;
-portfolio_project4_name;Wireless Train Integrity;Wireless Train Integrity;
-portfolio_project4_category;IoT;IoT;
-portfolio_project5_name;Escape Game;Escape Game;
-portfolio_project5_category;Videogames and VR;Videojuegos y RV;
-portfolio_project6_name;Haptic Render;Háptico Render;
-portfolio_project6_category;Haptics;Hápticos;
-portfolio_project7_name;Advanced Mesh Deformation Simulations;Simulaciones Avanzadas en Mallas;
-portfolio_project7_category;Simulation;Simulación;
-portfolio_project8_name;More Projects;Más Proyectos;
-portfolio_project8_category;Various;Varios;
-portfolio_project9_name;Boat VR Minigame;Boat VR Minijuego;
-portfolio_project9_category;Videogames and VR / Simulation;Videojuegos y RV / Simulación;
-portfolio_project10_name;Rigging and Animation of Models;Rigging y Animación de Modelos;
-portfolio_project10_category;Videogames and RV;Videojuegos y RV;
-portfolio_project11_name;Github;Github;
-portfolio_project11_category;https://github.com/Ecenys;https://github.com/Ecenys;
-portfolio_project12_name;Stereoscopic Marker Tracking;Seguimiento Estereoscópico de Marcadores;
-portfolio_project12_category;Videogames and VR;Videojuegos y RV;
-my_resume;My Resume;Mi Resumen
-laboral_experience;Laboral Experience;Experiencia laboral
-resume_item_5;November 2021 - Present;Noviembre 2021 - Actualidad
-resume_title_5;R&D Engineer in Railway Systems;Ingeniero de I+D en sistemas ferroviarios
-resume_description_5_1;Railway Systems Engineer in the European program "Europe’s Rail Joint Undertaking". Research and development of new systems for ETCS 3.;Ingeniero de Sistemas Ferroviarios en el programa Europeo "Europe’s Rail Joint Undertaking". Investigación y desarrollo de nuevos sistemas para ETCS 3.
-resume_description_5_2;Wireless Train Integiry, Virtual Coupling and Train Warning System; Virtual Coupling, Wireless Train Integrity y Train Warning System
-resume_description_5_3;C/C++, MQTT and CBOR for main systems and communications. Python and QT5 for simulator development and support tools;C/C++, MQTT y CBOR para sistemas principales y comunicaciones. Python y QT5 para desarrollo de simuladores y herramientas de soporte
-resume_company_5;Indra Sistemas;Indra Sistemas
-resume_item_4;January 2021 - September 2021;Enero 2021 - Septiembre 2021
-resume_title_4;Researcher;Investigador
-resume_description_4_1;Researcher in the "TouchDesing" research group. Research on new subactuated haptic rendering algorithms;Investigador en el grupo de investigación "TouchDesing". Investigación de nuevos algoritmos de renderizado háptico subactuado
-resume_description_4_2;C/C++, C#, and Unity. Programming drivers for the SenseGlove DK1 haptic device;C/C++, C# y Unity. Programación de drivers para dispositivo háptico SenseGlove DK1
-resume_company_4; Rey Juan Carlos I University;Universidad Rey Juan Carlos I
-resume_item_3;January 2020 - December 2020;Enero 2020 - Diciembre 2020
-resume_company_3;Vector ITC Group;Vector ITC Group
-resume_title_3;Developer;Programador
-resume_description_3_1;Junior Programmer for the "Programa por puntos" (PxP) and accident program (ARENA) for DGT (Dirección General de Tráfico);Programador Junior de los programas "Programa por puntos" (PxP) y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)
-resume_description_3_2;Java/JSP and OracleSQL for projects related to DGT. Angular for support tools;Java/JSP y OracleSQL para proyectos relacionados con DGT. Angular para herramientas de apoyo
-resume_item_2;April 2019 - June 2019;Abril 2019 - Junio 2019
-resume_title_2;Intern;Estudiante en prácticas
-resume_description_2_1;Development of a smart car key storage system. Enabling automatic opening via app;Desarrollo de un sistema de almacenamiento de llaves de automoviles inteligentes. Que permiten la apertura automática mediante app
-resume_description_2_2;Java/Angular;Java/Angular
-resume_description_2_3;Developer and Functional Tester;Desarrollador y Tester funcional
-resume_company_2;CreamTeam GmbH;CreamTeam GmbH
-resume_item_1;2013-2020;2013-2020
-resume_title_1;Farm Labourer;Trabajador agrícola
-resume_desciption_1_1;Various tasks in the world of agriculture at different time periods;Tareas varias en el mundo de la agricultura en diferentes intervalos de tiempo
-education_item_2;November 2020 - Present; Noviembre 2020 - Actualidad
-education_description_2_1;Master in Computer Graphics, Videogames and Virtual Reality;Master en Informática Gráfica, Videojuegos y Realidad Virtual
-education_school_2_1;University Rey Juan Carlos I;Universidad Rey Juan Carlos I
-education_item_1;September 2015 - December 2019;Septiembre 2015 - Diciembre 2019
-education_description_1_1;Degree in Computer Engineering;Grado en Ingeniería Informática
-education_description_1_2;Computer Science Speciality;Especialidad en Computación
-education_school_1_1;University of Castilla-La Mancha;Universidad de Castilla-La Mancha
-volunteer_item_4;September 2017 - Present;Septiembre 2017 - Actualidad
-volunteer_title_4;Organizer Albanime;Organizador Albanime
-volunteer_description_4_1;Albacete Manga, Anime and Alternative Leisure Fair;Salon del manga, anime y ocio alternativo de Albacete
-volunteer_item_3;January 2018 - Present;Enero 2018 - Actualidad
-volunteer_title_3;Partner Nexus Outsiders;Socio Nexus Outsiders
-volunteer_description_3_1;Organisation promoting alternative leisure activities in Albacete;Organización promotora del ocio alternativo en Albacete
-volunteer_item_2;September 2017 - July 2019;Septiembre 2017 - Julio 2019
-volunteer_title_2;Student Mentor;Mentor de estudiantes
-volunteer_description_2_1;Mentor of first and second year students of the Computer Engineering degree in Albacete.;Mentor de estudiantes del primer y segundo curso del grado de Ingeniería Informática de Albacete
-volunteer_item_1;March 2019;Marzo 2019
-volunteer_title_1;Volunteer organiser;Voluntario organizador
-volunteer_description_1_1;Volunteer organiser of the X Meeting of Students of Technical and Higher Engineering in Computer Science (RITSI);Voluntario organizador del X Congreso Encuentro de Estudiantes de Ingeniería Técnica y Superior en Informática (RITSI)
-education_tag;Education;Educación
-volunteer_tag;Volunteer;Voluntariado
-aboutme_tag;About Me;Sobre Mi;
-aboutme_resume;Freak, enthusiast, animal lover, video game lover,... and in search of adventure.;Friki, entusiasta, amante de los animales, de los videojuegos,... y en busca de aventuras
-aboutme_text;I am a computer engineer specialised in BackEnd programming, but with great fluency in any kind of programming. He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. My specialities are videogames and haptic devices, thanks to the projects during all my educational stage, and the development of railway systems and Safety, por el desarrollo de estos sistemas durante más de 2 años;Soy un ingeniero informático especializado en programación BackEnd, pero con gran soltura en cualquier tipo de programación.					He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. Mis especialidades son los videojuegos y dispositivos hápticos, gracias a los proyectos durante toda mi etapa educativa, y el desarrollo de sistemas ferroviarios y Safety, por el desarrollo de estos sistemas durante más de 2 años
-contactme_tag;Contact Me;Contacta Conmigo
-contactme_sendme;Send me an email;Mandame un email
-contactme_contact;Contact;Contacto
-contactme_yourname;Your Name;Tu Nombre
-contactme_youremail;Your Email;Tu Email
-contactme_yourphone;Your Phone;Tu Teléfono
-contactme_message;Message;Mensaje
-contactme_email;Email;Email
-contactme_address;Address;Dirección
-contactme_send;Send Message;Enviar Mensaje
-contactme_currentemail;ogmonedero@gmail.com;ogmonedero@gmail.com
-contactme_currentlocation;Madrid, Spain; Madrid, España
+key	en	es
+home	Home	Inicio
+portfolio	Portfolio	Portfolio
+resume	Resume	Resumen
+about_tag	About	Sobre Mi
+contact	Contact	Contacto
+hello_heading	Hello, I am	Hola, yo soy
+welcome_message	Welcome to my personal portfolio	Te doy la bienvenida a mi portfolio personal
+section_portfolio_heading	Portfolio	Portafolio
+filter_all	All Projects	Todos los proyectos
+filter_haptic	Haptics	Hápticos
+filter_iot	IoT	IoT
+filter_videogame	Videogames and VR	Videojuegos y RV
+filter_simulation	Simulation	Simulación
+portfolio_project1_name	Part-Time Hero	Part-Time Hero
+portfolio_project1_category	Videogames and VR	Videojuegos y RV
+portfolio_project2_name	Smart Train Composition Coupling	Acoplamiento Inteligente de Composición de Trenes
+portfolio_project2_category	IoT	IoT
+portfolio_project3_name	Obstetric Simulator	Simulador Obstétrico
+portfolio_project3_category	Simulation and Haptics	Simulación y Hápticos
+portfolio_project4_name	Wireless Train Integrity	Wireless Train Integrity
+portfolio_project4_category	IoT	IoT
+portfolio_project5_name	Escape Game	Escape Game
+portfolio_project5_category	Videogames and VR	Videojuegos y RV
+portfolio_project6_name	Haptic Render	Háptico Render
+portfolio_project6_category	Haptics	Hápticos
+portfolio_project7_name	Advanced Mesh Deformation Simulations	Simulaciones Avanzadas en Mallas
+portfolio_project7_category	Simulation	Simulación
+portfolio_project8_name	More Projects	Más Proyectos
+portfolio_project8_category	Various	Varios
+portfolio_project9_name	Boat VR Minigame	Boat VR Minijuego
+portfolio_project9_category	Videogames and VR / Simulation	Videojuegos y RV / Simulación
+portfolio_project10_name	Rigging and Animation of Models	Rigging y Animación de Modelos
+portfolio_project10_category	Videogames and RV	Videojuegos y RV
+portfolio_project11_name	Github	Github
+portfolio_project11_category	https://github.com/Ecenys	https://github.com/Ecenys
+portfolio_project12_name	Stereoscopic Marker Tracking	Seguimiento Estereoscópico de Marcadores
+portfolio_project12_category	Videogames and VR	Videojuegos y RV
+my_resume	My Resume	Mi Resumen
+laboral_experience	Laboral Experience	Experiencia laboral
+resume_item_5	November 2021 - Present	Noviembre 2021 - Actualidad
+resume_title_5	R&D Engineer in Railway Systems	Ingeniero de I+D en sistemas ferroviarios
+resume_description_5_1	"Railway Systems Engineer in the European program ""Europe’s Rail Joint Undertaking"". Research and development of new systems for ETCS 3."	"Ingeniero de Sistemas Ferroviarios en el programa Europeo ""Europe’s Rail Joint Undertaking"". Investigación y desarrollo de nuevos sistemas para ETCS 3."
+resume_description_5_2	Wireless Train Integiry, Virtual Coupling and Train Warning System	 Virtual Coupling, Wireless Train Integrity y Train Warning System
+resume_description_5_3	C/C++, MQTT and CBOR for main systems and communications. Python and QT5 for simulator development and support tools	C/C++, MQTT y CBOR para sistemas principales y comunicaciones. Python y QT5 para desarrollo de simuladores y herramientas de soporte
+resume_company_5	Indra Sistemas	Indra Sistemas
+resume_item_4	January 2021 - September 2021	Enero 2021 - Septiembre 2021
+resume_title_4	Researcher	Investigador
+resume_description_4_1	"Researcher in the ""TouchDesing"" research group. Research on new subactuated haptic rendering algorithms"	"Investigador en el grupo de investigación ""TouchDesing"". Investigación de nuevos algoritmos de renderizado háptico subactuado"
+resume_description_4_2	C/C++, C#, and Unity. Programming drivers for the SenseGlove DK1 haptic device	C/C++, C# y Unity. Programación de drivers para dispositivo háptico SenseGlove DK1
+resume_company_4	 Rey Juan Carlos I University	Universidad Rey Juan Carlos I
+resume_item_3	January 2020 - December 2020	Enero 2020 - Diciembre 2020
+resume_company_3	Vector ITC Group	Vector ITC Group
+resume_title_3	Developer	Programador
+resume_description_3_1	"Junior Programmer for the ""Programa por puntos"" (PxP) and accident program (ARENA) for DGT (Dirección General de Tráfico)"	"Programador Junior de los programas ""Programa por puntos"" (PxP) y programa de accidentes (ARENA) para DGT (Dirección General de Tráfico)"
+resume_description_3_2	Java/JSP and OracleSQL for projects related to DGT. Angular for support tools	Java/JSP y OracleSQL para proyectos relacionados con DGT. Angular para herramientas de apoyo
+resume_item_2	April 2019 - June 2019	Abril 2019 - Junio 2019
+resume_title_2	Intern	Estudiante en prácticas
+resume_description_2_1	Development of a smart car key storage system. Enabling automatic opening via app	Desarrollo de un sistema de almacenamiento de llaves de automoviles inteligentes. Que permiten la apertura automática mediante app
+resume_description_2_2	Java/Angular	Java/Angular
+resume_description_2_3	Developer and Functional Tester	Desarrollador y Tester funcional
+resume_company_2	CreamTeam GmbH	CreamTeam GmbH
+resume_item_1	2013-2020	2013-2020
+resume_title_1	Farm Labourer	Trabajador agrícola
+resume_desciption_1_1	Various tasks in the world of agriculture at different time periods	Tareas varias en el mundo de la agricultura en diferentes intervalos de tiempo
+education_item_2	November 2020 - Present	 Noviembre 2020 - Actualidad
+education_description_2_1	Master in Computer Graphics, Videogames and Virtual Reality	Master en Informática Gráfica, Videojuegos y Realidad Virtual
+education_school_2_1	University Rey Juan Carlos I	Universidad Rey Juan Carlos I
+education_item_1	September 2015 - December 2019	Septiembre 2015 - Diciembre 2019
+education_description_1_1	Degree in Computer Engineering	Grado en Ingeniería Informática
+education_description_1_2	Computer Science Speciality	Especialidad en Computación
+education_school_1_1	University of Castilla-La Mancha	Universidad de Castilla-La Mancha
+volunteer_item_4	September 2017 - Present	Septiembre 2017 - Actualidad
+volunteer_title_4	Organizer Albanime	Organizador Albanime
+volunteer_description_4_1	Albacete Manga, Anime and Alternative Leisure Fair	Salon del manga, anime y ocio alternativo de Albacete
+volunteer_item_3	January 2018 - Present	Enero 2018 - Actualidad
+volunteer_title_3	Partner Nexus Outsiders	Socio Nexus Outsiders
+volunteer_description_3_1	Organisation promoting alternative leisure activities in Albacete	Organización promotora del ocio alternativo en Albacete
+volunteer_item_2	September 2017 - July 2019	Septiembre 2017 - Julio 2019
+volunteer_title_2	Student Mentor	Mentor de estudiantes
+volunteer_description_2_1	Mentor of first and second year students of the Computer Engineering degree in Albacete.	Mentor de estudiantes del primer y segundo curso del grado de Ingeniería Informática de Albacete
+volunteer_item_1	March 2019	Marzo 2019
+volunteer_title_1	Volunteer organiser	Voluntario organizador
+volunteer_description_1_1	Volunteer organiser of the X Meeting of Students of Technical and Higher Engineering in Computer Science (RITSI)	Voluntario organizador del X Congreso Encuentro de Estudiantes de Ingeniería Técnica y Superior en Informática (RITSI)
+education_tag	Education	Educación
+volunteer_tag	Volunteer	Voluntariado
+aboutme_tag	About Me	Sobre Mi
+aboutme_resume	Freak, enthusiast, animal lover, video game lover,... and in search of adventure.	Friki, entusiasta, amante de los animales, de los videojuegos,... y en busca de aventuras
+aboutme_text	I am a computer engineer specialised in BackEnd programming, but with great fluency in any kind of programming. He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. My specialities are videogames and haptic devices, thanks to the projects during all my educational stage, and the development of railway systems and Safety, por el desarrollo de estos sistemas durante más de 2 años	Soy un ingeniero informático especializado en programación BackEnd, pero con gran soltura en cualquier tipo de programación. He trabajado en diversos proyectos y ramas de la ingeniería que me han transformado en un mejor profesional. Mis especialidades son los videojuegos y dispositivos hápticos, gracias a los proyectos durante toda mi etapa educativa, y el desarrollo de sistemas ferroviarios y Safety, por el desarrollo de estos sistemas durante más de 2 años
+contactme_tag	Contact Me	Contacta Conmigo
+contactme_sendme	Send me an email	Mandame un email
+contactme_contact	Contact	Contacto
+contactme_yourname	Your Name	Tu Nombre
+contactme_youremail	Your Email	Tu Email
+contactme_yourphone	Your Phone	Tu Teléfono
+contactme_message	Message	Mensaje
+contactme_email	Email	Email
+contactme_address	Address	Dirección
+contactme_send	Send Message	Enviar Mensaje
+contactme_currentemail	ogmonedero@gmail.com	ogmonedero@gmail.com
+contactme_currentlocation	Madrid, Spain	 Madrid, España
