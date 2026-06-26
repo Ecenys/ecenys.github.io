@@ -67,7 +67,7 @@ input,textarea{font:inherit;outline:none}
   <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,56px);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)">
     <a href="#home" style="display:flex;align-items:center;gap:11px">
       <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:9px;background:var(--accent);color:var(--on);font-family:'Chakra Petch';font-weight:700;font-size:17px;letter-spacing:-.02em;box-shadow:0 0 0 1px var(--line),0 8px 22px var(--glow)">OG</span>
-      <span style="font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.06em;color:var(--muted)">ogmonedero<span style="color:var(--accent)">.dev</span></span>
+      <span style="font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.06em;color:var(--muted)">ecenys<span style="color:var(--accent)">.github.io</span></span>
     </a>
     <div style="display:flex;align-items:center;gap:26px">
       <div style="display:flex;gap:24px;align-items:center" data-navlinks>
@@ -324,8 +324,8 @@ class Component extends DCLogic {
     const tick = () => {
       const es = this.state.lang === 'es';
       const words = es
-        ? ['Software', 'I+D ferroviario', 'Videojuegos & VR', 'Háptica']
-        : ['Software', 'Railway R&D', 'Games & VR', 'Haptics'];
+        ? ['Ingeniero Software', 'I+D ferroviario', 'Videojuegos & VR', 'Sistemas Embebidos', 'Seguridad ferroviaria', 'Háptica']
+        : ['Software Engineer', 'Railway R&D', 'Games & VR', 'Embedded Systems', 'Railway Safety', 'Haptics'];
       const w = words[this._ti % words.length];
       let delay;
       if (!this._del) {
@@ -398,8 +398,8 @@ class Component extends DCLogic {
     return {
       es: {
         navAbout: 'Sobre mí', navPortfolio: 'Proyectos', navResume: 'Trayectoria', navContact: 'Contacto',
-        heroStatus: 'Ingeniero I+D @ Indra', heroHello: '// hola, soy',
-        heroRole: 'Software · I+D ferroviario · Videojuegos & VR · Háptica',
+        heroStatus: 'Ingeniero I+D @ Indra', heroHello: '// Hola, soy',
+        heroRole: 'Ingeniero software · FPGA · I+D ferroviario · Videojuegos & VR · Safety ferroviario · Háptica',
         heroLead: 'Software donde fallar no es una opción.',
         heroCtaWork: 'Ver proyectos', heroCtaContact: 'Contáctame',
         aboutTag: '// quién soy', aboutTitle: 'Sobre mí',
@@ -420,8 +420,8 @@ class Component extends DCLogic {
       },
       en: {
         navAbout: 'About', navPortfolio: 'Projects', navResume: 'Resume', navContact: 'Contact',
-        heroStatus: 'R&D Engineer @ Indra', heroHello: '// hello, I am',
-        heroRole: 'Software · Railway R&D · Games & VR · Haptics',
+        heroStatus: 'R&D Engineer @ Indra', heroHello: '// Hello, I am',
+        heroRole: 'Software Engineer · FPGA · Railway R&D · Games & VR · Railway Safety · Haptics',
         heroLead: 'Software where failure is not an option.',
         heroCtaWork: 'View projects', heroCtaContact: 'Get in touch',
         aboutTag: '// who I am', aboutTitle: 'About me',
