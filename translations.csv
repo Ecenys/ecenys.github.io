@@ -1,0 +1,94 @@
+section,key,es,en
+ui,navAbout,Sobre mí,About
+ui,navPortfolio,Proyectos,Projects
+ui,navResume,Trayectoria,Resume
+ui,navContact,Contacto,Contact
+ui,heroStatus,Ingeniero I+D @ Indra,R&D Engineer @ Indra
+ui,heroHello,// Hola soy,// Hello I am
+ui,heroCtaWork,Ver proyectos,View projects
+ui,heroCtaContact,Contáctame,Get in touch
+ui,aboutTag,// quién soy,// who I am
+ui,aboutTitle,Sobre mí,About me
+ui,aboutP1,"Ingeniero informático con sólida especialización en desarrollo backend y sistemas de alta fiabilidad. Mi trayectoria abarca infraestructuras ferroviarias Safety-critical, investigación en interfaces hápticas y simuladores médicos, lo que me ha dotado de una visión técnica amplia y rigurosa.","Computer engineer with a strong foundation in backend development and high-reliability systems. My career spans safety-critical railway infrastructure, haptic interface research, and medical simulation — giving me a broad and rigorous technical perspective."
+ui,aboutP2,"Actualmente, como ingeniero de I+D en Indra, contribuyo a proyectos europeos de nueva generación para ferrocarril (ETCS 3) —Virtual Coupling, Wireless Train Integrity— en entornos multidisciplinares que exigen precisión, fiabilidad y capacidad real de innovación.","Currently working as an R&D Engineer at Indra, I contribute to next-generation European railway programmes (ETCS 3) — Virtual Coupling, Wireless Train Integrity — in multidisciplinary environments that demand precision, dependability, and a genuine drive to innovate."
+ui,aboutKicker,"Comprometido con construir sistemas que importan: desde infraestructuras ferroviarias críticas hasta experiencias interactivas de última generación.","Committed to building systems that matter — from safety-critical railway infrastructure to cutting-edge interactive and simulation technologies."
+ui,aboutCta,Ver LinkedIn,View LinkedIn
+ui,portfolioTag,// trabajos seleccionados,// selected work
+ui,portfolioTitle,Proyectos,Projects
+ui,portfolioView,Ver proyecto,View project
+ui,portfolioGithub,Más proyectos en GitHub →,More projects on GitHub →
+ui,fAll,Todos,All
+ui,fGames,Videojuegos & VR,Games & VR
+ui,fHaptics,Háptica,Haptics
+ui,fSim,Simulación,Simulation
+ui,resumeTag,// experiencia + formación,// experience + education
+ui,resumeTitle,Trayectoria,Resume
+ui,expTitle,Experiencia laboral,Work experience
+ui,eduTitle,Educación,Education
+ui,volTitle,Voluntariado,Volunteering
+ui,contactTag,// hablemos,// let's talk
+ui,contactTitle,Contacto,Contact
+ui,contactLead,"¿Tienes un proyecto, una oferta o simplemente quieres saludar? Escríbeme y construyamos algo juntos.","Got a project, an offer or just want to say hi? Drop me a line and let's build something together."
+ui,namePh,Tu nombre,Your name
+ui,emailPh,Tu email,Your email
+ui,msgPh,Tu mensaje,Your message
+ui,send,Enviar mensaje,Send message
+ui,elsewhere,En otros sitios,Find me elsewhere
+ui,footer,© 2026 Óscar Gómez Monedero,© 2026 Óscar Gómez Monedero
+ui,toastMsg,¡Mensaje enviado! (demo),Message sent! (demo)
+ui,typeWord1,Software,Software
+ui,typeWord2,I+D ferroviario,Railway R&D
+ui,typeWord3,Videojuegos & VR,Games & VR
+ui,typeWord4,Háptica,Haptics
+ui,catGames,Videojuegos & VR,Games & VR
+ui,catHaptics,Háptica,Haptics
+ui,catSim,Simulación,Simulation
+traits,trait1,Backend,Backend
+traits,trait2,Videojuegos & VR,Games & VR
+traits,trait3,Háptica,Haptics
+traits,trait4,Sistemas ferroviarios,Railway systems
+traits,trait5,Safety,Safety
+traits,trait6,Simulación,Simulation
+project,pth_desc,Videojuego desarrollado en equipo (C404 Games). Acción y plataformas con un héroe a tiempo parcial.,Team-built game (C404 Games). Action-platformer starring a part-time hero.
+project,stcc_desc,Acoplamiento inteligente de composiciones ferroviarias para ETCS 3 (Virtual Coupling).,Smart coupling of train compositions for ETCS 3 (Virtual Coupling).
+project,obst_desc,Simulador obstétrico con realimentación háptica para entrenamiento médico.,Obstetric simulator with haptic feedback for medical training.
+project,wti_desc,Sistema de integridad de tren inalámbrico para señalización ferroviaria de nueva generación.,Wireless train integrity system for next-generation railway signalling.
+project,escape_desc,Juego tipo escape room con puzles y mecánicas de exploración.,Escape-room style game with puzzles and exploration mechanics.
+project,hip_desc,Investigación de algoritmos de renderizado háptico subactuado (proxy básico HIP).,Research on underactuated haptic rendering algorithms (basic HIP proxy).
+project,mesh_desc,Animación y simulación física avanzada sobre mallas deformables.,Advanced physics animation and simulation on deformable meshes.
+project,boat_desc,Minijuego en VR de navegación con simulación de fluidos.,VR sailing minigame with fluid simulation.
+project,rig_desc,Modelado rigging y animación de personajes para videojuegos.,Character modeling rigging and animation for games.
+project,track_desc,Seguimiento estereoscópico de marcadores para realidad aumentada.,Stereoscopic marker tracking for augmented reality.
+experience,exp1_period,Nov 2021 — Actualidad,Nov 2021 — Present
+experience,exp1_role,Ingeniero de I+D en sistemas ferroviarios,"R&D Engineer, Railway Systems"
+experience,exp1_desc,"Programa europeo «Europe's Rail Joint Undertaking». I+D de nuevos sistemas para ETCS 3: Virtual Coupling, Wireless Train Integrity y Train Warning System.","European programme ""Europe's Rail Joint Undertaking"". R&D of new ETCS 3 systems: Virtual Coupling, Wireless Train Integrity and Train Warning System."
+experience,exp2_period,Ene 2021 — Sep 2021,Jan 2021 — Sep 2021
+experience,exp2_role,Investigador,Researcher
+experience,exp2_desc,Grupo de investigación TouchDesign. Nuevos algoritmos de renderizado háptico subactuado.,TouchDesign research group. New underactuated haptic rendering algorithms.
+experience,exp3_period,Ene 2020 — Dic 2020,Jan 2020 — Dec 2020
+experience,exp3_role,Programador,Software Developer
+experience,exp3_desc,"Programas «Programa por Puntos (PxP)» y de accidentes (ARENA) para la DGT.","""Points programme (PxP)"" and accidents (ARENA) systems for the Spanish DGT."
+experience,exp4_period,Abr 2019 — Jun 2019,Apr 2019 — Jun 2019
+experience,exp4_role,Estudiante en prácticas,Intern
+experience,exp4_desc,Sistema inteligente de almacenamiento de llaves de automóvil con apertura automática vía app. Tester funcional.,Smart car-key storage system with automatic app-based unlocking. Functional tester.
+experience,exp5_period,2013 — 2020,2013 — 2020
+experience,exp5_role,Trabajador agrícola,Agricultural worker
+experience,exp5_desc,Tareas diversas en el sector agrícola en distintos periodos.,Various agricultural tasks across different periods.
+education,edu1_period,Nov 2020 — Actualidad,Nov 2020 — Present
+education,edu1_title,"Máster en Informática Gráfica, Videojuegos y Realidad Virtual","MSc in Computer Graphics, Games and Virtual Reality"
+education,edu1_org,Universidad Rey Juan Carlos,Universidad Rey Juan Carlos
+education,edu2_period,Sep 2015 — Dic 2019,Sep 2015 — Dec 2019
+education,edu2_title,Grado en Ingeniería Informática · Esp. Computación,BSc in Computer Engineering · Computing specialty
+education,edu2_org,Universidad de Castilla-La Mancha,Universidad de Castilla-La Mancha
+volunteering,vol1_period,Sep 2017 — Actualidad,Sep 2017 — Present
+volunteering,vol1_title,Organizador — Albanime,Organizer — Albanime
+volunteering,vol1_desc,Salón del manga anime y ocio alternativo de Albacete.,Manga anime and alternative-culture convention in Albacete.
+volunteering,vol2_period,Ene 2018 — Actualidad,Jan 2018 — Present
+volunteering,vol2_title,Socio — Nexus Outsiders,Member — Nexus Outsiders
+volunteering,vol2_desc,Organización promotora del ocio alternativo en Albacete.,Organization promoting alternative culture in Albacete.
+volunteering,vol3_period,Sep 2017 — Jul 2019,Sep 2017 — Jul 2019
+volunteering,vol3_title,Mentor de estudiantes,Student mentor
+volunteering,vol3_desc,Mentor de estudiantes de 1.º y 2.º del Grado de Ingeniería Informática (Albacete).,Mentor for 1st and 2nd-year Computer Engineering students (Albacete).
+volunteering,vol4_period,Mar 2019,Mar 2019
+volunteering,vol4_title,Voluntario organizador — RITSI,Organizing volunteer — RITSI
+volunteering,vol4_desc,X Congreso Encuentro de Estudiantes de Ingeniería en Informática.,10th Congress of Computer Engineering Students.
