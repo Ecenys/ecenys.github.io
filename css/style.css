@@ -426,12 +426,19 @@ a {
   opacity: 1;
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   -webkit-transition: .5s ease;
   -o-transition: .5s ease;
   transition: .5s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
+
+.train {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin-top: 2rem; }
 
 .middle {
   -webkit-transition: .5s ease;
@@ -623,3 +630,32 @@ a {
 .letter-spacing {
   letter-spacing: .2rem;
   color: rgba(255, 255, 255, 0.5) !important; }
+
+.resume-decoration-col {
+  position: relative; }
+
+.resume-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .resume-decoration .resume-rocket {
+    width: 100%;
+    height: auto;
+    object-fit: contain; }
+  .resume-decoration .resume-smoke {
+    width: 100%;
+    height: auto;
+    object-fit: contain; }
+
+@media (max-width: 575px) {
+  .single-portfolio {
+    width: 100%; } }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .single-portfolio {
+    flex: 0 0 50%;
+    max-width: 50%; } }

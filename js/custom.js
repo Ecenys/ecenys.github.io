@@ -32,7 +32,7 @@
 		$(".smoothscroll[href^='#'], #pb-navbar ul li a[href^='#']").on('click', function(e) {
 		 	e.preventDefault();
 		 	var hash = this.hash;
-		 		
+
 		 	$('html, body').animate({
 
 		    scrollTop: $(hash).offset().top
@@ -45,69 +45,8 @@
 		  	navToggler.click();
 		  }
 		});
-
-		$('body').on('activate.bs.scrollspy', function () {
-		  console.log('nice');
-		})
 	};
-	
 
-	var offCanvasNav = function() {
-		// var toggleNav = $('.js-pb_nav-toggle'),
-		// 		offcanvasNav = $('.js-pb_offcanvas-nav_v1');
-		// if( toggleNav.length > 0 ) {
-		// 	toggleNav.click(function(e){
-		// 		$(this).toggleClass('active');
-		// 		offcanvasNav.addClass('active');
-		// 		e.preventDefault();
-		// 	});
-		// }
-		// offcanvasNav.click(function(e){
-		// 	if (offcanvasNav.hasClass('active')) {
-		// 		offcanvasNav.removeClass('active');
-		// 		toggleNav.removeClass('active');
-		// 	}
-		// 	e.preventDefault();
-		// })
-	};
-	
-
-	/*----------------------------------------
-		Konami Code
-	----------------------------------------*/
-
-	var konamiCode = function() {
-		// Definir la secuencia del código Konami completo
-		const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA', 'Enter'];
-
-		// Definir la variable que llevará un registro de la posición actual del usuario en la secuencia
-		let konamiCodePosition = 0;
-
-		// Escuchar eventos de teclado
-		document.addEventListener('keydown', (event) => {
-		// Obtener la tecla presionada
-		const keyPressed = event.code;
-		
-		// Comprobar si la tecla presionada coincide con la tecla esperada en la posición actual del código Konami
-		if (keyPressed === konamiCode[konamiCodePosition]) {
-			// Incrementar la posición actual del usuario en la secuencia
-			konamiCodePosition++;
-			
-			// Comprobar si el usuario ha completado todo el código Konami
-			if (konamiCodePosition === konamiCode.length) {
-			// El usuario ha ingresado el código Konami completo, haz algo aquí
-			// Por ejemplo, muestra un mensaje o inicia un juego oculto
-			alert('¡Código Konami completo!');
-			
-			// Reiniciar la posición actual del usuario en la secuencia
-			konamiCodePosition = 0;
-			}
-		} else {
-			// La tecla presionada no coincide con la tecla esperada en la posición actual del código Konami, reiniciar la posición actual del usuario en la secuencia
-			konamiCodePosition = 0;
-		}
-		});
-	};
 
 	/*----------------------------------------
 		Animate Scroll
@@ -118,7 +57,7 @@
 		$('.site-animate').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('site-animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -140,9 +79,9 @@
 							el.removeClass('item-animate');
 						},  k * 100, 'easeInOutExpo' );
 					});
-					
+
 				}, 100);
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -164,98 +103,10 @@
 			}
 
 			if ( navbar.hasClass('scrolled') && st > 300 ) {
-		   	if (st > lastScrollTop){
-		      // if (navbar.hasClass('scrolled')) {
-		      	// navbar.removeClass('awake');
-		      	// navbar.addClass('sleep');
-		      // }
-		   	} else {
-		      // if (navbar.hasClass('scrolled')) {
-		      	// navbar.addClass('awake');
-		      	// navbar.removeClass('sleep');
-		      // }
-		   	}
-		   	lastScrollTop = st;
+				lastScrollTop = st;
 		  }
 
 		});
-
-
-
-		
-	};
-
-	
-	
-	
-	var siteStellar = function() {
-		$(window).stellar({
-	    responsive: true,
-	    parallaxBackgrounds: true,
-	    parallaxElements: true,
-	    horizontalScrolling: false,
-	    hideDistantElements: false,
-	    scrollProperty: 'scroll'
-	  });
-	};
-	
-
-
-
-	// Page Nav
-	var clickMenu = function() {
-
-		$('.navbar-nav a:not([class="external"])').click(function(event){
-
-			var section = $(this).data('nav-section'),
-				navbar = $('.navbar-nav');
-				if (isMobile.any()) {
-					$('.navbar-toggle').click();
-				}
-				if ( $('[data-section="' + section + '"]').length ) {
-			    	$('html, body').animate({
-			        	scrollTop: $('[data-section="' + section + '"]').offset().top
-			    	}, 500, 'easeInOutExpo');
-			   }
-
-		    event.preventDefault();
-		    return false;
-		});
-
-
-	};
-
-	// Reflect scrolling in navigation
-	var navActive = function(section) {
-
-		var $el = $('.navbar-nav');
-		$el.find('li').removeClass('active');
-		$el.each(function(){
-			$(this).find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
-		});
-
-	};
-
-	var navigationSection = function() {
-
-		var $section = $('section[data-section]');
-		
-		$section.waypoint(function(direction) {
-		  	if (direction === 'down') {
-		    	navActive($(this.element).data('section'));
-		  	}
-		}, {
-	  		offset: '150px'
-		});
-
-		$section.waypoint(function(direction) {
-		  	if (direction === 'up') {
-		    	navActive($(this.element).data('section'));
-		  	}
-		}, {
-		  	offset: function() { return -$(this.element).height() - 155; }
-		});
-
 	};
 
 
@@ -269,103 +120,56 @@
 			return false;
 		});
 	};
-	
-	var magnificPopupControl = function() {
-
-
-		$('.image-popup').magnificPopup({
-			type: 'image',
-			removalDelay: 300,
-			mainClass: 'mfp-with-zoom',
-			gallery:{
-				enabled:true
-			},
-			zoom: {
-				enabled: true, // By default it's false, so don't forget to enable it
-
-				duration: 300, // duration of the effect, in milliseconds
-				easing: 'ease-in-out', // CSS transition easing function
-
-				// The "opener" function should return the element from which popup will be zoomed in
-				// and to which popup will be scaled down
-				// By defailt it looks for an image tag:
-				opener: function(openerElement) {
-				// openerElement is the element on which popup was initialized, in this case its <a> tag
-				// you don't need to add "opener" option if this code matches your needs, it's defailt one.
-				return openerElement.is('img') ? openerElement : openerElement.find('img');
-				}
-			}
-		});
-
-		$('.with-caption').magnificPopup({
-			type: 'image',
-			closeOnContentClick: true,
-			closeBtnInside: false,
-			mainClass: 'mfp-with-zoom mfp-img-mobile',
-			image: {
-				verticalFit: true,
-				titleSrc: function(item) {
-					return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-				}
-			},
-			zoom: {
-				enabled: true
-			}
-		});
-
-
-		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-      disableOn: 700,
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      removalDelay: 160,
-      preloader: false,
-
-      fixedContentPos: false
-    });
-	};
-
-
 
 
 	var portfolioMasonry = function () {
-		//$('.grid .all:not(.principal)').css('display', 'none');
-		$('.filters ul li').click(function () {
-			$('.filters ul li').removeClass('active');
-			$(this).addClass('active');
+		if (!document.getElementById("section-portfolio")) { return; }
 
-			var data = $(this).attr('data-filter');
-			$grid.isotope({
-				filter: data
-			})
-		});
+		var $grid;
 
-
-		if (document.getElementById("section-portfolio")) {
-			var $grid = $(".grid").isotope({
+		// Wait for all images to load before initializing Isotope
+		// so item heights are calculated correctly on first load
+		imagesLoaded('.grid', function() {
+			$grid = $(".grid").isotope({
 				itemSelector: ".all",
 				percentPosition: true,
 				masonry: {
 					columnWidth: ".all"
 				}
-			})
-		};
+			});
+		});
+
+		$('.filters ul li').click(function () {
+			$('.filters ul li').removeClass('active');
+			$(this).addClass('active');
+
+			var data = $(this).attr('data-filter');
+			if ($grid) {
+				$grid.isotope({ filter: data });
+			}
+		});
+
+		// Relayout on resize so column count updates at breakpoints
+		var resizeTimer;
+		$(window).on('resize', function() {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function() {
+				if ($grid) { $grid.isotope('layout'); }
+			}, 200);
+		});
 	};
-	  
+
 
 	$(function(){
 
 		OnePageNav();
-		offCanvasNav();
 		contentWayPoint();
 		navbarState();
-		clickMenu();
 		smoothScroll();
 		portfolioMasonry();
 	});
 
-	
+
 
 
 })();
-

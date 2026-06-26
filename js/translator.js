@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             for (let j = 1; j < headers.length; j++) {
                 const lang = headers[j];
-                console.log(headers);
                 translations[key][lang] = currentLine[j];
             }
         }
@@ -60,8 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
         elements.forEach(element => {
             const key = element.getAttribute('data-translate-placeholder');
             if (translations[key] && translations[key][language]) {
-                // print placeholder of element
-                console.log(element.placeholder);
                 element.placeholder = translations[key][language];
             }
         });
@@ -74,8 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
         elements.forEach(element => {
             const key = element.getAttribute('data-translate-value');
             if (translations[key] && translations[key][language]) {
-                // print placeholder of element
-                console.log(element.placeholder);
                 element.value = translations[key][language];
             }
         });
