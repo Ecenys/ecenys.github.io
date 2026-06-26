@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0e12}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:none;background:none}
+input,textarea{font:inherit;outline:none}
+::selection{background:var(--accent);color:var(--on)}
+[data-theme="dark"]{--bg:#0a0e12;--panel:#0e151b;--panel2:#131c24;--line:rgba(255,255,255,.09);--text:#e8eff5;--muted:#8b98a6;--on:#06120c;--grid:rgba(255,255,255,.045)}
+[data-theme="light"]{--bg:#f3efe7;--panel:#ffffff;--panel2:#ece7db;--line:rgba(20,20,20,.12);--text:#16202a;--muted:#5d6873;--on:#06120c;--grid:rgba(0,0,0,.05)}
+[data-vibe="phosphor"]{--accent:#27d885;--accent2:#15bdb6;--glow:rgba(39,216,133,.28)}
+[data-vibe="arcade"]{--accent:#ff4f74;--accent2:#ffb13b;--glow:rgba(255,79,116,.28)}
+[data-vibe="cobalt"]{--accent:#5b8cff;--accent2:#9b6bff;--glow:rgba(91,140,255,.28)}
+[data-vibe="mono"]{--accent:#c8d2dc;--accent2:#7d8893;--glow:rgba(200,210,220,.18)}
+[data-vibe="mono"][data-theme="light"]{--accent:#2a333d;--accent2:#5d6873;--glow:rgba(40,50,60,.12);--on:#ffffff}
+/* backdrop atmospheres */
+[data-backdrop="solid"] .bg-grid{display:none}
+[data-backdrop="solid"] .bg-glow{opacity:.25}
+[data-backdrop="scanlines"] .bg-grid{background-image:repeating-linear-gradient(0deg,var(--grid),var(--grid) 1px,transparent 1px,transparent 4px);background-size:auto;animation:scan 8s linear infinite;mask-image:linear-gradient(#000,#000)}
+@keyframes scan{0%{background-position:0 0}100%{background-position:0 200px}}
+/* flair: gamer personality intensity */
+[data-flair="refined"] .deco-float{display:none}
+[data-flair="refined"] .term-cursor{display:none}
+[data-flair="refined"] .bg-grid{animation:none;opacity:.55}
+[data-flair="refined"] .glow-pulse{animation:none !important}
+[data-flair="refined"] .accent-frame{opacity:.28}
+[data-flair="playful"] .deco-float{animation-duration:3s}
+[data-flair="playful"] .bg-glow{opacity:.95;animation-duration:3.5s}
+[data-flair="playful"] .accent-frame{opacity:.85;box-shadow:0 0 30px var(--glow)}
+[data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-reveal][data-in="1"]{opacity:1;transform:none}
+[data-filter][data-active="true"]{background:var(--accent) !important;color:var(--on) !important;border-color:var(--accent) !important;font-weight:700;box-shadow:0 4px 16px var(--glow)}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes gridpan{0%{background-position:0 0}100%{background-position:0 44px}}
+@keyframes glowpulse{0%,100%{opacity:.45}50%{opacity:.85}}
+@keyframes kRocket{0%{transform:translate(-50%,40px) rotate(-5deg)}14%{transform:translate(-50%,-14px) rotate(4deg)}100%{transform:translate(-50%,-130vh) rotate(-3deg)}}
+@keyframes kSnake{0%{left:-100px}100%{left:112vw}}
+@keyframes kSnakeBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes kFlash{0%{opacity:0}12%{opacity:.55}100%{opacity:0}}
+@keyframes kScan{0%{background-position:0 0}100%{background-position:0 100px}}
+@keyframes kStar{0%{transform:translateY(-10vh) rotate(0deg);opacity:0}10%{opacity:1}100%{transform:translateY(110vh) rotate(220deg);opacity:.9}}
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" data-vibe="{{ vibe }}" data-backdrop="{{ backdrop }}" data-flair="{{ flair }}" style="position:relative;min-height:100vh;background:var(--bg,#0a0e12);color:var(--text,#e8eff5);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden;transition:background .4s ease,color .4s ease">
+
+  <!-- background grid -->
+  <div class="bg-grid" style="position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;animation:gridpan 9s linear infinite;mask-image:radial-gradient(120% 90% at 50% 0%,#000 30%,transparent 80%)"></div>
+  <div class="bg-glow" style="display:none"></div>
+
+  <!-- NAV -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,56px);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)">
+    <a href="#home" style="display:flex;align-items:center;gap:11px">
+      <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:9px;background:var(--accent);color:var(--on);font-family:'Chakra Petch';font-weight:700;font-size:17px;letter-spacing:-.02em;box-shadow:0 0 0 1px var(--line),0 8px 22px var(--glow)">OG</span>
+      <span style="font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.06em;color:var(--muted)">ogmonedero<span style="color:var(--accent)">.dev</span></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:26px">
+      <div style="display:flex;gap:24px;align-items:center" data-navlinks>
+        <a href="#about" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navAbout }}</a>
+        <a href="#portfolio" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navPortfolio }}</a>
+        <a href="#resume" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navResume }}</a>
+        <a href="#contact" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navContact }}</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button onClick="{{ cycleVibe }}" title="Cambiar paleta / Switch palette" style="display:grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel)">
+          <span style="width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow)"></span>
+        </button>
+        <button onClick="{{ toggleTheme }}" title="Tema claro / oscuro" style="display:grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel);font-size:15px">{{ themeIcon }}</button>
+        <button onClick="{{ setLang }}" title="Idioma / Language" style="display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);font-family:'JetBrains Mono';font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--accent)">{{ langLabel }}</button>
+      </div>
+    </div>
+  </nav>
+
+  <main style="position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
+
+    <!-- HERO -->
+    <section id="home" style="scroll-margin-top:90px;min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:96px">
+      <div data-reveal>
+        <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:26px">
+          <span class="glow-pulse" style="width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow);animation:glowpulse 2.4s ease-in-out infinite"></span>{{ t.heroStatus }}
+        </div>
+        <p style="font-family:'JetBrains Mono';font-size:15px;letter-spacing:.04em;color:var(--accent);margin:0 0 8px">{{ t.heroHello }}</p>
+        <h1 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(38px,6.6vw,76px);line-height:1.02;letter-spacing:-.02em;margin:0">Óscar Gómez<br>Monedero</h1>
+        <p style="font-family:'JetBrains Mono';font-size:clamp(12px,1.5vw,14.5px);letter-spacing:.02em;color:var(--muted);margin:18px 0 0;min-height:1.4em"><span style="color:var(--accent)">&gt;</span> {{ typeText }}<span class="term-cursor" style="color:var(--accent);font-weight:700;animation:blink 1.1s step-end infinite">▋</span></p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
+          <a href="#portfolio" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:10px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;box-shadow:0 10px 30px var(--glow)" style-hover="transform:translateY(-2px)">{{ t.heroCtaWork }} →</a>
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-weight:600;font-size:15px" style-hover="border-color:var(--accent)">{{ t.heroCtaContact }}</a>
+        </div>
+      </div>
+      <div data-reveal style="position:relative;justify-self:center">
+        <div class="accent-frame" style="position:absolute;inset:-14px -14px 14px 14px;border:1.5px solid var(--accent);border-radius:18px;opacity:.55"></div>
+        <div class="deco-float" style="position:absolute;top:-26px;right:-22px;width:46px;height:46px;border-radius:10px;background:var(--accent2);opacity:.85;animation:floaty 5s ease-in-out infinite"></div>
+        <div class="deco-float" style="position:absolute;bottom:24px;left:-30px;width:30px;height:30px;border-radius:7px;background:var(--accent);opacity:.7;animation:floaty 4s ease-in-out infinite .6s"></div>
+        <div style="position:relative;width:clamp(240px,32vw,360px);height:clamp(300px,40vw,440px);border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.35)">
+          <img src="assets/portrait.jpeg" alt="Óscar Gómez Monedero" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="scroll-margin-top:90px;padding:96px 0">
+      <div data-reveal style="margin-bottom:46px">
+        <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.aboutTag }}</p>
+        <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.aboutTitle }}</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start">
+        <div data-reveal style="position:relative">
+          <div style="width:100%;height:360px;border-radius:16px;overflow:hidden;border:1px solid var(--line)">
+            <img src="assets/portrait.jpeg" alt="Óscar Gómez Monedero" style="width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block">
+          </div>
+          <div style="position:absolute;bottom:-1px;left:16px;right:16px;transform:translateY(50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-family:'JetBrains Mono';font-size:12.5px;color:var(--muted);box-shadow:0 16px 40px rgba(0,0,0,.25)">📍 Madrid · España</div>
+        </div>
+        <div data-reveal>
+          <p style="font-size:18px;line-height:1.75;margin:0 0 18px">{{ t.aboutP1 }}</p>
+          <p style="font-size:18px;line-height:1.75;margin:0 0 24px;color:var(--muted)">{{ t.aboutP2 }}</p>
+          <p style="font-family:'JetBrains Mono';font-size:13.5px;line-height:1.7;color:var(--accent);border-left:2px solid var(--accent);padding-left:16px;margin:0 0 28px">{{ t.aboutKicker }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px">
+            <sc-for list="{{ traits }}" as="tr" hint-placeholder-count="6">
+              <span style="padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);font-size:13px;font-weight:500">{{ tr }}</span>
+            </sc-for>
+          </div>
+          <a href="https://www.linkedin.com/in/ogmonedero/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:10px;border:1px solid var(--line);background:var(--panel);font-weight:600;font-size:14px" style-hover="border-color:var(--accent)">{{ t.aboutCta }} ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" style="scroll-margin-top:90px;padding:96px 0">
+      <div data-reveal style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px">
+        <div>
+          <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.portfolioTag }}</p>
+          <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.portfolioTitle }}</h2>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <button data-filter data-active="{{ aAll }}" onClick="{{ fltAll }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fAll }}</button>
+          <button data-filter data-active="{{ aGames }}" onClick="{{ fltGames }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fGames }}</button>
+          <button data-filter data-active="{{ aHaptics }}" onClick="{{ fltHaptics }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fHaptics }}</button>
+          <button data-filter data-active="{{ aIot }}" onClick="{{ fltIot }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">IoT</button>
+          <button data-filter data-active="{{ aSim }}" onClick="{{ fltSim }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fSim }}</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s" style-hover="transform:translateY(-4px);border-color:var(--accent)">
+            <div style="position:relative">
+              <div style="width:100%;height:172px;background:var(--panel2);overflow:hidden">
+                <img src="{{ p.img }}" alt="{{ p.title }}" loading="lazy" style="width:100%;height:100%;display:block;object-fit:{{ p.imgFit }};object-position:center">
+              </div>
+              <span style="position:absolute;top:12px;left:12px;padding:5px 11px;border-radius:999px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line);font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)">{{ p.catLabel }}</span>
+              <span style="position:absolute;top:12px;right:12px;font-family:'JetBrains Mono';font-size:11px;color:var(--muted)">{{ p.n }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;flex:1;padding:18px 18px 20px">
+              <h3 style="font-family:'Chakra Petch';font-weight:600;font-size:18px;letter-spacing:-.01em;margin:0 0 8px;line-height:1.25">{{ p.title }}</h3>
+              <p style="font-size:13.5px;line-height:1.6;color:var(--muted);margin:0 0 16px;flex:1">{{ p.desc }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px">
+                <sc-for list="{{ p.tech }}" as="tech" hint-placeholder-count="3">
+                  <span style="font-family:'JetBrains Mono';font-size:11px;padding:4px 9px;border-radius:6px;background:var(--panel2);color:var(--muted)">{{ tech }}</span>
+                </sc-for>
+              </div>
+              <sc-if value="{{ p.hasLink }}" hint-placeholder-val="{{ true }}">
+                <a href="{{ p.link }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono';font-size:12.5px;font-weight:500;color:var(--accent)" style-hover="gap:11px">{{ t.portfolioView }} ↗</a>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <a href="https://github.com/Ecenys" target="_blank" rel="noopener" data-reveal style="display:flex;align-items:center;justify-content:center;gap:11px;margin-top:22px;padding:20px;border-radius:16px;border:1px dashed var(--line);background:var(--panel);font-family:'JetBrains Mono';font-size:14px;color:var(--muted)" style-hover="border-color:var(--accent);color:var(--text)">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+        {{ t.portfolioGithub }}
+      </a>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" style="scroll-margin-top:90px;padding:96px 0">
+      <div data-reveal style="margin-bottom:46px">
+        <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.resumeTag }}</p>
+        <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.resumeTitle }}</h2>
+      </div>
+
+      <h3 data-reveal style="font-family:'Chakra Petch';font-weight:600;font-size:22px;margin:0 0 26px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:var(--accent);border-radius:2px"></span>{{ t.expTitle }}</h3>
+      <div style="display:flex;flex-direction:column;gap:18px;margin-bottom:64px">
+        <sc-for list="{{ experience }}" as="e" hint-placeholder-count="5">
+          <div data-reveal style="display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel)">
+            <div style="font-family:'JetBrains Mono';font-size:12.5px;color:var(--accent);padding-top:3px">{{ e.period }}</div>
+            <div>
+              <h4 style="font-family:'Chakra Petch';font-weight:600;font-size:18px;margin:0 0 3px">{{ e.role }}</h4>
+              <sc-if value="{{ e.org }}" hint-placeholder-val="x">
+                <p style="font-size:13px;font-weight:600;color:var(--muted);margin:0 0 10px">{{ e.org }}</p>
+              </sc-if>
+              <p style="font-size:14.5px;line-height:1.65;color:var(--muted);margin:0 0 12px">{{ e.desc }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <sc-for list="{{ e.tech }}" as="tech" hint-placeholder-count="3">
+                  <span style="font-family:'JetBrains Mono';font-size:11px;padding:4px 9px;border-radius:6px;background:var(--panel2);color:var(--text)">{{ tech }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px">
+        <div>
+          <h3 data-reveal style="font-family:'Chakra Petch';font-weight:600;font-size:22px;margin:0 0 26px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:var(--accent2);border-radius:2px"></span>{{ t.eduTitle }}</h3>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <sc-for list="{{ education }}" as="ed" hint-placeholder-count="2">
+              <div data-reveal style="padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)">
+                <p style="font-family:'JetBrains Mono';font-size:12px;color:var(--accent);margin:0 0 8px">{{ ed.period }}</p>
+                <h4 style="font-family:'Chakra Petch';font-weight:600;font-size:16.5px;line-height:1.3;margin:0 0 6px">{{ ed.title }}</h4>
+                <p style="font-size:13.5px;color:var(--muted);margin:0">{{ ed.org }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <h3 data-reveal style="font-family:'Chakra Petch';font-weight:600;font-size:22px;margin:0 0 26px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:var(--accent2);border-radius:2px"></span>{{ t.volTitle }}</h3>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <sc-for list="{{ volunteering }}" as="v" hint-placeholder-count="4">
+              <div data-reveal style="padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)">
+                <p style="font-family:'JetBrains Mono';font-size:12px;color:var(--accent);margin:0 0 8px">{{ v.period }}</p>
+                <h4 style="font-family:'Chakra Petch';font-weight:600;font-size:16.5px;line-height:1.3;margin:0 0 6px">{{ v.title }}</h4>
+                <p style="font-size:13.5px;color:var(--muted);margin:0;line-height:1.55">{{ v.desc }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="scroll-margin-top:90px;padding:96px 0 64px">
+      <div data-reveal style="margin-bottom:46px">
+        <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.contactTag }}</p>
+        <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.contactTitle }}</h2>
+        <p style="font-size:17px;line-height:1.7;color:var(--muted);max-width:48ch;margin:16px 0 0">{{ t.contactLead }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start">
+        <form data-reveal onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px">
+          <input required placeholder="{{ t.namePh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
+          <input required type="email" placeholder="{{ t.emailPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
+          <textarea required rows="5" placeholder="{{ t.msgPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px;resize:vertical;font-family:'IBM Plex Sans'" style-focus="border-color:var(--accent)"></textarea>
+          <button type="submit" style="align-self:flex-start;padding:14px 26px;border-radius:11px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;box-shadow:0 10px 30px var(--glow)" style-hover="transform:translateY(-2px)">{{ t.send }} →</button>
+        </form>
+        <div data-reveal style="display:flex;flex-direction:column;gap:14px">
+          <p style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 2px">{{ t.elsewhere }}</p>
+          <a href="https://www.linkedin.com/in/ogmonedero/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;border:1px solid var(--line);background:var(--panel)" style-hover="border-color:var(--accent);transform:translateX(4px)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color:var(--accent)"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            <span><span style="display:block;font-weight:600;font-size:14.5px">LinkedIn</span><span style="font-family:'JetBrains Mono';font-size:12px;color:var(--muted)">in/ogmonedero</span></span>
+          </a>
+          <a href="https://github.com/Ecenys" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;border:1px solid var(--line);background:var(--panel)" style-hover="border-color:var(--accent);transform:translateX(4px)">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color:var(--accent)"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+            <span><span style="display:block;font-weight:600;font-size:14.5px">GitHub</span><span style="font-family:'JetBrains Mono';font-size:12px;color:var(--muted)">@Ecenys</span></span>
+          </a>
+          <a href="https://twitter.com/ecenys" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;border:1px solid var(--line);background:var(--panel)" style-hover="border-color:var(--accent);transform:translateX(4px)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="color:var(--accent)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            <span><span style="display:block;font-weight:600;font-size:14.5px">X / Twitter</span><span style="font-family:'JetBrains Mono';font-size:12px;color:var(--muted)">@ecenys</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="position:relative;z-index:1;border-top:1px solid var(--line);background:var(--panel);margin-top:40px">
+    <div style="max-width:1140px;margin:0 auto;padding:30px clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center">
+      <span style="font-size:13.5px;color:var(--muted)">{{ t.footer }}</span>
+      <span style="font-family:'JetBrains Mono';font-size:11.5px;color:var(--muted);opacity:.7" title="Konami code 😉">↑ ↑ ↓ ↓ ← → ← → B A</span>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <sc-if value="{{ toast }}" hint-placeholder-val="">
+    <div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:99;padding:14px 22px;border-radius:12px;background:var(--accent);color:var(--on);font-family:'JetBrains Mono';font-size:13px;font-weight:500;box-shadow:0 16px 44px var(--glow)">{{ toast }}</div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: 760 },
+  &quot;palette&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;phosphor&quot;, &quot;arcade&quot;, &quot;cobalt&quot;, &quot;mono&quot;],
+    &quot;default&quot;: &quot;phosphor&quot;,
+    &quot;tsType&quot;: &quot;string&quot;
+  },
+  &quot;backdrop&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;grid&quot;, &quot;scanlines&quot;, &quot;solid&quot;],
+    &quot;default&quot;: &quot;grid&quot;,
+    &quot;tsType&quot;: &quot;string&quot;
+  },
+  &quot;flair&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;refined&quot;, &quot;balanced&quot;, &quot;playful&quot;],
+    &quot;default&quot;: &quot;balanced&quot;,
+    &quot;tsType&quot;: &quot;string&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { lang: 'es', theme: 'dark', vibe: null, filter: 'all', toast: '', typeText: '' };
+
+  componentDidMount() {
+    this._reveal();
+    this._konami();
+    this._startType();
+  }
+
+  _startType() {
+    this._ti = 0; this._ci = 0; this._del = false;
+    const tick = () => {
+      const es = this.state.lang === 'es';
+      const words = es
+        ? ['Software', 'I+D ferroviario', 'Videojuegos & VR', 'Háptica']
+        : ['Software', 'Railway R&D', 'Games & VR', 'Haptics'];
+      const w = words[this._ti % words.length];
+      let delay;
+      if (!this._del) {
+        this._ci++;
+        this.setState({ typeText: w.slice(0, this._ci) });
+        if (this._ci >= w.length) { this._del = true; delay = 1400; }
+        else delay = 65 + Math.random() * 55;
+      } else {
+        this._ci--;
+        this.setState({ typeText: w.slice(0, this._ci) });
+        if (this._ci <= 0) { this._del = false; this._ti++; delay = 380; }
+        else delay = 35;
+      }
+      this._typeT = setTimeout(tick, delay);
+    };
+    tick();
+  }
+
+  _reveal() {
+    if (this._io) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.setAttribute('data-in', '1'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+    this._io = obs;
+    document.querySelectorAll('[data-reveal]:not([data-in])').forEach((el) => obs.observe(el));
+    this._fb = setTimeout(() => {
+      document.querySelectorAll('[data-reveal]:not([data-in])').forEach((el) => el.setAttribute('data-in', '1'));
+    }, 2600);
+  }
+
+  _konami() {
+    const seq = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+    let i = 0;
+    this._kh = (ev) => {
+      const k = (ev.key || '').toLowerCase();
+      if (k === seq[i]) { i++; if (i === seq.length) { i = 0; this._cheat(); } }
+      else { i = (k === seq[0]) ? 1 : 0; }
+    };
+    window.addEventListener('keydown', this._kh);
+  }
+
+  _cheat() {
+    this._launchFx();
+  }
+
+  _launchFx() {
+    if (this._fxOn) return;
+    this._fxOn = true;
+    const layer = document.createElement('div');
+    layer.style.cssText = 'position:fixed;inset:0;z-index:90;pointer-events:none;overflow:hidden';
+
+    const snake = document.createElement('img');
+    snake.src = 'assets/deco-snake.png';
+    snake.alt = '';
+    snake.style.cssText = 'position:absolute;bottom:22px;left:-100px;width:74px;height:74px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 8px 16px rgba(0,0,0,.45));animation:kSnake 3.6s linear forwards,kSnakeBob .42s ease-in-out infinite';
+    layer.appendChild(snake);
+
+    document.body.appendChild(layer);
+    this._fxTimer = setTimeout(() => { layer.remove(); this._fxOn = false; }, 4000);
+  }
+
+  componentWillUnmount() {
+    if (this._kh) window.removeEventListener('keydown', this._kh);
+    clearTimeout(this._fb); clearTimeout(this._tt); clearTimeout(this._fxTimer); clearTimeout(this._typeT);
+  }
+
+  _T() {
+    return {
+      es: {
+        navAbout: 'Sobre mí', navPortfolio: 'Proyectos', navResume: 'Trayectoria', navContact: 'Contacto',
+        heroStatus: 'Ingeniero I+D @ Indra', heroHello: '// hola, soy',
+        heroRole: 'Software · I+D ferroviario · Videojuegos & VR · Háptica',
+        heroLead: 'Software donde fallar no es una opción.',
+        heroCtaWork: 'Ver proyectos', heroCtaContact: 'Contáctame',
+        aboutTag: '// quién soy', aboutTitle: 'Sobre mí',
+        aboutP1: 'Ingeniero informático con sólida especialización en desarrollo backend y sistemas de alta fiabilidad. Mi trayectoria abarca infraestructuras ferroviarias Safety-critical, investigación en interfaces hápticas y simuladores médicos, lo que me ha dotado de una visión técnica amplia y rigurosa.',
+        aboutP2: 'Actualmente, como ingeniero de I+D en Indra, contribuyo a proyectos europeos de nueva generación para ferrocarril (ETCS 3) —Virtual Coupling, Wireless Train Integrity— en entornos multidisciplinares que exigen precisión, fiabilidad y capacidad real de innovación.',
+        aboutKicker: 'Comprometido con construir sistemas que importan: desde infraestructuras ferroviarias críticas hasta experiencias interactivas de última generación.',
+        aboutCta: 'Ver LinkedIn',
+        portfolioTag: '// trabajos seleccionados', portfolioTitle: 'Proyectos', portfolioView: 'Ver proyecto',
+        portfolioGithub: 'Más proyectos en GitHub →',
+        fAll: 'Todos', fGames: 'Videojuegos & VR', fHaptics: 'Háptica', fSim: 'Simulación',
+        resumeTag: '// experiencia + formación', resumeTitle: 'Trayectoria',
+        expTitle: 'Experiencia laboral', eduTitle: 'Educación', volTitle: 'Voluntariado',
+        contactTag: '// hablemos', contactTitle: 'Contacto',
+        contactLead: '¿Tienes un proyecto, una oferta o simplemente quieres saludar? Escríbeme y construyamos algo juntos.',
+        namePh: 'Tu nombre', emailPh: 'Tu email', msgPh: 'Tu mensaje', send: 'Enviar mensaje',
+        elsewhere: 'En otros sitios',
+        footer: '© 2026 Óscar Gómez Monedero'
+      },
+      en: {
+        navAbout: 'About', navPortfolio: 'Projects', navResume: 'Resume', navContact: 'Contact',
+        heroStatus: 'R&D Engineer @ Indra', heroHello: '// hello, I am',
+        heroRole: 'Software · Railway R&D · Games & VR · Haptics',
+        heroLead: 'Software where failure is not an option.',
+        heroCtaWork: 'View projects', heroCtaContact: 'Get in touch',
+        aboutTag: '// who I am', aboutTitle: 'About me',
+        aboutP1: 'Computer engineer with a strong foundation in backend development and high-reliability systems. My career spans safety-critical railway infrastructure, haptic interface research, and medical simulation — giving me a broad and rigorous technical perspective.',
+        aboutP2: 'Currently working as an R&D Engineer at Indra, I contribute to next-generation European railway programmes (ETCS 3) — Virtual Coupling, Wireless Train Integrity — in multidisciplinary environments that demand precision, dependability, and a genuine drive to innovate.',
+        aboutKicker: 'Committed to building systems that matter — from safety-critical railway infrastructure to cutting-edge interactive and simulation technologies.',
+        aboutCta: 'View LinkedIn',
+        portfolioTag: '// selected work', portfolioTitle: 'Projects', portfolioView: 'View project',
+        portfolioGithub: 'More projects on GitHub →',
+        fAll: 'All', fGames: 'Games & VR', fHaptics: 'Haptics', fSim: 'Simulation',
+        resumeTag: '// experience + education', resumeTitle: 'Resume',
+        expTitle: 'Work experience', eduTitle: 'Education', volTitle: 'Volunteering',
+        contactTag: '// let\u2019s talk', contactTitle: 'Contact',
+        contactLead: 'Got a project, an offer or just want to say hi? Drop me a line and let\u2019s build something together.',
+        namePh: 'Your name', emailPh: 'Your email', msgPh: 'Your message', send: 'Send message',
+        elsewhere: 'Find me elsewhere',
+        footer: '© 2026 Óscar Gómez Monedero'
+      }
+    };
+  }
+
+  _projects() {
+    return [
+      { id: 'pth', title: 'Part-Time Hero', cats: ['games'], tech: ['Unity', 'C#'], img: 'assets/proj-pth.png', fit: 'cover', link: 'https://c404games.itch.io/part-time-hero', es: 'Videojuego desarrollado en equipo (C404 Games). Acción y plataformas con un héroe a tiempo parcial.', en: 'Team-built game (C404 Games). Action-platformer starring a part-time hero.' },
+      { id: 'stcc', title: 'Smart Train Composition Coupling', cats: ['iot'], tech: ['C/C++', 'MQTT', 'CBOR'], img: 'assets/proj-stcc.png', fit: 'cover', link: 'https://www.youtube.com/watch?v=pMQ0CWzOKTI', es: 'Acoplamiento inteligente de composiciones ferroviarias para ETCS 3 (Virtual Coupling).', en: 'Smart coupling of train compositions for ETCS 3 (Virtual Coupling).' },
+      { id: 'obst', title: 'Simulador Obstétrico', cats: ['sim', 'haptics'], tech: ['C++', 'Háptica'], img: 'assets/proj-obst.png', fit: 'cover', link: 'https://github.com/Ecenys/Obstetric-simulator', es: 'Simulador obstétrico con realimentación háptica para entrenamiento médico.', en: 'Obstetric simulator with haptic feedback for medical training.' },
+      { id: 'wti', title: 'Wireless Train Integrity', cats: ['iot'], tech: ['C/C++', 'MQTT'], img: 'assets/proj-wti.png', fit: 'cover', link: 'https://www.youtube.com/watch?v=INog83y3lKE', es: 'Sistema de integridad de tren inalámbrico para señalización ferroviaria de nueva generación.', en: 'Wireless train integrity system for next-generation railway signalling.' },
+      { id: 'escape', title: 'Escape Game', cats: ['games'], tech: ['Unity', 'C#'], img: 'assets/proj-escape.png', fit: 'cover', link: 'https://github.com/Ecenys/EscapeGame', es: 'Juego tipo escape room con puzles y mecánicas de exploración.', en: 'Escape-room style game with puzzles and exploration mechanics.' },
+      { id: 'hip', title: 'Render háptico subactuado', cats: ['haptics'], tech: ['C/C++', 'SenseGlove'], img: 'assets/proj-hip.png', fit: 'cover', link: 'https://github.com/Ecenys/Basic-Proxy-HIP-Simulation', es: 'Investigación de algoritmos de renderizado háptico subactuado (proxy básico HIP).', en: 'Research on underactuated haptic rendering algorithms (basic HIP proxy).' },
+      { id: 'mesh', title: 'Simulaciones avanzadas en mallas', cats: ['sim'], tech: ['C++', 'FEM'], img: 'assets/proj-mesh.png', fit: 'cover', link: 'https://github.com/Ecenys/Animacion-y-simulacion-avanzada', es: 'Animación y simulación física avanzada sobre mallas deformables.', en: 'Advanced physics animation and simulation on deformable meshes.' },
+      { id: 'boat', title: 'Boat VR Minigame', cats: ['games', 'sim'], tech: ['Unity', 'VR'], img: 'assets/proj-boat.png', fit: 'cover', link: 'https://github.com/Ecenys/Boat-VR-minigame', es: 'Minijuego en VR de navegación con simulación de fluidos.', en: 'VR sailing minigame with fluid simulation.' },
+      { id: 'rig', title: 'Rigging y animación de personajes', cats: ['games'], tech: ['Blender', 'Maya'], img: 'assets/proj-rig.png', fit: 'cover', link: 'https://github.com/Ecenys/Modelado-y-Animacion-de-Personaje', es: 'Modelado, rigging y animación de personajes para videojuegos.', en: 'Character modeling, rigging and animation for games.' },
+      { id: 'track', title: 'Seguimiento estereoscópico de marcador', cats: ['games'], tech: ['OpenCV', 'AR'], img: 'assets/proj-track.png', fit: 'cover', link: '', es: 'Seguimiento estereoscópico de marcadores para realidad aumentada.', en: 'Stereoscopic marker tracking for augmented reality.' }
+    ];
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const t = this._T()[lang];
+    const es = lang === 'es';
+
+    const catLabel = { games: es ? 'Videojuegos & VR' : 'Games & VR', haptics: es ? 'Háptica' : 'Haptics', iot: 'IoT', sim: es ? 'Simulación' : 'Simulation' };
+    const projects = this._projects()
+      .filter((p) => this.state.filter === 'all' || p.cats.includes(this.state.filter))
+      .map((p, idx) => ({ id: p.id, title: p.title, tech: p.tech, link: p.link, hasLink: !!p.link, img: p.img, imgFit: p.fit || 'cover', desc: es ? p.es : p.en, catLabel: catLabel[p.cats[0]], n: String(idx + 1).padStart(2, '0') }));
+
+    const experience = [
+      { period: es ? 'Nov 2021 — Actualidad' : 'Nov 2021 — Present', role: es ? 'Ingeniero de I+D en sistemas ferroviarios' : 'R&D Engineer, Railway Systems', org: 'Indra', es: 'Programa europeo «Europe\u2019s Rail Joint Undertaking». I+D de nuevos sistemas para ETCS 3: Virtual Coupling, Wireless Train Integrity y Train Warning System.', en: 'European programme \u201CEurope\u2019s Rail Joint Undertaking\u201D. R&D of new ETCS 3 systems: Virtual Coupling, Wireless Train Integrity and Train Warning System.', tech: ['C/C++', 'MQTT', 'CBOR', 'Python', 'Qt5'] },
+      { period: es ? 'Ene 2021 — Sep 2021' : 'Jan 2021 — Sep 2021', role: es ? 'Investigador' : 'Researcher', org: 'Universidad Rey Juan Carlos', es: 'Grupo de investigación TouchDesign. Nuevos algoritmos de renderizado háptico subactuado.', en: 'TouchDesign research group. New underactuated haptic rendering algorithms.', tech: ['C/C++', 'C#', 'Unity', 'SenseGlove DK1'] },
+      { period: es ? 'Ene 2020 — Dic 2020' : 'Jan 2020 — Dec 2020', role: es ? 'Programador' : 'Software Developer', org: 'Vector ITC Group', es: 'Programas «Programa por Puntos (PxP)» y de accidentes (ARENA) para la DGT.', en: '\u201CPoints programme (PxP)\u201D and accidents (ARENA) systems for the Spanish DGT.', tech: ['Java/JSP', 'OracleSQL', 'Angular'] },
+      { period: es ? 'Abr 2019 — Jun 2019' : 'Apr 2019 — Jun 2019', role: es ? 'Estudiante en prácticas' : 'Intern', org: 'CreamTeam GmbH', es: 'Sistema inteligente de almacenamiento de llaves de automóvil con apertura automática vía app. Tester funcional.', en: 'Smart car-key storage system with automatic app-based unlocking. Functional tester.', tech: ['Java', 'Angular'] },
+      { period: '2013 — 2020', role: es ? 'Trabajador agrícola' : 'Agricultural worker', org: '', es: 'Tareas diversas en el sector agrícola en distintos periodos.', en: 'Various agricultural tasks across different periods.', tech: [] }
+    ].map((e) => ({ period: e.period, role: e.role, org: e.org, desc: es ? e.es : e.en, tech: e.tech }));
+
+    const education = [
+      { period: es ? 'Nov 2020 — Actualidad' : 'Nov 2020 — Present', title: es ? 'Máster en Informática Gráfica, Videojuegos y Realidad Virtual' : 'MSc in Computer Graphics, Games and Virtual Reality', org: 'Universidad Rey Juan Carlos' },
+      { period: es ? 'Sep 2015 — Dic 2019' : 'Sep 2015 — Dec 2019', title: es ? 'Grado en Ingeniería Informática · Esp. Computación' : 'BSc in Computer Engineering · Computing specialty', org: 'Universidad de Castilla-La Mancha' }
+    ];
+
+    const volunteering = [
+      { period: es ? 'Sep 2017 — Actualidad' : 'Sep 2017 — Present', title: es ? 'Organizador — Albanime' : 'Organizer — Albanime', desc: es ? 'Salón del manga, anime y ocio alternativo de Albacete.' : 'Manga, anime and alternative-culture convention in Albacete.' },
+      { period: es ? 'Ene 2018 — Actualidad' : 'Jan 2018 — Present', title: es ? 'Socio — Nexus Outsiders' : 'Member — Nexus Outsiders', desc: es ? 'Organización promotora del ocio alternativo en Albacete.' : 'Organization promoting alternative culture in Albacete.' },
+      { period: es ? 'Sep 2017 — Jul 2019' : 'Sep 2017 — Jul 2019', title: es ? 'Mentor de estudiantes' : 'Student mentor', desc: es ? 'Mentor de estudiantes de 1.º y 2.º del Grado de Ingeniería Informática (Albacete).' : 'Mentor for 1st and 2nd-year Computer Engineering students (Albacete).' },
+      { period: 'Mar 2019', title: es ? 'Voluntario organizador — RITSI' : 'Organizing volunteer — RITSI', desc: es ? 'X Congreso Encuentro de Estudiantes de Ingeniería en Informática.' : '10th Congress of Computer Engineering Students.' }
+    ];
+
+    const traits = es
+      ? ['Backend', 'Videojuegos & VR', 'Háptica', 'Sistemas ferroviarios', 'Safety', 'Simulación']
+      : ['Backend', 'Games & VR', 'Haptics', 'Railway systems', 'Safety', 'Simulation'];
+
+    const f = this.state.filter;
+    const vibe = this.state.vibe || (this.props.palette ?? 'phosphor');
+    const backdrop = this.props.backdrop ?? 'grid';
+    const flair = this.props.flair ?? 'balanced';
+    return {
+      t, lang, theme: this.state.theme, vibe, backdrop, flair, toast: this.state.toast,
+      langLabel: lang === 'es' ? '🇪🇸' : '🇬🇧',
+      typeText: this.state.typeText,
+      themeIcon: this.state.theme === 'dark' ? '☀' : '🌙',
+      setLang: () => this.setState((s) => ({ lang: s.lang === 'es' ? 'en' : 'es' })),
+      toggleTheme: () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+      cycleVibe: () => { const o = ['phosphor', 'arcade', 'cobalt', 'mono']; this.setState({ vibe: o[(o.indexOf(vibe) + 1) % o.length] }); },
+      projects, experience, education, volunteering, traits,
+      fltAll: () => this.setState({ filter: 'all' }),
+      fltGames: () => this.setState({ filter: 'games' }),
+      fltHaptics: () => this.setState({ filter: 'haptics' }),
+      fltIot: () => this.setState({ filter: 'iot' }),
+      fltSim: () => this.setState({ filter: 'sim' }),
+      aAll: f === 'all' ? 'true' : 'false', aGames: f === 'games' ? 'true' : 'false', aHaptics: f === 'haptics' ? 'true' : 'false', aIot: f === 'iot' ? 'true' : 'false', aSim: f === 'sim' ? 'true' : 'false',
+      onSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ toast: es ? '¡Mensaje enviado! (demo)' : 'Message sent! (demo)' });
+        clearTimeout(this._tt);
+        this._tt = setTimeout(() => this.setState({ toast: '' }), 3000);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
