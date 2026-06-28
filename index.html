@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -250,10 +251,11 @@ input,textarea{font:inherit;outline:none}
       </div>
       <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start">
         <form data-reveal onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px">
-          <input required placeholder="{{ t.namePh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
-          <input required type="email" placeholder="{{ t.emailPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
-          <textarea required rows="5" placeholder="{{ t.msgPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px;resize:vertical;font-family:'IBM Plex Sans'" style-focus="border-color:var(--accent)"></textarea>
-          <button type="submit" style="align-self:flex-start;padding:14px 26px;border-radius:11px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;box-shadow:0 10px 30px var(--glow)" style-hover="transform:translateY(-2px)">{{ t.send }} →</button>
+          <input name="name" required placeholder="{{ t.namePh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
+          <input name="email" required type="email" placeholder="{{ t.emailPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
+          <textarea name="message" required rows="5" placeholder="{{ t.msgPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px;resize:vertical;font-family:'IBM Plex Sans'" style-focus="border-color:var(--accent)"></textarea>
+          <sc-if value="{{ !sending }}"><button type="submit" style="align-self:flex-start;padding:14px 26px;border-radius:11px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;box-shadow:0 10px 30px var(--glow)" style-hover="transform:translateY(-2px)">{{ t.send }} →</button></sc-if>
+          <sc-if value="{{ sending }}"><button type="button" disabled style="align-self:flex-start;padding:14px 26px;border-radius:11px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;opacity:0.7;cursor:not-allowed">{{ t.sending }}</button></sc-if>
         </form>
         <div data-reveal style="display:flex;flex-direction:column;gap:14px">
           <p style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 2px">{{ t.elsewhere }}</p>
@@ -311,7 +313,7 @@ input,textarea{font:inherit;outline:none}
   }
 }">
 class Component extends DCLogic {
-  state = { lang: 'es', theme: 'dark', vibe: null, filter: 'all', toast: '', typeText: '' };
+  state = { lang: 'es', theme: 'dark', vibe: null, filter: 'all', toast: '', typeText: '', sending: false };
 
   componentDidMount() {
     this._reveal();
@@ -414,7 +416,7 @@ class Component extends DCLogic {
         expTitle: 'Experiencia laboral', eduTitle: 'Educación', volTitle: 'Voluntariado',
         contactTag: '// hablemos', contactTitle: 'Contacto',
         contactLead: '¿Tienes un proyecto, una oferta o simplemente quieres saludar? Escríbeme y construyamos algo juntos.',
-        namePh: 'Tu nombre', emailPh: 'Tu email', msgPh: 'Tu mensaje', send: 'Enviar mensaje',
+        namePh: 'Tu nombre', emailPh: 'Tu email', msgPh: 'Tu mensaje', send: 'Enviar mensaje', sending: 'Enviando…',
         elsewhere: 'En otros sitios',
         footer: '© 2026 Óscar Gómez Monedero'
       },
@@ -436,7 +438,7 @@ class Component extends DCLogic {
         expTitle: 'Work experience', eduTitle: 'Education', volTitle: 'Volunteering',
         contactTag: '// let\u2019s talk', contactTitle: 'Contact',
         contactLead: 'Got a project, an offer or just want to say hi? Drop me a line and let\u2019s build something together.',
-        namePh: 'Your name', emailPh: 'Your email', msgPh: 'Your message', send: 'Send message',
+        namePh: 'Your name', emailPh: 'Your email', msgPh: 'Your message', send: 'Send message', sending: 'Sending…',
         elsewhere: 'Find me elsewhere',
         footer: '© 2026 Óscar Gómez Monedero'
       }
@@ -497,7 +499,7 @@ class Component extends DCLogic {
     const backdrop = this.props.backdrop ?? 'grid';
     const flair = this.props.flair ?? 'balanced';
     return {
-      t, lang, theme: this.state.theme, vibe, backdrop, flair, toast: this.state.toast,
+      t, lang, theme: this.state.theme, vibe, backdrop, flair, toast: this.state.toast, sending: this.state.sending,
       langLabel: lang === 'es' ? '🇪🇸' : '🇬🇧',
       typeText: this.state.typeText,
       themeIcon: this.state.theme === 'dark' ? '☀' : '🌙',
@@ -513,9 +515,29 @@ class Component extends DCLogic {
       aAll: f === 'all' ? 'true' : 'false', aGames: f === 'games' ? 'true' : 'false', aHaptics: f === 'haptics' ? 'true' : 'false', aIot: f === 'iot' ? 'true' : 'false', aSim: f === 'sim' ? 'true' : 'false',
       onSubmit: (e) => {
         e.preventDefault();
-        this.setState({ toast: es ? '¡Mensaje enviado! (demo)' : 'Message sent! (demo)' });
-        clearTimeout(this._tt);
-        this._tt = setTimeout(() => this.setState({ toast: '' }), 3000);
+        if (this.state.sending) return;
+        this.setState({ sending: true });
+        emailjs.init({ publicKey: 'TKHOE6g7-7Khy-Mr-' });
+        const fd = new FormData(e.target);
+        emailjs.send('service_txvq843', 'template_a7yaeyn', {
+          name: fd.get('name'),
+          from_name: fd.get('name'),
+          email: fd.get('email'),
+          from_email: fd.get('email'),
+          message: fd.get('message')
+        })
+          .then(() => {
+            e.target.reset();
+            this.setState({ sending: false, toast: es ? '¡Mensaje enviado!' : 'Message sent!' });
+            clearTimeout(this._tt);
+            this._tt = setTimeout(() => this.setState({ toast: '' }), 4000);
+          })
+          .catch((err) => {
+            console.error('[EmailJS error]', err);
+            this.setState({ sending: false, toast: es ? 'Error al enviar. Inténtalo de nuevo.' : 'Failed to send. Please try again.' });
+            clearTimeout(this._tt);
+            this._tt = setTimeout(() => this.setState({ toast: '' }), 4000);
+          });
       }
     };
   }
