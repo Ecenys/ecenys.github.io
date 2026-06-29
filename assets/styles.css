@@ -1,0 +1,41 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0e12}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:none;background:none}
+input,textarea{font:inherit;outline:none}
+::selection{background:var(--accent);color:var(--on)}
+[data-theme="dark"]{--bg:#0a0e12;--panel:#0e151b;--panel2:#131c24;--line:rgba(255,255,255,.09);--text:#e8eff5;--muted:#8b98a6;--on:#06120c;--grid:rgba(255,255,255,.045)}
+[data-theme="light"]{--bg:#f3efe7;--panel:#ffffff;--panel2:#ece7db;--line:rgba(20,20,20,.12);--text:#16202a;--muted:#5d6873;--on:#06120c;--grid:rgba(0,0,0,.05)}
+[data-vibe="phosphor"]{--accent:#27d885;--accent2:#15bdb6;--glow:rgba(39,216,133,.28)}
+[data-vibe="arcade"]{--accent:#ff4f74;--accent2:#ffb13b;--glow:rgba(255,79,116,.28)}
+[data-vibe="cobalt"]{--accent:#5b8cff;--accent2:#9b6bff;--glow:rgba(91,140,255,.28)}
+[data-vibe="mono"]{--accent:#c8d2dc;--accent2:#7d8893;--glow:rgba(200,210,220,.18)}
+[data-vibe="mono"][data-theme="light"]{--accent:#2a333d;--accent2:#5d6873;--glow:rgba(40,50,60,.12);--on:#ffffff}
+/* backdrop atmospheres */
+[data-backdrop="solid"] .bg-grid{display:none}
+[data-backdrop="solid"] .bg-glow{opacity:.25}
+[data-backdrop="scanlines"] .bg-grid{background-image:repeating-linear-gradient(0deg,var(--grid),var(--grid) 1px,transparent 1px,transparent 4px);background-size:auto;animation:scan 8s linear infinite;mask-image:linear-gradient(#000,#000)}
+@keyframes scan{0%{background-position:0 0}100%{background-position:0 200px}}
+/* flair: gamer personality intensity */
+[data-flair="refined"] .deco-float{display:none}
+[data-flair="refined"] .term-cursor{display:none}
+[data-flair="refined"] .bg-grid{animation:none;opacity:.55}
+[data-flair="refined"] .glow-pulse{animation:none !important}
+[data-flair="refined"] .accent-frame{opacity:.28}
+[data-flair="playful"] .deco-float{animation-duration:3s}
+[data-flair="playful"] .bg-glow{opacity:.95;animation-duration:3.5s}
+[data-flair="playful"] .accent-frame{opacity:.85;box-shadow:0 0 30px var(--glow)}
+[data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-reveal][data-in="1"]{opacity:1;transform:none}
+[data-filter][data-active="true"]{background:var(--accent) !important;color:var(--on) !important;border-color:var(--accent) !important;font-weight:700;box-shadow:0 4px 16px var(--glow)}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes gridpan{0%{background-position:0 0}100%{background-position:0 44px}}
+@keyframes glowpulse{0%,100%{opacity:.45}50%{opacity:.85}}
+@keyframes kRocket{0%{transform:translate(-50%,40px) rotate(-5deg)}14%{transform:translate(-50%,-14px) rotate(4deg)}100%{transform:translate(-50%,-130vh) rotate(-3deg)}}
+@keyframes kSnake{0%{left:-100px}100%{left:112vw}}
+@keyframes kSnakeBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes kFlash{0%{opacity:0}12%{opacity:.55}100%{opacity:0}}
+@keyframes kScan{0%{background-position:0 0}100%{background-position:0 100px}}
+@keyframes kStar{0%{transform:translateY(-10vh) rotate(0deg);opacity:0}10%{opacity:1}100%{transform:translateY(110vh) rotate(220deg);opacity:.9}}
