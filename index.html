@@ -25,19 +25,19 @@
   <div class="bg-glow" style="display:none"></div>
 
   <!-- NAV -->
-  <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,56px);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)">
+  <nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,56px);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)">
     <a href="#home" style="display:flex;align-items:center;gap:11px">
       <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:9px;background:var(--accent);color:var(--on);font-family:'Chakra Petch';font-weight:700;font-size:17px;letter-spacing:-.02em;box-shadow:0 0 0 1px var(--line),0 8px 22px var(--glow)">OG</span>
-      <span style="font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.06em;color:var(--muted)">ecenys<span style="color:var(--accent)">.github.io</span></span>
+      <span data-nav-domain style="font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.06em;color:var(--muted)">ecenys<span style="color:var(--accent)">.github.io</span></span>
     </a>
-    <div style="display:flex;align-items:center;gap:26px">
+    <div data-nav-right style="display:flex;align-items:center;gap:26px">
       <div style="display:flex;gap:24px;align-items:center" data-navlinks>
         <a href="#about" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navAbout }}</a>
         <a href="#portfolio" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navPortfolio }}</a>
         <a href="#resume" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navResume }}</a>
         <a href="#contact" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navContact }}</a>
       </div>
-      <div style="display:flex;align-items:center;gap:8px">
+      <div data-nav-buttons style="display:flex;align-items:center;gap:8px">
         <button onClick="{{ cycleVibe }}" title="Cambiar paleta / Switch palette" style="display:grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel)">
           <span style="width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow)"></span>
         </button>
@@ -50,7 +50,7 @@
   <main style="position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
 
     <!-- HERO -->
-    <section id="home" style="position:relative;scroll-margin-top:90px;min-height:100vh;padding-bottom:180px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:96px">
+    <section id="home" data-hero style="position:relative;scroll-margin-top:90px;min-height:100vh;padding-bottom:180px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:96px">
       <div data-reveal>
         <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:26px">
           <span class="glow-pulse" style="width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow);animation:glowpulse 2.4s ease-in-out infinite"></span>{{ t.heroStatus }}
@@ -63,7 +63,7 @@
           <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-weight:600;font-size:15px" style-hover="border-color:var(--accent)">{{ t.heroCtaContact }}</a>
         </div>
       </div>
-      <div data-reveal style="position:relative;justify-self:center">
+      <div data-reveal data-hero-photo style="position:relative;justify-self:center">
         <div class="accent-frame" style="position:absolute;inset:-14px -14px 14px 14px;border:1.5px solid var(--accent);border-radius:18px;opacity:.55"></div>
         <div class="deco-float" style="position:absolute;top:-26px;right:-22px;width:46px;height:46px;border-radius:10px;background:var(--accent2);opacity:.85;animation:floaty 5s ease-in-out infinite"></div>
         <div class="deco-float" style="position:absolute;bottom:24px;left:-30px;width:30px;height:30px;border-radius:7px;background:var(--accent);opacity:.7;animation:floaty 4s ease-in-out infinite .6s"></div>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <!-- trenes en Virtual Coupling (assets/rail.js) -->
-      <canvas id="rail-canvas" aria-hidden="true" style="position:absolute;left:50%;bottom:10px;width:100vw;height:156px;transform:translateX(-50%);pointer-events:none"></canvas>
+      <canvas id="rail-canvas" aria-hidden="true" style="position:absolute;left:50%;bottom:10px;width:100vw;height:156px;transform:translateX(-50%);pointer-events:none;background:linear-gradient(180deg,transparent 0,var(--bg) 16%,var(--bg) 88%,transparent 100%)"></canvas>
     </section>
 
     <!-- ABOUT -->
