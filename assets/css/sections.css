@@ -43,6 +43,9 @@
 .exp-role{font-family:var(--font-display);font-weight:600;font-size:18px;margin:0 0 3px}
 .exp-org{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 10px}
 .exp-desc{font-size:14.5px;line-height:1.65;color:var(--muted);margin:0 0 12px}
+.exp-block{margin:0 0 12px}
+.exp-block-title{font-size:13px;font-weight:600;color:var(--text);margin:0 0 4px}
+.exp-block-list{margin:0;padding-left:18px;font-size:14.5px;line-height:1.6;color:var(--muted)}
 .resume-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px}
 .stack{display:flex;flex-direction:column;gap:16px}
 
