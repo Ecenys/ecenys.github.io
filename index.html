@@ -3,172 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-<script src="assets/data.js"></script>
-<script src="assets/rail.js"></script>
+<script src="assets/js/support.js"></script>
+<script src="assets/data/site-data.js"></script>
+<script src="assets/js/rail.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<link rel="icon" href="assets/favicon.png">
+<link rel="icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/effects.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
 </helmet>
 
-<div data-theme="{{ theme }}" data-vibe="{{ vibe }}" data-backdrop="{{ backdrop }}" data-flair="{{ flair }}" style="position:relative;min-height:100vh;background:var(--bg,#0a0e12);color:var(--text,#e8eff5);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden;transition:background .4s ease,color .4s ease">
+<div class="page" data-theme="{{ theme }}" data-vibe="{{ vibe }}" data-backdrop="{{ backdrop }}" data-flair="{{ flair }}">
 
   <!-- background grid -->
-  <div class="bg-grid" style="position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;animation:gridpan 9s linear infinite;mask-image:radial-gradient(120% 90% at 50% 0%,#000 30%,transparent 80%)"></div>
-  <div class="bg-glow" style="display:none"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
 
   <!-- NAV -->
-  <nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,56px);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)">
-    <a href="#home" style="display:flex;align-items:center;gap:11px">
-      <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:9px;background:var(--accent);color:var(--on);font-family:'Chakra Petch';font-weight:700;font-size:17px;letter-spacing:-.02em;box-shadow:0 0 0 1px var(--line),0 8px 22px var(--glow)">OG</span>
-      <span data-nav-domain style="font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.06em;color:var(--muted)">ecenys<span style="color:var(--accent)">.github.io</span></span>
+  <nav class="nav">
+    <a href="#home" class="nav-brand">
+      <span class="nav-logo">OG</span>
+      <span class="nav-domain">ecenys<span>.github.io</span></span>
     </a>
-    <div data-nav-right style="display:flex;align-items:center;gap:26px">
-      <div style="display:flex;gap:24px;align-items:center" data-navlinks>
-        <a href="#about" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navAbout }}</a>
-        <a href="#portfolio" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navPortfolio }}</a>
-        <a href="#resume" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navResume }}</a>
-        <a href="#contact" style="font-size:14px;color:var(--muted)" style-hover="color:var(--text)">{{ t.navContact }}</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#about">{{ t.navAbout }}</a>
+        <a href="#portfolio">{{ t.navPortfolio }}</a>
+        <a href="#resume">{{ t.navResume }}</a>
+        <a href="#contact">{{ t.navContact }}</a>
       </div>
-      <div data-nav-buttons style="display:flex;align-items:center;gap:8px">
-        <button onClick="{{ cycleVibe }}" title="Cambiar paleta / Switch palette" style="display:grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel)">
-          <span style="width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow)"></span>
-        </button>
-        <button onClick="{{ toggleTheme }}" title="Tema claro / oscuro" style="display:grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel);font-size:15px">{{ themeIcon }}</button>
-        <button onClick="{{ setLang }}" title="Idioma / Language" style="display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);font-family:'JetBrains Mono';font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--accent)">{{ langLabel }}</button>
+      <div class="nav-buttons">
+        <button class="icon-btn" onClick="{{ cycleVibe }}" title="Cambiar paleta / Switch palette"><span class="icon-btn-dot"></span></button>
+        <button class="icon-btn icon-btn--theme" onClick="{{ toggleTheme }}" title="Tema claro / oscuro">{{ themeIcon }}</button>
+        <button class="lang-btn" onClick="{{ setLang }}" title="Idioma / Language">{{ langLabel }}</button>
       </div>
     </div>
   </nav>
 
-  <main style="position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
+  <main class="container">
 
     <!-- HERO -->
-    <section id="home" data-hero style="position:relative;scroll-margin-top:90px;min-height:100vh;padding-bottom:180px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:96px">
+    <section id="home" class="hero">
       <div data-reveal>
-        <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:26px">
-          <span class="glow-pulse" style="width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow);animation:glowpulse 2.4s ease-in-out infinite"></span>{{ t.heroStatus }}
-        </div>
-        <p style="font-family:'JetBrains Mono';font-size:15px;letter-spacing:.04em;color:var(--accent);margin:0 0 8px">{{ t.heroHello }}</p>
-        <h1 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(38px,6.6vw,76px);line-height:1.02;letter-spacing:-.02em;margin:0">Óscar Gómez<br>Monedero</h1>
-        <p style="font-family:'JetBrains Mono';font-size:clamp(12px,1.5vw,14.5px);letter-spacing:.02em;color:var(--muted);margin:18px 0 0;min-height:1.4em"><span style="color:var(--accent)">&gt;</span> {{ typeText }}<span class="term-cursor" style="color:var(--accent);font-weight:700;animation:blink 1.1s step-end infinite">▋</span></p>
-        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
-          <a href="#portfolio" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:10px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;box-shadow:0 10px 30px var(--glow)" style-hover="transform:translateY(-2px)">{{ t.heroCtaWork }} →</a>
-          <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-weight:600;font-size:15px" style-hover="border-color:var(--accent)">{{ t.heroCtaContact }}</a>
+        <div class="status-pill"><span class="glow-pulse"></span>{{ t.heroStatus }}</div>
+        <p class="hero-hello">{{ t.heroHello }}</p>
+        <h1 class="hero-name">Óscar Gómez<br>Monedero</h1>
+        <p class="hero-type"><span class="prompt">&gt;</span> {{ typeText }}<span class="term-cursor">▋</span></p>
+        <div class="hero-ctas">
+          <a href="#portfolio" class="btn btn-primary">{{ t.heroCtaWork }} →</a>
+          <a href="#contact" class="btn btn-ghost">{{ t.heroCtaContact }}</a>
         </div>
       </div>
-      <div data-reveal data-hero-photo style="position:relative;justify-self:center">
-        <div class="accent-frame" style="position:absolute;inset:-14px -14px 14px 14px;border:1.5px solid var(--accent);border-radius:18px;opacity:.55"></div>
-        <div class="deco-float" style="position:absolute;top:-26px;right:-22px;width:46px;height:46px;border-radius:10px;background:var(--accent2);opacity:.85;animation:floaty 5s ease-in-out infinite"></div>
-        <div class="deco-float" style="position:absolute;bottom:24px;left:-30px;width:30px;height:30px;border-radius:7px;background:var(--accent);opacity:.7;animation:floaty 4s ease-in-out infinite .6s"></div>
-        <div style="position:relative;width:clamp(240px,32vw,360px);height:clamp(300px,40vw,440px);border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.35)">
-          <img src="assets/portrait.jpeg" alt="Óscar Gómez Monedero" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+      <div data-reveal class="hero-photo">
+        <div class="accent-frame"></div>
+        <div class="deco-float deco-float--a"></div>
+        <div class="deco-float deco-float--b"></div>
+        <div class="hero-photo-frame">
+          <img class="cover-img" src="assets/img/portrait.jpeg" alt="Óscar Gómez Monedero">
         </div>
       </div>
-      <!-- trenes en Virtual Coupling (assets/rail.js) -->
-      <canvas id="rail-canvas" aria-hidden="true" style="position:absolute;left:50%;bottom:10px;width:100vw;height:156px;transform:translateX(-50%);pointer-events:none;background:linear-gradient(180deg,transparent 0,var(--bg) 16%,var(--bg) 88%,transparent 100%)"></canvas>
+      <!-- trenes en Virtual Coupling (assets/js/rail.js) -->
+      <canvas id="rail-canvas" class="rail-canvas" aria-hidden="true"></canvas>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" style="scroll-margin-top:90px;padding:96px 0">
-      <div data-reveal style="margin-bottom:46px">
-        <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.aboutTag }}</p>
-        <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.aboutTitle }}</h2>
+    <section id="about" class="section">
+      <div data-reveal class="section-head">
+        <p class="section-tag">{{ t.aboutTag }}</p>
+        <h2 class="section-title">{{ t.aboutTitle }}</h2>
       </div>
-      <div style="display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start">
-        <div data-reveal style="position:relative">
-          <div style="width:100%;height:360px;border-radius:16px;overflow:hidden;border:1px solid var(--line)">
-            <img src="assets/portrait.jpeg" alt="Óscar Gómez Monedero" style="width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block">
+      <div class="about-grid">
+        <div data-reveal class="about-photo">
+          <div class="about-photo-frame">
+            <img class="cover-img" src="assets/img/portrait.jpeg" alt="Óscar Gómez Monedero">
           </div>
-          <div style="position:absolute;bottom:-1px;left:16px;right:16px;transform:translateY(50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-family:'JetBrains Mono';font-size:12.5px;color:var(--muted);box-shadow:0 16px 40px rgba(0,0,0,.25)">📍 Madrid · España</div>
+          <div class="location-badge">{{ t.location }}</div>
         </div>
         <div data-reveal>
-          <p style="font-size:18px;line-height:1.75;margin:0 0 18px">{{ t.aboutP1 }}</p>
-          <p style="font-size:18px;line-height:1.75;margin:0 0 24px;color:var(--muted)">{{ t.aboutP2 }}</p>
-          <p style="font-family:'JetBrains Mono';font-size:13.5px;line-height:1.7;color:var(--accent);border-left:2px solid var(--accent);padding-left:16px;margin:0 0 28px">{{ t.aboutKicker }}</p>
-          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px">
+          <p class="about-text">{{ t.aboutP1 }}</p>
+          <p class="about-text about-text--muted">{{ t.aboutP2 }}</p>
+          <p class="kicker">{{ t.aboutKicker }}</p>
+          <div class="chips">
             <sc-for list="{{ traits }}" as="tr" hint-placeholder-count="6">
-              <span style="padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);font-size:13px;font-weight:500">{{ tr }}</span>
+              <span class="chip">{{ tr }}</span>
             </sc-for>
           </div>
-          <a href="https://www.linkedin.com/in/ogmonedero/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:10px;border:1px solid var(--line);background:var(--panel);font-weight:600;font-size:14px" style-hover="border-color:var(--accent)">{{ t.aboutCta }} ↗</a>
+          <a href="https://www.linkedin.com/in/ogmonedero/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">{{ t.aboutCta }} ↗</a>
         </div>
       </div>
     </section>
 
     <!-- PORTFOLIO -->
-    <section id="portfolio" style="scroll-margin-top:90px;padding:96px 0">
-      <div data-reveal style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px">
+    <section id="portfolio" class="section">
+      <div data-reveal class="portfolio-head">
         <div>
-          <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.portfolioTag }}</p>
-          <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.portfolioTitle }}</h2>
+          <p class="section-tag">{{ t.portfolioTag }}</p>
+          <h2 class="section-title">{{ t.portfolioTitle }}</h2>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px">
-          <button data-filter data-active="{{ aAll }}" onClick="{{ fltAll }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fAll }}</button>
-          <button data-filter data-active="{{ aGames }}" onClick="{{ fltGames }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fGames }}</button>
-          <button data-filter data-active="{{ aHaptics }}" onClick="{{ fltHaptics }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fHaptics }}</button>
-          <button data-filter data-active="{{ aIot }}" onClick="{{ fltIot }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">IoT</button>
-          <button data-filter data-active="{{ aSim }}" onClick="{{ fltSim }}" style="padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:13px;font-weight:500;transition:all .2s">{{ t.fSim }}</button>
+        <div class="filters">
+          <sc-for list="{{ filters }}" as="fl" hint-placeholder-count="5">
+            <button class="filter-btn" data-active="{{ fl.active }}" onClick="{{ fl.select }}">{{ fl.label }}</button>
+          </sc-for>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px">
+      <div class="projects-grid">
         <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
-          <div style="display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s" style-hover="transform:translateY(-4px);border-color:var(--accent)">
-            <div style="position:relative">
-              <div style="width:100%;height:172px;background:var(--panel2);overflow:hidden">
-                <img src="{{ p.img }}" alt="{{ p.title }}" loading="lazy" style="width:100%;height:100%;display:block;object-fit:{{ p.imgFit }};object-position:center">
+          <div class="card">
+            <div class="card-media">
+              <div class="card-img">
+                <img src="{{ p.img }}" alt="{{ p.title }}" loading="lazy" style="object-fit:{{ p.imgFit }}">
               </div>
-              <span style="position:absolute;top:12px;left:12px;padding:5px 11px;border-radius:999px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line);font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)">{{ p.catLabel }}</span>
-              <span style="position:absolute;top:12px;right:12px;font-family:'JetBrains Mono';font-size:11px;color:var(--muted)">{{ p.n }}</span>
+              <span class="card-cat">{{ p.catLabel }}</span>
+              <span class="card-num">{{ p.n }}</span>
             </div>
-            <div style="display:flex;flex-direction:column;flex:1;padding:18px 18px 20px">
-              <h3 style="font-family:'Chakra Petch';font-weight:600;font-size:18px;letter-spacing:-.01em;margin:0 0 8px;line-height:1.25">{{ p.title }}</h3>
-              <p style="font-size:13.5px;line-height:1.6;color:var(--muted);margin:0 0 16px;flex:1">{{ p.desc }}</p>
-              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px">
+            <div class="card-body">
+              <h3 class="card-title">{{ p.title }}</h3>
+              <p class="card-desc">{{ p.desc }}</p>
+              <div class="tags">
                 <sc-for list="{{ p.tech }}" as="tech" hint-placeholder-count="3">
-                  <span style="font-family:'JetBrains Mono';font-size:11px;padding:4px 9px;border-radius:6px;background:var(--panel2);color:var(--muted)">{{ tech }}</span>
+                  <span class="tag">{{ tech }}</span>
                 </sc-for>
               </div>
               <sc-if value="{{ p.hasLink }}" hint-placeholder-val="{{ true }}">
-                <a href="{{ p.link }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono';font-size:12.5px;font-weight:500;color:var(--accent)" style-hover="gap:11px">{{ t.portfolioView }} ↗</a>
+                <a href="{{ p.link }}" target="_blank" rel="noopener" class="card-link">{{ t.portfolioView }} ↗</a>
               </sc-if>
             </div>
           </div>
         </sc-for>
       </div>
-      <a href="https://github.com/Ecenys" target="_blank" rel="noopener" data-reveal style="display:flex;align-items:center;justify-content:center;gap:11px;margin-top:22px;padding:20px;border-radius:16px;border:1px dashed var(--line);background:var(--panel);font-family:'JetBrains Mono';font-size:14px;color:var(--muted)" style-hover="border-color:var(--accent);color:var(--text)">
+      <a href="https://github.com/Ecenys" target="_blank" rel="noopener" data-reveal class="github-banner">
         <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
         {{ t.portfolioGithub }}
       </a>
     </section>
 
     <!-- RESUME -->
-    <section id="resume" style="scroll-margin-top:90px;padding:96px 0">
-      <div data-reveal style="margin-bottom:46px">
-        <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.resumeTag }}</p>
-        <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.resumeTitle }}</h2>
+    <section id="resume" class="section">
+      <div data-reveal class="section-head">
+        <p class="section-tag">{{ t.resumeTag }}</p>
+        <h2 class="section-title">{{ t.resumeTitle }}</h2>
       </div>
 
-      <h3 data-reveal style="font-family:'Chakra Petch';font-weight:600;font-size:22px;margin:0 0 26px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:var(--accent);border-radius:2px"></span>{{ t.expTitle }}</h3>
-      <div style="display:flex;flex-direction:column;gap:18px;margin-bottom:64px">
+      <h3 data-reveal class="subhead">{{ t.expTitle }}</h3>
+      <div class="exp-list">
         <sc-for list="{{ experience }}" as="e" hint-placeholder-count="5">
-          <div data-reveal style="display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel)">
-            <div style="font-family:'JetBrains Mono';font-size:12.5px;color:var(--accent);padding-top:3px">{{ e.period }}</div>
+          <div data-reveal class="exp-item">
+            <div class="exp-period">{{ e.period }}</div>
             <div>
-              <h4 style="font-family:'Chakra Petch';font-weight:600;font-size:18px;margin:0 0 3px">{{ e.role }}</h4>
+              <h4 class="exp-role">{{ e.role }}</h4>
               <sc-if value="{{ e.org }}" hint-placeholder-val="x">
-                <p style="font-size:13px;font-weight:600;color:var(--muted);margin:0 0 10px">{{ e.org }}</p>
+                <p class="exp-org">{{ e.org }}</p>
               </sc-if>
-              <p style="font-size:14.5px;line-height:1.65;color:var(--muted);margin:0 0 12px">{{ e.desc }}</p>
-              <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <p class="exp-desc">{{ e.desc }}</p>
+              <div class="tags">
                 <sc-for list="{{ e.tech }}" as="tech" hint-placeholder-count="3">
-                  <span style="font-family:'JetBrains Mono';font-size:11px;padding:4px 9px;border-radius:6px;background:var(--panel2);color:var(--text)">{{ tech }}</span>
+                  <span class="tag tag--strong">{{ tech }}</span>
                 </sc-for>
               </div>
             </div>
@@ -176,27 +174,27 @@
         </sc-for>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px">
+      <div class="resume-cols">
         <div>
-          <h3 data-reveal style="font-family:'Chakra Petch';font-weight:600;font-size:22px;margin:0 0 26px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:var(--accent2);border-radius:2px"></span>{{ t.eduTitle }}</h3>
-          <div style="display:flex;flex-direction:column;gap:16px">
+          <h3 data-reveal class="subhead subhead--alt">{{ t.eduTitle }}</h3>
+          <div class="stack">
             <sc-for list="{{ education }}" as="ed" hint-placeholder-count="2">
-              <div data-reveal style="padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)">
-                <p style="font-family:'JetBrains Mono';font-size:12px;color:var(--accent);margin:0 0 8px">{{ ed.period }}</p>
-                <h4 style="font-family:'Chakra Petch';font-weight:600;font-size:16.5px;line-height:1.3;margin:0 0 6px">{{ ed.title }}</h4>
-                <p style="font-size:13.5px;color:var(--muted);margin:0">{{ ed.org }}</p>
+              <div data-reveal class="mini-card">
+                <p class="mini-period">{{ ed.period }}</p>
+                <h4 class="mini-title">{{ ed.title }}</h4>
+                <p class="mini-text">{{ ed.org }}</p>
               </div>
             </sc-for>
           </div>
         </div>
         <div>
-          <h3 data-reveal style="font-family:'Chakra Petch';font-weight:600;font-size:22px;margin:0 0 26px;display:flex;align-items:center;gap:12px"><span style="width:9px;height:9px;background:var(--accent2);border-radius:2px"></span>{{ t.volTitle }}</h3>
-          <div style="display:flex;flex-direction:column;gap:16px">
+          <h3 data-reveal class="subhead subhead--alt">{{ t.volTitle }}</h3>
+          <div class="stack">
             <sc-for list="{{ volunteering }}" as="v" hint-placeholder-count="4">
-              <div data-reveal style="padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)">
-                <p style="font-family:'JetBrains Mono';font-size:12px;color:var(--accent);margin:0 0 8px">{{ v.period }}</p>
-                <h4 style="font-family:'Chakra Petch';font-weight:600;font-size:16.5px;line-height:1.3;margin:0 0 6px">{{ v.title }}</h4>
-                <p style="font-size:13.5px;color:var(--muted);margin:0;line-height:1.55">{{ v.desc }}</p>
+              <div data-reveal class="mini-card">
+                <p class="mini-period">{{ v.period }}</p>
+                <h4 class="mini-title">{{ v.title }}</h4>
+                <p class="mini-text mini-text--long">{{ v.desc }}</p>
               </div>
             </sc-for>
           </div>
@@ -205,33 +203,33 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" style="scroll-margin-top:90px;padding:96px 0 64px">
-      <div data-reveal style="margin-bottom:46px">
-        <p style="font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">{{ t.contactTag }}</p>
-        <h2 style="font-family:'Chakra Petch';font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.01em;margin:8px 0 0">{{ t.contactTitle }}</h2>
-        <p style="font-size:17px;line-height:1.7;color:var(--muted);max-width:48ch;margin:16px 0 0">{{ t.contactLead }}</p>
+    <section id="contact" class="section section--contact">
+      <div data-reveal class="section-head">
+        <p class="section-tag">{{ t.contactTag }}</p>
+        <h2 class="section-title">{{ t.contactTitle }}</h2>
+        <p class="section-lead">{{ t.contactLead }}</p>
       </div>
-      <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start">
-        <form data-reveal onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px">
-          <input name="name" required placeholder="{{ t.namePh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
-          <input name="email" required type="email" placeholder="{{ t.emailPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px" style-focus="border-color:var(--accent)">
-          <textarea name="message" required rows="5" placeholder="{{ t.msgPh }}" style="padding:15px 16px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:15px;resize:vertical;font-family:'IBM Plex Sans'" style-focus="border-color:var(--accent)"></textarea>
-          <sc-if value="{{ !sending }}"><button type="submit" style="align-self:flex-start;padding:14px 26px;border-radius:11px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;box-shadow:0 10px 30px var(--glow)" style-hover="transform:translateY(-2px)">{{ t.send }} →</button></sc-if>
-          <sc-if value="{{ sending }}"><button type="button" disabled style="align-self:flex-start;padding:14px 26px;border-radius:11px;background:var(--accent);color:var(--on);font-weight:600;font-size:15px;opacity:0.7;cursor:not-allowed">{{ t.sending }}</button></sc-if>
+      <div class="contact-grid">
+        <form data-reveal class="contact-form" onSubmit="{{ onSubmit }}">
+          <input class="field" name="name" required placeholder="{{ t.namePh }}">
+          <input class="field" name="email" required type="email" placeholder="{{ t.emailPh }}">
+          <textarea class="field" name="message" required rows="5" placeholder="{{ t.msgPh }}"></textarea>
+          <sc-if value="{{ !sending }}"><button type="submit" class="btn btn-primary">{{ t.send }} →</button></sc-if>
+          <sc-if value="{{ sending }}"><button type="button" class="btn btn-primary" disabled>{{ t.sending }}</button></sc-if>
         </form>
-        <div data-reveal style="display:flex;flex-direction:column;gap:14px">
-          <p style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 2px">{{ t.elsewhere }}</p>
-          <a href="https://www.linkedin.com/in/ogmonedero/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;border:1px solid var(--line);background:var(--panel)" style-hover="border-color:var(--accent);transform:translateX(4px)">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color:var(--accent)"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-            <span><span style="display:block;font-weight:600;font-size:14.5px">LinkedIn</span><span style="font-family:'JetBrains Mono';font-size:12px;color:var(--muted)">in/ogmonedero</span></span>
+        <div data-reveal class="socials">
+          <p class="socials-label">{{ t.elsewhere }}</p>
+          <a href="https://www.linkedin.com/in/ogmonedero/" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            <span><span class="social-name">LinkedIn</span><span class="social-handle">in/ogmonedero</span></span>
           </a>
-          <a href="https://github.com/Ecenys" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;border:1px solid var(--line);background:var(--panel)" style-hover="border-color:var(--accent);transform:translateX(4px)">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color:var(--accent)"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-            <span><span style="display:block;font-weight:600;font-size:14.5px">GitHub</span><span style="font-family:'JetBrains Mono';font-size:12px;color:var(--muted)">@Ecenys</span></span>
+          <a href="https://github.com/Ecenys" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+            <span><span class="social-name">GitHub</span><span class="social-handle">@Ecenys</span></span>
           </a>
-          <a href="https://twitter.com/ecenys" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:13px;border:1px solid var(--line);background:var(--panel)" style-hover="border-color:var(--accent);transform:translateX(4px)">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="color:var(--accent)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-            <span><span style="display:block;font-weight:600;font-size:14.5px">X / Twitter</span><span style="font-family:'JetBrains Mono';font-size:12px;color:var(--muted)">@ecenys</span></span>
+          <a href="https://twitter.com/ecenys" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            <span><span class="social-name">X / Twitter</span><span class="social-handle">@ecenys</span></span>
           </a>
         </div>
       </div>
@@ -239,16 +237,16 @@
   </main>
 
   <!-- FOOTER -->
-  <footer style="position:relative;z-index:1;border-top:1px solid var(--line);background:var(--panel);margin-top:40px">
-    <div style="max-width:1140px;margin:0 auto;padding:30px clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center">
-      <span style="font-size:13.5px;color:var(--muted)">{{ t.footer }}</span>
-      <span style="font-family:'JetBrains Mono';font-size:11.5px;color:var(--muted);opacity:.7" title="Konami code 😉">↑ ↑ ↓ ↓ ← → ← → B A</span>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-text">{{ t.footer }}</span>
+      <span class="konami-hint" title="Konami code 😉">↑ ↑ ↓ ↓ ← → ← → B A</span>
     </div>
   </footer>
 
   <!-- TOAST -->
   <sc-if value="{{ toast }}" hint-placeholder-val="">
-    <div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:99;padding:14px 22px;border-radius:12px;background:var(--accent);color:var(--on);font-family:'JetBrains Mono';font-size:13px;font-weight:500;box-shadow:0 16px 44px var(--glow)">{{ toast }}</div>
+    <div class="toast">{{ toast }}</div>
   </sc-if>
 
 </div>
@@ -342,7 +340,7 @@ class Component extends DCLogic {
     layer.style.cssText = 'position:fixed;inset:0;z-index:90;pointer-events:none;overflow:hidden';
 
     const snake = document.createElement('img');
-    snake.src = 'assets/deco-snake.png';
+    snake.src = 'assets/img/deco/snake.png';
     snake.alt = '';
     snake.style.cssText = 'position:absolute;bottom:22px;left:-100px;width:74px;height:74px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 8px 16px rgba(0,0,0,.45));animation:kSnake 3.6s linear forwards,kSnakeBob .42s ease-in-out infinite';
     layer.appendChild(snake);
@@ -357,32 +355,56 @@ class Component extends DCLogic {
     clearTimeout(this._fb); clearTimeout(this._tt); clearTimeout(this._fxTimer); clearTimeout(this._typeT);
   }
 
-  _T() {
-    return window.SITE_DATA.translations;
+  _showToast(msg) {
+    this.setState({ toast: msg });
+    clearTimeout(this._tt);
+    this._tt = setTimeout(() => this.setState({ toast: '' }), 4000);
   }
 
-  _projects() {
-    return window.SITE_DATA.projects;
+  _send(form, t) {
+    if (this.state.sending) return;
+    this.setState({ sending: true });
+    const cfg = window.SITE_DATA.emailjs;
+    emailjs.init({ publicKey: cfg.publicKey });
+    const fd = new FormData(form);
+    emailjs.send(cfg.serviceId, cfg.templateId, {
+      name: fd.get('name'),
+      from_name: fd.get('name'),
+      email: fd.get('email'),
+      from_email: fd.get('email'),
+      message: fd.get('message')
+    })
+      .then(() => {
+        form.reset();
+        this.setState({ sending: false });
+        this._showToast(t.toastSent);
+      })
+      .catch((err) => {
+        console.error('[EmailJS error]', err);
+        this.setState({ sending: false });
+        this._showToast(t.toastError);
+      });
   }
 
   renderVals() {
-    const lang = this.state.lang;
-    const t = this._T()[lang];
-    const es = lang === 'es';
-
-    const catLabel = { games: es ? 'Videojuegos & VR' : 'Games & VR', haptics: es ? 'Háptica' : 'Haptics', iot: 'IoT', sim: es ? 'Simulación' : 'Simulation' };
-    const projects = this._projects()
-      .filter((p) => this.state.filter === 'all' || p.cats.includes(this.state.filter))
-      .map((p, idx) => ({ id: p.id, title: p.title, tech: p.tech, link: p.link, hasLink: !!p.link, img: p.img, imgFit: p.fit || 'cover', desc: es ? p.es : p.en, catLabel: catLabel[p.cats[0]], n: String(idx + 1).padStart(2, '0') }));
-
     const D = window.SITE_DATA;
+    const lang = this.state.lang;
+    const t = D.translations[lang];
     const L = (v) => (v && typeof v === 'object' && 'es' in v) ? v[lang] : v;
+    const f = this.state.filter;
+
+    const catLabel = Object.fromEntries(D.categories.map((c) => [c.id, L(c.label)]));
+    const filters = [{ id: 'all', label: t.fAll }, ...D.categories.map((c) => ({ id: c.id, label: L(c.label) }))]
+      .map((c) => ({ label: c.label, active: f === c.id ? 'true' : 'false', select: () => this.setState({ filter: c.id }) }));
+    const projects = D.projects
+      .filter((p) => f === 'all' || p.cats.includes(f))
+      .map((p, idx) => ({ id: p.id, title: p.title, tech: p.tech, link: p.link, hasLink: !!p.link, img: p.img, imgFit: p.fit || 'cover', desc: p[lang], catLabel: catLabel[p.cats[0]], n: String(idx + 1).padStart(2, '0') }));
+
     const experience = D.experience.map((e) => ({ period: L(e.period), role: L(e.role), org: e.org, desc: L(e.desc), tech: e.tech }));
     const education = D.education.map((ed) => ({ period: L(ed.period), title: L(ed.title), org: ed.org }));
     const volunteering = D.volunteering.map((v) => ({ period: L(v.period), title: L(v.title), desc: L(v.desc) }));
     const traits = D.traits[lang];
 
-    const f = this.state.filter;
     const vibe = this.state.vibe || (this.props.palette ?? 'phosphor');
     const backdrop = this.props.backdrop ?? 'grid';
     const flair = this.props.flair ?? 'balanced';
@@ -394,39 +416,8 @@ class Component extends DCLogic {
       setLang: () => this.setState((s) => ({ lang: s.lang === 'es' ? 'en' : 'es' })),
       toggleTheme: () => this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
       cycleVibe: () => { const o = ['phosphor', 'arcade', 'cobalt', 'mono']; this.setState({ vibe: o[(o.indexOf(vibe) + 1) % o.length] }); },
-      projects, experience, education, volunteering, traits,
-      fltAll: () => this.setState({ filter: 'all' }),
-      fltGames: () => this.setState({ filter: 'games' }),
-      fltHaptics: () => this.setState({ filter: 'haptics' }),
-      fltIot: () => this.setState({ filter: 'iot' }),
-      fltSim: () => this.setState({ filter: 'sim' }),
-      aAll: f === 'all' ? 'true' : 'false', aGames: f === 'games' ? 'true' : 'false', aHaptics: f === 'haptics' ? 'true' : 'false', aIot: f === 'iot' ? 'true' : 'false', aSim: f === 'sim' ? 'true' : 'false',
-      onSubmit: (e) => {
-        e.preventDefault();
-        if (this.state.sending) return;
-        this.setState({ sending: true });
-        emailjs.init({ publicKey: 'TKHOE6g7-7Khy-Mr-' });
-        const fd = new FormData(e.target);
-        emailjs.send('service_txvq843', 'template_a7yaeyn', {
-          name: fd.get('name'),
-          from_name: fd.get('name'),
-          email: fd.get('email'),
-          from_email: fd.get('email'),
-          message: fd.get('message')
-        })
-          .then(() => {
-            e.target.reset();
-            this.setState({ sending: false, toast: es ? '¡Mensaje enviado!' : 'Message sent!' });
-            clearTimeout(this._tt);
-            this._tt = setTimeout(() => this.setState({ toast: '' }), 4000);
-          })
-          .catch((err) => {
-            console.error('[EmailJS error]', err);
-            this.setState({ sending: false, toast: es ? 'Error al enviar. Inténtalo de nuevo.' : 'Failed to send. Please try again.' });
-            clearTimeout(this._tt);
-            this._tt = setTimeout(() => this.setState({ toast: '' }), 4000);
-          });
-      }
+      projects, filters, experience, education, volunteering, traits,
+      onSubmit: (e) => { e.preventDefault(); this._send(e.target, t); }
     };
   }
 }

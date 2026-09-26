@@ -1,0 +1,18 @@
+/* Móvil: menú en dos filas y hero en una columna. Se carga el último para ganar la cascada. */
+@media (max-width:900px){
+  .nav{flex-wrap:wrap;row-gap:10px;padding:12px 20px}
+  .nav-right{display:contents}
+  .nav-links{order:3;width:100%;justify-content:flex-start;gap:24px}
+  .hero{padding-top:124px}
+}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:44px;min-height:auto}
+  .hero-photo{margin-right:14px}
+}
+@media (max-width:480px){
+  .nav-links{justify-content:space-between;gap:12px}
+}
+@media (max-width:420px){
+  .nav-domain{display:none}
+  .nav-links a{font-size:13px}
+}

@@ -8,6 +8,8 @@
  *   - education     : educación
  *   - volunteering  : voluntariado
  *   - traits        : etiquetas de la sección "Sobre mí"
+ *   - categories    : categorías de proyectos (botones de filtro y etiqueta de cada tarjeta)
+ *   - emailjs       : configuración del formulario de contacto
  *
  * Convención bilingüe: cuando un texto cambia según el idioma se escribe como
  * { es: '…', en: '…' }. Si es igual en ambos idiomas basta con un texto normal.
@@ -27,13 +29,14 @@ window.SITE_DATA = {
       aboutCta: 'Ver LinkedIn',
       portfolioTag: '// trabajos seleccionados', portfolioTitle: 'Proyectos', portfolioView: 'Ver proyecto',
       portfolioGithub: 'Más proyectos en GitHub →',
-      fAll: 'Todos', fGames: 'Videojuegos & VR', fHaptics: 'Háptica', fSim: 'Simulación',
+      fAll: 'Todos',
       resumeTag: '// experiencia + formación', resumeTitle: 'Trayectoria',
       expTitle: 'Experiencia laboral', eduTitle: 'Educación', volTitle: 'Voluntariado',
       contactTag: '// hablemos', contactTitle: 'Contacto',
       contactLead: '¿Tienes un proyecto, una oferta o simplemente quieres saludar? Escríbeme y construyamos algo juntos.',
       namePh: 'Tu nombre', emailPh: 'Tu email', msgPh: 'Tu mensaje', send: 'Enviar mensaje', sending: 'Enviando…',
-      elsewhere: 'En otros sitios',
+      elsewhere: 'En otros sitios', location: '📍 Madrid · España',
+      toastSent: '¡Mensaje enviado!', toastError: 'Error al enviar. Inténtalo de nuevo.',
       footer: '© 2026 Óscar Gómez Monedero'
     },
     en: {
@@ -49,13 +52,14 @@ window.SITE_DATA = {
       aboutCta: 'View LinkedIn',
       portfolioTag: '// selected work', portfolioTitle: 'Projects', portfolioView: 'View project',
       portfolioGithub: 'More projects on GitHub →',
-      fAll: 'All', fGames: 'Games & VR', fHaptics: 'Haptics', fSim: 'Simulation',
+      fAll: 'All',
       resumeTag: '// experience + education', resumeTitle: 'Resume',
       expTitle: 'Work experience', eduTitle: 'Education', volTitle: 'Volunteering',
       contactTag: '// let’s talk', contactTitle: 'Contact',
       contactLead: 'Got a project, an offer or just want to say hi? Drop me a line and let’s build something together.',
       namePh: 'Your name', emailPh: 'Your email', msgPh: 'Your message', send: 'Send message', sending: 'Sending…',
-      elsewhere: 'Find me elsewhere',
+      elsewhere: 'Find me elsewhere', location: '📍 Madrid · Spain',
+      toastSent: 'Message sent!', toastError: 'Failed to send. Please try again.',
       footer: '© 2026 Óscar Gómez Monedero'
     }
   },
@@ -66,16 +70,16 @@ window.SITE_DATA = {
   },
 
   projects: [
-    { id: 'pth', title: 'Part-Time Hero', cats: ['games'], tech: ['Unity', 'C#'], img: 'assets/proj-pth.png', fit: 'cover', link: 'https://c404games.itch.io/part-time-hero', es: 'Videojuego desarrollado en equipo (C404 Games). Acción y plataformas con un héroe a tiempo parcial.', en: 'Team-built game (C404 Games). Action-platformer starring a part-time hero.' },
-    { id: 'stcc', title: 'Smart Train Composition Coupling', cats: ['iot'], tech: ['C/C++', 'MQTT', 'CBOR'], img: 'assets/proj-stcc.png', fit: 'cover', link: 'https://www.youtube.com/watch?v=pMQ0CWzOKTI', es: 'Acoplamiento inteligente de composiciones ferroviarias para ETCS 3 (Virtual Coupling).', en: 'Smart coupling of train compositions for ETCS 3 (Virtual Coupling).' },
-    { id: 'obst', title: 'Simulador Obstétrico', cats: ['sim', 'haptics'], tech: ['C++', 'Háptica'], img: 'assets/proj-obst.png', fit: 'cover', link: 'https://github.com/Ecenys/Obstetric-simulator', es: 'Simulador obstétrico con realimentación háptica para entrenamiento médico.', en: 'Obstetric simulator with haptic feedback for medical training.' },
-    { id: 'wti', title: 'Wireless Train Integrity', cats: ['iot'], tech: ['C/C++', 'MQTT'], img: 'assets/proj-wti.png', fit: 'cover', link: 'https://www.youtube.com/watch?v=INog83y3lKE', es: 'Sistema de integridad de tren inalámbrico para señalización ferroviaria de nueva generación.', en: 'Wireless train integrity system for next-generation railway signalling.' },
-    { id: 'escape', title: 'Escape Game', cats: ['games'], tech: ['Unity', 'C#'], img: 'assets/proj-escape.png', fit: 'cover', link: 'https://github.com/Ecenys/EscapeGame', es: 'Juego tipo escape room con puzles y mecánicas de exploración.', en: 'Escape-room style game with puzzles and exploration mechanics.' },
-    { id: 'hip', title: 'Render háptico subactuado', cats: ['haptics'], tech: ['C/C++', 'SenseGlove'], img: 'assets/proj-hip.png', fit: 'cover', link: 'https://github.com/Ecenys/Basic-Proxy-HIP-Simulation', es: 'Investigación de algoritmos de renderizado háptico subactuado (proxy básico HIP).', en: 'Research on underactuated haptic rendering algorithms (basic HIP proxy).' },
-    { id: 'mesh', title: 'Simulaciones avanzadas en mallas', cats: ['sim'], tech: ['C++', 'FEM'], img: 'assets/proj-mesh.png', fit: 'cover', link: 'https://github.com/Ecenys/Animacion-y-simulacion-avanzada', es: 'Animación y simulación física avanzada sobre mallas deformables.', en: 'Advanced physics animation and simulation on deformable meshes.' },
-    { id: 'boat', title: 'Boat VR Minigame', cats: ['games', 'sim'], tech: ['Unity', 'VR'], img: 'assets/proj-boat.png', fit: 'cover', link: 'https://github.com/Ecenys/Boat-VR-minigame', es: 'Minijuego en VR de navegación con simulación de fluidos.', en: 'VR sailing minigame with fluid simulation.' },
-    { id: 'rig', title: 'Rigging y animación de personajes', cats: ['games'], tech: ['Blender', 'Maya'], img: 'assets/proj-rig.png', fit: 'cover', link: 'https://github.com/Ecenys/Modelado-y-Animacion-de-Personaje', es: 'Modelado, rigging y animación de personajes para videojuegos.', en: 'Character modeling, rigging and animation for games.' },
-    { id: 'track', title: 'Seguimiento estereoscópico de marcador', cats: ['games'], tech: ['OpenCV', 'AR'], img: 'assets/proj-track.png', fit: 'cover', link: '', es: 'Seguimiento estereoscópico de marcadores para realidad aumentada.', en: 'Stereoscopic marker tracking for augmented reality.' }
+    { id: 'pth', title: 'Part-Time Hero', cats: ['games'], tech: ['Unity', 'C#'], img: 'assets/img/projects/pth.png', fit: 'cover', link: 'https://c404games.itch.io/part-time-hero', es: 'Videojuego desarrollado en equipo (C404 Games). Acción y plataformas con un héroe a tiempo parcial.', en: 'Team-built game (C404 Games). Action-platformer starring a part-time hero.' },
+    { id: 'stcc', title: 'Smart Train Composition Coupling', cats: ['iot'], tech: ['C/C++', 'MQTT', 'CBOR'], img: 'assets/img/projects/stcc.png', fit: 'cover', link: 'https://www.youtube.com/watch?v=pMQ0CWzOKTI', es: 'Acoplamiento inteligente de composiciones ferroviarias para ETCS 3 (Virtual Coupling).', en: 'Smart coupling of train compositions for ETCS 3 (Virtual Coupling).' },
+    { id: 'obst', title: 'Simulador Obstétrico', cats: ['sim', 'haptics'], tech: ['C++', 'Háptica'], img: 'assets/img/projects/obst.png', fit: 'cover', link: 'https://github.com/Ecenys/Obstetric-simulator', es: 'Simulador obstétrico con realimentación háptica para entrenamiento médico.', en: 'Obstetric simulator with haptic feedback for medical training.' },
+    { id: 'wti', title: 'Wireless Train Integrity', cats: ['iot'], tech: ['C/C++', 'MQTT'], img: 'assets/img/projects/wti.png', fit: 'cover', link: 'https://www.youtube.com/watch?v=INog83y3lKE', es: 'Sistema de integridad de tren inalámbrico para señalización ferroviaria de nueva generación.', en: 'Wireless train integrity system for next-generation railway signalling.' },
+    { id: 'escape', title: 'Escape Game', cats: ['games'], tech: ['Unity', 'C#'], img: 'assets/img/projects/escape.png', fit: 'cover', link: 'https://github.com/Ecenys/EscapeGame', es: 'Juego tipo escape room con puzles y mecánicas de exploración.', en: 'Escape-room style game with puzzles and exploration mechanics.' },
+    { id: 'hip', title: 'Render háptico subactuado', cats: ['haptics'], tech: ['C/C++', 'SenseGlove'], img: 'assets/img/projects/hip.png', fit: 'cover', link: 'https://github.com/Ecenys/Basic-Proxy-HIP-Simulation', es: 'Investigación de algoritmos de renderizado háptico subactuado (proxy básico HIP).', en: 'Research on underactuated haptic rendering algorithms (basic HIP proxy).' },
+    { id: 'mesh', title: 'Simulaciones avanzadas en mallas', cats: ['sim'], tech: ['C++', 'FEM'], img: 'assets/img/projects/mesh.png', fit: 'cover', link: 'https://github.com/Ecenys/Animacion-y-simulacion-avanzada', es: 'Animación y simulación física avanzada sobre mallas deformables.', en: 'Advanced physics animation and simulation on deformable meshes.' },
+    { id: 'boat', title: 'Boat VR Minigame', cats: ['games', 'sim'], tech: ['Unity', 'VR'], img: 'assets/img/projects/boat.png', fit: 'cover', link: 'https://github.com/Ecenys/Boat-VR-minigame', es: 'Minijuego en VR de navegación con simulación de fluidos.', en: 'VR sailing minigame with fluid simulation.' },
+    { id: 'rig', title: 'Rigging y animación de personajes', cats: ['games'], tech: ['Blender', 'Maya'], img: 'assets/img/projects/rig.png', fit: 'cover', link: 'https://github.com/Ecenys/Modelado-y-Animacion-de-Personaje', es: 'Modelado, rigging y animación de personajes para videojuegos.', en: 'Character modeling, rigging and animation for games.' },
+    { id: 'track', title: 'Seguimiento estereoscópico de marcador', cats: ['games'], tech: ['OpenCV', 'AR'], img: 'assets/img/projects/track.png', fit: 'cover', link: '', es: 'Seguimiento estereoscópico de marcadores para realidad aumentada.', en: 'Stereoscopic marker tracking for augmented reality.' }
   ],
 
   experience: [
@@ -155,5 +159,17 @@ window.SITE_DATA = {
   traits: {
     es: ['Backend', 'Videojuegos & VR', 'Háptica', 'Sistemas ferroviarios', 'Safety', 'Simulación'],
     en: ['Backend', 'Games & VR', 'Haptics', 'Railway systems', 'Safety', 'Simulation']
-  }
+  },
+
+  // Orden de los botones de filtro. El `id` es el que se usa en `cats` de cada proyecto;
+  // la etiqueta de cada tarjeta es la de su primera categoría.
+  categories: [
+    { id: 'games', label: { es: 'Videojuegos & VR', en: 'Games & VR' } },
+    { id: 'haptics', label: { es: 'Háptica', en: 'Haptics' } },
+    { id: 'iot', label: 'IoT' },
+    { id: 'sim', label: { es: 'Simulación', en: 'Simulation' } }
+  ],
+
+  // Clave pública de EmailJS (no es secreta: EmailJS la expone en el navegador por diseño)
+  emailjs: { publicKey: 'TKHOE6g7-7Khy-Mr-', serviceId: 'service_txvq843', templateId: 'template_a7yaeyn' }
 };
