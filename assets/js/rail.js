@@ -394,55 +394,48 @@
       ctx.restore();
     }
 
-    // Marquesina (detrás de la vía A): tejado, pilares, luces y cartel con reloj / cuenta atrás
-    function drawCanopy() {
-      const x0 = station.x0, x1 = station.x1, w = x1 - x0;
+    // Las piezas de la marquesina son translúcidas: se pintan primero con el color del
+    // fondo para que tapen de verdad lo que queda detrás (vía de paso, tren rápido, vía A)
+    function solid(alpha, paint) {
+      ctx.fillStyle = colors.bg; paint();
+      ctx.fillStyle = withAlpha(colors.muted, alpha); paint();
+    }
 
-      // pilares hasta el andén
-      ctx.fillStyle = withAlpha(colors.muted, 0.22);
-      const cols = 4;
-      for (let k = 0; k < cols; k++) {
-        const x = x0 + 14 + k * (w - 28) / (cols - 1);
-        ctx.fillRect(x - 1.5, ROOF_Y + 4, 3, PLAT_TOP - ROOF_Y - 4);
-      }
+    const CANOPY_COLS = 4;
+    const canopyColX = (k) => station.x0 + 14 + k * (station.x1 - station.x0 - 28) / (CANOPY_COLS - 1);
+
+    // Marquesina, parte alta (detrás de la vía A): tejado y focos
+    function drawCanopy() {
+      const x0 = station.x0, x1 = station.x1;
 
       // tejado: losa con alero inclinado en los extremos
-      ctx.fillStyle = withAlpha(colors.muted, 0.3);
       ctx.beginPath();
       ctx.moveTo(x0 - 12, ROOF_Y + 5);
       ctx.lineTo(x0 - 4, ROOF_Y);
       ctx.lineTo(x1 + 4, ROOF_Y);
       ctx.lineTo(x1 + 12, ROOF_Y + 5);
       ctx.closePath();
-      ctx.fill();
+      solid(0.3, () => ctx.fill());
       ctx.strokeStyle = withAlpha(colors.accent, 0.55);
       ctx.beginPath();
       ctx.moveTo(x0 - 4, ROOF_Y + 0.5); ctx.lineTo(x1 + 4, ROOF_Y + 0.5);
       ctx.stroke();
 
-      // luces bajo el tejado: de noche encendidas, con un cono de luz hasta el andén
-      for (let k = 0; k < cols - 1; k++) {
-        const x = x0 + 14 + (k + 0.5) * (w - 28) / (cols - 1);
-        if (night) {
-          const g = ctx.createLinearGradient(0, ROOF_Y + 7, 0, PLAT_TOP);
-          g.addColorStop(0, withAlpha(WINDOW_NIGHT, 0.16));
-          g.addColorStop(1, withAlpha(WINDOW_NIGHT, 0));
-          ctx.fillStyle = g;
-          ctx.beginPath();
-          ctx.moveTo(x - 4, ROOF_Y + 7); ctx.lineTo(x + 4, ROOF_Y + 7);
-          ctx.lineTo(x + 22, PLAT_TOP); ctx.lineTo(x - 22, PLAT_TOP);
-          ctx.closePath();
-          ctx.fill();
-        }
+      // focos bajo el tejado (de noche encendidos; el cono de luz va en drawCanopyFront)
+      for (let k = 0; k < CANOPY_COLS - 1; k++) {
+        const x = canopyColX(k + 0.5);
         ctx.save();
         if (night) { ctx.shadowColor = WINDOW_NIGHT; ctx.shadowBlur = 8; }
         ctx.fillStyle = night ? WINDOW_NIGHT : withAlpha(colors.muted, 0.5);
         ctx.fillRect(x - 4, ROOF_Y + 6, 8, 1.5);
         ctx.restore();
       }
+    }
 
-      // cartel colgante: nombre y, debajo, reloj o cuenta atrás de la parada
-      const bw = 70, bh = 22, bx = x0 + w / 2 - bw / 2, by = ROOF_Y + 10;
+    // Cartel colgante del tejado: nombre y, debajo, reloj o cuenta atrás de la parada.
+    // Va delante de toda la marquesina (pilares y conos de luz incluidos)
+    function drawSign() {
+      const bw = 70, bh = 22, bx = (station.x0 + station.x1) / 2 - bw / 2, by = ROOF_Y + 10;
       ctx.strokeStyle = withAlpha(colors.muted, 0.5);
       ctx.beginPath();
       ctx.moveTo(bx + 10, ROOF_Y + 5); ctx.lineTo(bx + 10, by);
@@ -471,6 +464,29 @@
       ctx.font = '7.5px "JetBrains Mono", monospace';
       ctx.fillStyle = colors.muted;
       ctx.fillText(info, bx + bw / 2, by + 18);
+    }
+
+    // Marquesina, parte delantera: los pilares se apoyan en el andén, que está entre la
+    // vía A y la B, así que quedan por delante del tren parado en la vía A
+    function drawCanopyFront() {
+      for (let k = 0; k < CANOPY_COLS; k++) {
+        const x = canopyColX(k);
+        solid(0.22, () => ctx.fillRect(x - 1.5, ROOF_Y + 5, 3, PLAT_TOP - ROOF_Y - 5));
+      }
+      // conos de luz de los focos hasta el andén, por encima del tren
+      if (!night) return;
+      for (let k = 0; k < CANOPY_COLS - 1; k++) {
+        const x = canopyColX(k + 0.5);
+        const g = ctx.createLinearGradient(0, ROOF_Y + 7, 0, PLAT_TOP);
+        g.addColorStop(0, withAlpha(WINDOW_NIGHT, 0.16));
+        g.addColorStop(1, withAlpha(WINDOW_NIGHT, 0));
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.moveTo(x - 4, ROOF_Y + 7); ctx.lineTo(x + 4, ROOF_Y + 7);
+        ctx.lineTo(x + 22, PLAT_TOP); ctx.lineTo(x - 22, PLAT_TOP);
+        ctx.closePath();
+        ctx.fill();
+      }
     }
 
     // Andén central (entre la vía A y la B): superficie con franja de seguridad y frente
@@ -546,9 +562,6 @@
       const base = tracks[0].y + 6;
       // mástil de celosía que se estrecha hacia arriba
       const half = (y) => 1 + 3 * (y - RBC_TOP) / (base - RBC_TOP);
-      ctx.strokeStyle = colors.muted;
-      ctx.globalAlpha = 0.55;
-      ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(x - half(base), base); ctx.lineTo(x - 1, RBC_TOP + 6);
       ctx.moveTo(x + half(base), base); ctx.lineTo(x + 1, RBC_TOP + 6);
@@ -556,6 +569,16 @@
       for (let y = base; y - 8 > RBC_TOP + 6; y -= 8, side = -side) {
         ctx.moveTo(x - side * half(y), y); ctx.lineTo(x + side * half(y - 8), y - 8);
       }
+      // contorno del color del fondo: la torre está delante de la vía de paso y
+      // sin él se funde con el tren rápido, que es del mismo color que el mástil
+      ctx.strokeStyle = colors.bg;
+      ctx.lineWidth = 3;
+      ctx.stroke();
+      ctx.fillStyle = colors.bg;
+      ctx.fillRect(x - 6, RBC_TOP + 1, 12, 9);
+      ctx.strokeStyle = colors.muted;
+      ctx.globalAlpha = 0.55;
+      ctx.lineWidth = 1;
       ctx.stroke();
       // antenas
       ctx.fillStyle = colors.muted;
@@ -623,6 +646,8 @@
       drawRbc();
       drawCanopy();
       drawTrackWithTrains(tracks[0], false);
+      drawCanopyFront();
+      drawSign();
       drawPlatform();
       drawTrackWithTrains(tracks[1], true);
     }

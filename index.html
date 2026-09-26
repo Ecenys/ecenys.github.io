@@ -164,6 +164,16 @@
                 <p class="exp-org">{{ e.org }}</p>
               </sc-if>
               <p class="exp-desc">{{ e.desc }}</p>
+              <sc-for list="{{ e.blocks }}" as="b" hint-placeholder-count="0">
+                <div class="exp-block">
+                  <p class="exp-block-title">{{ b.title }}</p>
+                  <ul class="exp-block-list">
+                    <sc-for list="{{ b.items }}" as="item" hint-placeholder-count="3">
+                      <li>{{ item }}</li>
+                    </sc-for>
+                  </ul>
+                </div>
+              </sc-for>
               <div class="tags">
                 <sc-for list="{{ e.tech }}" as="tech" hint-placeholder-count="3">
                   <span class="tag tag--strong">{{ tech }}</span>
@@ -400,7 +410,7 @@ class Component extends DCLogic {
       .filter((p) => f === 'all' || p.cats.includes(f))
       .map((p, idx) => ({ id: p.id, title: p.title, tech: p.tech, link: p.link, hasLink: !!p.link, img: p.img, imgFit: p.fit || 'cover', desc: p[lang], catLabel: catLabel[p.cats[0]], n: String(idx + 1).padStart(2, '0') }));
 
-    const experience = D.experience.map((e) => ({ period: L(e.period), role: L(e.role), org: e.org, desc: L(e.desc), tech: e.tech }));
+    const experience = D.experience.map((e) => ({ period: L(e.period), role: L(e.role), org: e.org, desc: L(e.desc), blocks: (e.blocks || []).map((b) => ({ title: L(b.title), items: b.items.map(L) })), tech: e.tech }));
     const education = D.education.map((ed) => ({ period: L(ed.period), title: L(ed.title), org: ed.org }));
     const volunteering = D.volunteering.map((v) => ({ period: L(v.period), title: L(v.title), desc: L(v.desc) }));
     const traits = D.traits[lang];
